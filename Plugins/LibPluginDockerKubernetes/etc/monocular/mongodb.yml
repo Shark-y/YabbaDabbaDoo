@@ -1,0 +1,28 @@
+# https://hub.helm.sh/charts/bitnami/mongodb
+
+## Pod Security Context
+## ref: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/
+##
+#securityContext:
+#  fsGroup: 0
+#  runAsUser: 0
+
+## Kubernetes service type
+service:
+  type: NodePort
+
+## Enable persistence using Persistent Volume Claims
+## ref: http://kubernetes.io/docs/user-guide/persistent-volumes/
+##
+persistence:
+  enabled: false
+  existingClaim: nfs-pvc01
+  subPath: "mongodb"
+#  storageClass: manual
+#  size: 1Gi
+  
+
+mongodbRootPassword: admin
+mongodbUsername: admin
+mongodbPassword: admin
+mongodbDatabase: db

@@ -1,0 +1,114 @@
+<h2>Cloud Cluster Library Change Log</h2>
+<hr>
+
+<h3>Branch release-1.1</h3>
+
+<ul>
+	<li>
+		02/27/2020 v1.2.8:
+		<ul>
+			<li>HZClusterInstance.java - describe(): Added missing display for cluster lists..</li>
+			<li>MANIFEST.MF increased version to 1.2.8</li>
+		</ul>
+	</li>
+	<li>
+		02/13/2019 v1.2.6:
+		<ul>
+			<li>08/22/2019 HZClusterInstance.java: Implemented describe method to get a JSON data tables of distributed objects (for console display).</li>
+			<li>08/02/2019 MANIFEST.MF increased version to 1.2.7</li>
+			<li>08/02/2019 Clustermember.java (toJSON()) new key nodeAddress to fix console config_cluster.jsp JS errors.</li>
+			<li>MANIFEST.MF increased version to 1.2.6</li>
+			<li>New class MulticastTunnel to forward mcast packets across subnets via unicast UDP.</li>
+			<li>MulticastTunnel, NetMulticaster moved to LibCloudCore(com.cloud.core.net).</li>
+			<li>ZeroConfDiscovery.java: Updated paths for refactored classes.</li>
+		</ul>
+	</li>
+
+	<li>
+		01/15/2019 v1.2.5:
+		<ul>
+			<li>MANIFEST.MF increased version to 1.2.5</li>
+			<li>CloudCluster.java: Default provider switched to Zeroconf.</li>
+			<li>1/17/2019 ZderoDescriptorServiceUp.java Findbugs fixes round #1.</li>
+			<li>1/19/2019 NetMulticaster.java: Increased the receive buffer size to 8K.</li>
+			<li>1/19/2019 CloudCluster.java Fixed: <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-96">CLOUD_CORE-96</a>: IllegalThreadStateException on node cfg save with cluster mode Zeroconf.</li>
+			<li>1/19/2019 NetMulticaster.java, ZList, ZMap.java Fixed: <a href="http://acme.com:6091/issue/UNIFIED_CC-507">UNIFIED_CC-507</a>: Zeroconf cluster serialization errors causing class cast exceptions.</li>
+			<li>1/23/2019 Major cleanup/refactoring moved multicast classes to new PKG com.cloud.cluster.multicast</li>
+			<li>2/02/2019 CloudCluster.java, NetMulticaster.java, ZeroConfDiscovery.java: Added the node name to all handler threads. </li>
+			<li>1/04/2019 ZeroMessageContainer.java set the default expiration time to 2 * ZeroConfDiscovery.DEFAULT_SEND_FREQUENCY</li>
+			<li>2/07/2019 ZMap, ZeroDescriptorObject, BaseDescriptor, ZConfDiscovery: Added a time-to-live to cluster maps (to remove expired messages).</li>
+			<li>2/07/2019 New cluster interface IMap to provide time to live functionality and encapsulate Zeroconf ZMap.</li>
+			<li>2/07/2019 ZeroConfDiscovery: New multicast queue data tables view (ZeroConfDiscovery.toDataTables()) for the cloud console.</li>
+			<li>2/07/2019 ZeroConfDiscovery.toDataTables(): Added TTL to the data tables view for the cloud console.</li>
+			<li>2/10/2019 BaseDescriptor.java, ZeroDescriptorService.java, service_up.json, service_down.json, cluster_up.json: Added new key nodeName to JSON, renamed key address to nodeAddress.</li>
+		</ul>
+	</li>
+
+	<li>
+		01/12/2019 Zeroconf updates:
+		<ul>
+			<li>MANIFEST.MF increased version to 1.2.4</li>
+			<li>Most Classes in PKG com.cloud.cluster.zeroconf refactored with proper names.</li>
+			<li>Zerconf msgs renamed to SERVICE_UP (UPDATED), SERVICE_DOWN (NEW), CLUSTER_DB</li>
+			<li>New cluster instance implementation (ZeroClusterInstance.java) based on Zeroconf only (no DB required).</li>
+			<li>IClusterInstance new method 'JSONObject describe()' to display distributed data</li>
+		</ul>
+	</li>
+
+	<li>
+		12/27/2018 New cluster service based on Zeroconf multi-cast auto discovery:
+		<ul>
+			<li>New pkg com.cloud.cluster.zeroconf with auto discovery initial implementation classes.</li>
+			<li>CluodCluster.java Zeroconf cluster initial implementation plus bug fixes.</li>
+			<li>MANIFEST.MF increased version to 1.2.3</li>
+			<li>Moved CloudCluster.injectOSMetrics (Map map) to OSMetrics.injectOSMetrics (map) @LibCloudCore  </li>
+			<li>IClusterInstance new method void collectGarbage for cleanup plus implementation.</li>
+			<li>IClusterInstance removed hazelcast dependency public HazelcastInstance getClusterProvider()</li>
+			<li>1/4/2019CloudCluster, ZeroConfClusterInstance: Garbage collection of expired messages.</li>
+			<li>1/6/2019 ZeroConfClusterInstance Default Cluster group name is NULL in Linux bug</li>
+			<li>1/8/2019 ZeroconfDiscovery, BaseDescriptor, NetMulticaster.java: Findbugs fixes round #1.</li>
+			<li>1/8/2019 NetMulticaster, ZeroconfDiscovery added default time-to-live support plus visibility changes. </li>
+			<li>1/11/2019 ZerConfClusterInstance, ServiceDescriptor, service.json: Added support for remote log event get endpoint.</li>
+		</ul>
+	</li>
+	<li>
+		8/13/2017 Moved class com.cloud.cluster.db.ObjectIO to the core LIB com.cloud.core.io.ObjectIO.
+	</li>
+
+	<li>
+		8/8/2017 TC PERMGEN leak removal for CloudCluster.java - https://dzone.com/articles/memory-leak-protection-tomcat
+	</li>
+	<li>
+		05-01-2017 Findbugs com.cloud.cluster.hazelcast.DitributedList.java:
+		Bug: There is an apparent infinite recursive loop in com.cloud.cluster.hazelcast.DistributedList.removeAll(Collection)
+		This method unconditionally invokes itself. This would seem to indicate an infinite recursive loop that will result in a stack overflow.
+	</li>
+	<li>04-15-2017 v1.2.1 by VSilva Fixes for <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-59">COULD_CORE-59</a>:
+		<ul>
+			<li>Moved Hazelcast classes to new package com.cloud.cluster.hazelcast: ClusterInatnce, DistrubtedAtomicLong, DistributedLock, DistributedTopic.</li>
+			<li>IClusterInstance changed to support 2 cluster implementations: Hazelcast, DataStore</li>
+			<li>IClusterInstance new methods: dumpAllInstances(), isShutdown, getClusterTcpMembers, getClusterGroupName, shutdown.</li>
+		</ul>
+	</li>
+
+	<li>11-26-2016 v1.2 by VSilva Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-36">COULD_CORE-36</a>ZAP Security Scan fixes:
+		<ul>
+			<li>
+			Buffer Overflow/Format String Error for ClusterManagerServlet.java
+			</li>
+		</ul>
+	</li>
+	<li>
+	12-7-2016 Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-39">COULD_CORE-39</a> Lib Cluster ClusterManagerServlet NullPointer exception.
+	</li>
+
+<li>12-03-2015 v1.1 By VSilva. Fixes for
+	<ul>
+		<li><a target="_new" href="http://acme208.acme.com:6091/issue/CLOUD_CORE-4">CLOUD_CORE-4</a> Add support for manual TCP node discovery.
+		Note: Plus changes to the admin console to support this.
+		</li> 
+	</ul>
+</li>
+<li>Initial commit.</li>
+</ul>
+

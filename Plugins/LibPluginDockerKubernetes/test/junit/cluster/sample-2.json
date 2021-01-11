@@ -1,0 +1,17 @@
+{
+	"uuid" : "1234",
+	"address": "192.168.56.2", 
+	"messageType" : "SERVICE",
+	"timeCreated": 1546986853148 ,
+	"timeSent": 1546986893912 ,
+	"attributes" : {"FreePhysicalMemorySize":4294967295,"AvailableProcessors":4,"vendor":"ACME","ProcessCpuLoad":-1,"KEY_CTX_URL":"http://localhost:8080/Node002/","peakThreadCount":5,"heapFree":15026192,"statusMessage":"Online","statusCode":200,"Name":"Windows 7","KEY_CTX_PATH":"/Node002","heapTotal":15026192,"SystemCpuLoad":0,"heapMax":15026192},
+	"lifeCycle": {
+		"start": {"method": "POST", "url": "http://localhost:8080/Node001/SysAdmin?rq_operation=start", "headers": {"Authorization":"bearer ACESS_TOKEN","Foo":"Bar"}},
+		"stop" : {"method": "POST", "url": "http://localhost:8080/Node001/SysAdmin?rq_operation=stop", "headers": {"Authorization":"bearer ACESS_TOKEN","Foo":"Bar"}},
+		"status": {"method": "GET", "url": "http://localhost:8080/Node001/OSPerformance", "headers": {"Authorization":"bearer ACESS_TOKEN","Foo":"Bar"}}
+	},
+	"configure": {
+		"get": {"method": "GET", "url": "http://localhost:8080/Node001/SysAdmin?op=confget", "headers": {}},
+		"store" : {"method": "POST", "url": "http://localhost:8080/Node001/SysAdmin?op=constore", "headers": {}}
+	}
+}

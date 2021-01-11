@@ -1,0 +1,733 @@
+<h2>Cloud Core Library Change Log</h2>
+<hr>
+
+<h3>Branch release-1.1</h3>
+
+<ul>
+<li>
+	09/06/2020 v1.6.39 by VSilva IAM Authentication <a href="http://prd210.acme.com:6090/issue/CLOUD_CORE-138">CLOUD_CORE-138</a> update #1.
+	<ul>
+		<li>OAuth2.java::authenticate() Removed /oauth2/token from endpoint URL.</li>
+		<li>REmoteAuthenticator.java: Updates to support IAM.</li>
+		<li>MANIFEST.MF increased version to 1.6.39</li>
+	</ul>
+</li>
+
+<li>
+	08/27/2020 v1.6.38 by VSilva Authorization <a href="http://prd210.acme.com:6090/issue/CLOUD_CORE-137">CLOUD_CORE-137</a> update #1.
+	<ul>
+		<li>New class JWT for json web token encoding/decoding.</li>
+		<li>RemoteAuthenticator.java: Added support for REST Basic authentication.</li>
+		<li>Win32ActiveDirectory.java: Added logging support for debugging.</li>
+		<li>MANIFEST.MF increased version to 1.6.38</li>
+	</ul>
+</li>
+
+<li>
+	08/27/2020 v1.6.37 by VSilva PenTest fixes Update #2: <a href="http://prd210.acme.com:6090/issue/CLOUD_CORE-127">CLOUD_CORE-127</a>
+	<ul>
+		<li>ServiceConfguraton.java: Password masking updates.</li>
+		<li>MANIFEST.MF increased version to 1.6.37</li>
+	</ul>
+</li>
+<li>
+	08/06/2020 v1.6.36 by VSilva PenTest fixes Update #1: <a href="http://prd210.acme.com:6090/issue/CLOUD_CORE-127">CLOUD_CORE-127</a>, <a href="http://prd210.acme.com:6090/issue/CLOUD_CORE-128">CLOUD_CORE-128</a>
+	<ul>
+		<li>ZipTool.java: Check for evil ZIPs. </li>
+		<li>OWASPGateKeeper.java: If URI is JSP redirect to login, else (servlet) send HTTP code UNAUTHORIZED.</li>
+		<li>MANIFEST.MF increased version to 1.6.36</li>
+		<li>DropBoxClient.java Fix for java.io.IOException: Error in call to API function "files/upload": Bad HTTP "Content-Type" header: "application/x-www-form-urlencoded,application/octet-stream".  Expecting one of "application/octet-stream", "text/plain; charset=dropbox-cors-hack".
+			at com.cloud.core.net.DropboxClient.upload(DropboxClient.java:229)
+			</li>
+		<li>pen_cfg.json, MailTool.java, ErrorNotificationSystem.java, EncryptionTool.java: Error notifications - Encrypt passwords.</li>
+	</ul>
+</li>
+
+<li>
+	07/31/2020 v1.6.35 by VSilva - <a href="http://prd210.acme.com:6090/issue/CLOUD_CORE-124">CLOUD_CORE-124</a> Update #2
+	<ul>
+		<li>8/5/2020 CloudService.java: moved PluginSystem.startPlugins() after services-start to allow the CloudExecutor service run if started by a plugin. </li>
+		<li>PluginSystem: new method destroy() to shutdown the PS</li>
+		<li>CloudServixes: invoke PluginSystem.shutdown()</li>
+		<li>MANIFEST.MF increased version to 1.6.35</li>
+	</ul>
+</li>
+<li>
+	06/22/2020 v1.6.34 by VSilva - License metrics fixed exception
+	<pre>
+java.io.FileNotFoundException: C:\Users\vsilva\.cloud\CloudConnector\licensemetrics-CloudConnectorNode002.log (The system cannot find the file specified)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.(init)(FileInputStream.java:138)
+	at java.io.FileInputStream.(init)(FileInputStream.java:93)
+	</pre>
+</li>
+
+<li>
+	06/21/2020 v1.6.33 by VSilva - <a href="http://prd210.acme.com:6090/issue/CLOUD_CORE-124">CLOUD_CORE-124</a> Update #1
+	<ul>
+		<li>HotStandbyWithNotification failover logic update #1: after bug fixes, tests</li>
+		<li>ConnectionPool.java: new method boolean initialized, getStatus() bug fix to return OFF_LINE if connections size == 0</li>
+		<li>MANIFEST.MF increased version to 1.6.33</li>
+	</ul>
+</li>
+
+<li>
+	06/10/2020 v1.6.32 by VSilva - <a href="http://prd210.acme.com:6090/issue/CLOUD_CORE-124">CLOUD_CORE-124</a>
+	<ul>
+		<li>HotStandbyWithNotification, CloudServices, NodeConfiguration: Added failover logic</li>
+		<li>New interface IServiceFaiover for reusable fail-over</li>
+		<li>MANIFEST.MF increased version to 1.6.32</li>
+	</ul>
+</li>
+
+<li>
+	05/31/2020 v1.6.31 by VSilva
+	<ul>
+		<li>PluginSystem.java: Added version support logic for all plugins.</li>
+		<li>MANIFEST.MF increased version to 1.6.31</li>
+	</ul>
+</li>
+
+<li>
+	05/24/2020 v1.6.30 by VSilva
+	<ul>
+		<li>Plugin system update #1: <a href="http://prd210.acme.com:6090/issue/CLOUD_CORE-123">CLOUD_CORE-123</a></li>
+		<li>New class PluginSystem.java</li>
+		<li>CloudServices, ServiceDescriptor: Updates for PS support.</li>
+		<li>MANIFEST.MF increased version to 1.6.30</li>
+	</ul>
+</li>
+
+<li>
+	05/17/2020 v1.6.29 by VSilva
+	<ul>
+		<li>RemoteAuthenticator.java, Win32ActiveDirectory.java: WindowsAD authentication: Support enabled for linux, bug fixed where login succeeds if empty password.</li>
+		<li>MANIFEST.MF increased version to 1.6.29</li>
+	</ul>
+</li>
+
+<li>
+	02/24/2020 v1.6.27 by VSilva
+	<ul>
+		<li>03/23/2020 RestClient.java : Added support for PATCH operation in java.net.HttpURLConnection.</li>
+		<li>03/18/2020 RestClient.java fixed bug with an empty url-encoded data payload HashMap setting content to NULL for content type JSON POST payloads.</li>
+		<li>02/26/2020 Updated for RestClient.java aplus MANIFEST.MF increased version to 1.6.28</li>
+		<li>02/26/2020 SecurityTool.java new method fixSSLFatalProtocolVersion() to use TLVv1.2 using sys prop https.protocols</li>
+		<li>New classes RestClient, RestException.</li>
+		<li>MANIFEST.MF increased version to 1.6.27</li>
+		<li>03/25/2020 FileTool.java: New method listFiles(String path, final String[] extensions, final String[] nameFilters, final boolean includeDirs)</li>
+		<li>04/05/2020 RestClient.java: New method load(JSONObject) to load an api JSON from memory.</li>
+	</ul>
+</li>
+
+<li>
+	02/08/2020 v1.6.26 by VSilva
+	<ul>
+		<li>Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-120">CLOUD_CORE-120</a>Broken LicenseMetrics peak usage page.</li>
+		<li>Updated LicenseMetrics.java, CloudCronService, CronTask.java for CLOUD_CORE-120</li>
+		<li>tile_config_node_notif.jsp fixed broken link to license peak usage page.</li>
+		<li>MANIFEST.MF increased version to 1.6.26</li>
+	</ul>
+</li>
+
+<li>
+	02/06/2020 v1.6.25 by VSilva
+	<ul>
+		<li>New feature <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-119">CLOUD_CORE-119</a>Cloud profiler attach to external VMs via Java attach API.</li>
+		<li>New class VMAttach.java </li>
+		<li>Updated OSMetrics.java</li>
+		<li>MANIFEST.MF increased version to 1.6.25</li>
+	</ul>
+</li>
+
+<li>
+	01/16/2020 v1.6.24 by VSilva
+	<ul>
+		<li>New feature <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-118">CLOUD_CORE-118</a>Alert system for all products.</li>
+		<li>CloudNotificationService.java::tick() load alerts OSProfilerAlerts.reload(); </li>
+		<li>LibCloudConsole::OSProfilerAlerts.java moved to LibClodCore</li>
+		<li>MANIFEST.MF increased version to 1.6.24</li>
+	</ul>
+</li>
+
+<li>10/31/2019 v1.6.23 by VSilva
+	<ul>
+		<li>ConfigItem, ServiceConfiguration.java: See <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-116">CLOUD_CORE-116</a> Pwd widget fix required attribute.</li>
+		<li>MANIFEST.MF version increased to v1.6.23</li>
+	</ul>
+</li>
+
+<li>10/28/2019 v1.6.22 by VSilva
+	<ul>
+		<li>XmlConfig.java: Implemented feature &lt;include=file .../&gt; See <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-115">CLOUD_CORE-115</a></li>
+		<li>MANIFEST.MF version increased to v1.6.22</li>
+	</ul>
+</li>
+
+<li>10/12/2019 v1.6.21 by VSilva
+	<ul>
+		<li>10/23/2019 OAuth2.java Implemented grant type password.</li>
+		<li>10/20/2019 Container.java new method streamLog() to parse large log files. </li>
+		<li>10/19/2019 JSONFileSerializer.java update to load default JSON from the class path.</li>
+		<li>10/19/2019 Container.java made convertMultiLineLog() public</li>
+		<li><a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-114">CLOUD_CORE-114</a> New JSON serializer pkg org.json.cloud using org.json (json.jar) with annotation support.</li>
+		<li>ServiceStatus.Status enum added method String geStatus()</li>
+		<li>MANIFEST.MF version increased to v1.6.21</li>
+	</ul>
+</li>
+
+<li>10/03/2019 v1.6.20 by VSilva
+	<ul>
+		<li>New OAuth2 client (OAuth2.java) with zero dependencies: grant type: client_credentials</li>
+		<li>MANIFEST.MF version increased to v1.6.20</li>
+		<li>File upload widget: New class FileWidget.java plus ServiceConfiguration.java file code update/cleanup.</li>
+	</ul>
+</li>
+
+<li>09/02/2019 v1.6.19 by VSilva
+	<ul>
+		<li>[CloudServices,ConnectionPool].java Fixed <a href="http://skyfall.cloudlab.com:6091/issue/CLOUD_CORE-107">CLOUD_CORE-107</a> STARTED_WITH_ERRORS not handled by auto recovery.</li>
+		<li>MANIFEST.MF version increased to v1.6.19</li>
+	</ul>
+</li>
+<li>08/13/2019 v1.6.18 by VSilva
+	<ul>
+		<li>09/02/2019 Fixed <a href="http://skyfall.cloudlab.com:6091/issue/CLOUD_CORE-105">CLOUD_CORE-105</a> STARTED_WITH_ERRORS not handled by auto recovery.</li>
+		<li>New reflection class com.cloud.core.io.ReflectionTool to provide basic reflective methods.</li>
+		<li>ServiceStatus: Added new statuses: CONNECTING, IDLE, UNKNOWN.</li>
+		<li>ServiceDescriptor.java new method String getProperty() to get custom service properties. </li>
+		<li><a href="http://skyfall.cloudlab.com:6091/issue/CLOUD_CORE-104">CLOUD_CORE-104</a> NEW Reusable Connection Pooling mechanism with classes com.cloud.core.net{IConnection,ConnectionPool}.java</li>
+		<li>MANIFEST.MF version increased to v1.6.18</li>
+		<li>BaseConfig.java: Fixed bug to delete removed properties from default (class-path) configuration XML.</li>
+		<li>New classes for Windows AD authentication com.clod.core.net.{Win32ActiveDirectory, RemoteAuthenticator}.java</li>
+	</ul>
+</li>
+
+<li>02/23/2019 v1.6.17 by VSilva
+	<ul>
+		<li>06/14/2019 Fixed <a href="http://skyfall.cloudlab.com:6091/issue/CLOUD_CORE-102">CLOUD_CORE-102</a> FileTool.java listFiles bug fixes. Incorrectly selects files with .EXTENSION in the middle of the name.</li>
+		<li>04/26/2019 MulticastTunnel.java: Removed weak cipher MD5 (replaced with SHA-256)</li>
+		<li>03/14/2019 WebClient.java: new method setSSLParams (String sslProto, String keyStorePath, String storePwd, final boolean trustAllCerts) to fix ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path...</li>
+		<li>03/03/2019 WebClient.java: doInputOutputRequest() enabled 2-way SSL client certificate.</li>
+		<li>MANIFEST.MF version increased to v1.6.17</li>
+		<li>WebClient.java doInputOutputRequest() visibility changed to public</li>
+		<li>WebClient.java Signature change for doInputOutputRequest(OutputStream out, String method, byte[] content, String contentType, Map requestProperties, boolean doInput, boolean doOutput)</li>
+	</ul>
+</li>
+
+<li>02/15/2019 v1.6.16 by VSilva
+	<ul>
+		<li>MANIFEST.MF version increased to v1.6.16</li>
+		<li>New package com.cloud.core.net and classes NetMulticaster, MulticastTunel</li>
+		<li>WebClient.java new method: String doPost(InputStream payload, String contentType, Map hdrs)</li>
+		<li>OAuth1WebClient: Updated for WebClient changes.</li>
+		<li>New class DropboxClient.java to upload large files/logs to cloud storage.</li>
+		<li>ErrorNotificationSystem.java: Removed the SMTP attachments logic and replaced with cloud storage uploads.</li>
+		<li>Auditor.java: Findbugs minor fixes.</li>
+		<li>pen_cfg.json: Added cloud storage (Dropbox) params.</li>
+		<li>CloudServices.nodeConfigurationSaved(), ClusterTool.java changed logic a bit for products that don't support clustering (don't have LibCloudCluster).</li>
+		<li>02/18/2019 pen_cfg.json, ErrorNotificationSstem.java: renamed config key update_logsFolderToken to notification_logsFolderToken</li>
+		<li>02/18/2019 pen_cfg.json, ErrorNotificationSstem.java: new config key notification_logsUploadToCloudStorage, if true, upload logs to cloud storage (default: true).</li>
+		<li>02/18/2019 ErrorNotificationSstem.java: (BugFix) Incorrectly sends notification when there are no errors in the logs.</li>
+	</ul>
+</li>
+
+<li>02/09/2019 v1.6.15 by VSilva
+	<ul>
+		<li>MANIFEST.MF version increased to v1.6.15</li>
+		<li>AutoUpdateUtils.java: Added new (MONTHLY) error check frequency.</li>
+		<li>pen_cfg.json: Pro-active error notification default configuration - updated default check frequency from DAILY to WEEKLY.</li>
+		<li>ErrorNotificationSystem.java: Added the node name to the notification payload.</li>
+		<li>LogCleanerService.java: Updated the execution frequency from WEEKLY (1/week) to MONTHLY (1/month).</li>
+	</ul>
+</li>
+
+<li>02/02/2019 v1.6.14 by VSilva
+	<ul>
+		<li>NodeConfiguration, CloudServicesMastertask.java added support for the new log cleaner service.</li>
+		<li>CloudServicesMastertask.java added node name to the master task name.</li>
+		<li>MANIFEST.MF version increased to v1.6.14</li>
+		<li>New log cleaner service (LogCleanerService.java) class.</li>
+		<li>Moved the instance id logic from License.java to CoreTypes.java (INSTANCE_ID refactoring).</li>
+		<li>CoreTypes.java: New method to get the node name.</li>
+		<li>FileTool.java: New method fileCopyTo(src, dst, opts)</li>
+		<li>1/5/2019 License.java (INSTANCE_ID refactoring) Fix for Old builds complaining with 'License Error: Invalid instance id.'</li>
+	</ul>
+</li>
+<li>12/19/2018 v1.6.13 by VSilva
+	<ul>
+		<li>NodeConfiguration, CloudServices.java removed devmode backdoor.</li>
+		<li>MANIFEST.MF version increased to v1.6.13 </li>
+		<li>12/30/2018 CloudFailOverService.java ClusterTool.java, NodeConfiguration.java updated for new ZeroConf (auto discovery) cluster functionality.</li>
+		<li>12/30/2018 Moved CloudCluster.injectOSMetrics (Map map) to OSMetrics.injectOSMetrics (map) @LibCloudCore </li>
+		<li>01/01/2019 NodeConfiguration.java: added product type (productType) to cluster startup params.</li>
+		<li>01/02/2019 BaseConfig(Properties) sort by key names.</li>
+		<li>01/02/2019 ConfigGroup.java added toJSON() method.</li>
+		<li>01/02/2019 PropertiesConfig: Garbage cleanup.</li>
+		<li>01/02/2019 ServiceConfiguration: new methods: toJSON(), setId().</li>
+		<li>01/06/2019 NodeConfiguration: Fixed Default Cluster group name NULL in Linux (default is dev)</li>
+		<li>01/09/2019 ClusterTool.clusterUpdate(): Set the initial node status. </li>
+		<li>01/12/2019 New class com.cloud.core.io.ObjectCache to manage distributed objects.</li>
+		<li>01/17/2019 ObjectCache.java Findbugs fixes round #1.</li>
+		<li>01/24/2019 Nodeconfiguration.addNodeURL() cleanup index.jsp from URL.</li>
+		<li>01/25/2019 ObjectCache.java: Objects are described/formatted as JSON for easy view.</li>
+	</ul>
+</li>
+<li>
+	10/18/2018 v1.6.10 by VSilva
+	<ul>
+	<li>MailTool.java: serealize(Message) fixed message content for case sensitive content types.</li>
+	<li>CloudServicesMasterTask.java: Added support for container exception alerts via email.</li>
+	<li>New classes/files: ErrorNotificationSystem, AutoUpdateUtils, Container exception default config: configuration/pen_cfg.json</li>
+	<li>FileTool.java: New methods sizeofFoler(), sizeOfFile()</li>
+	<li>WebClient, OAuth1WebClient: Added support for SSL client certificates (Two-way SSL).</li>
+	<li>Version increased to 1.6.12 in MANIFEST.MF</li>
+	<li>10/26/2018 WebClient.java fixed InvalidState on multi thread GET, POST requests, synchronized methods reported by findbugs.</li>
+	<li>10/28/2018 WebClient.java/AutoUpdateUtils.java: Fixed findbugs load/save stream bugs.</li>
+	</ul>
+</li>
+
+<li>
+	06/08/2018 v1.6.10 by VSilva
+	<ul>
+	<li>07/09/2018 NodeConfiguration.java marked as deprecated service hrs code. Kept for compatibility reasons.</li>
+	<li>07/08/2018 FileTool.java: new method New method listFiles to read files from the the file system.</li>
+	<li>07/08/2018 Version increased to 1.6.11 in MANIFEST.MF</li>
+	<li>06/08/2018 New class com.clod.core.io.MailTool for SMTP sendMel get messages.</li>
+	<li>06/13/2018 WebClient.java: New method doPost(OutputStream out, String content, String contentType, Map requestProperties) for binary file download.</li>
+	</ul>
+</li>
+
+<li>
+	11/02/2017 v1.6.9 by VSilva
+	<ul>
+	<li>12/20/2017 NodeConfiguration.java new log constants: KEY_LOG_MASK_REGEXP, KEY_LOG_MASK for <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-92">CLOUD_CORE-92</a> - mask sensitive information from log messages.</li>
+	<li>11/27/2017 LatencyTrackerServlet.java changed the URL pattern of this servlet to /LatencyTracker to avoid conflicts w/ the reports and microservices web apps.</li>
+	<li>11/16/2017 JDBCClient.java: Batch upsert cleanup, improvements and bug fixes. WebClient.java: made this class thread safe. ServiceStatus.java: Default description set to empty. </li>
+	<li>11/14/2017 WebClient.java: Synchronized methods doGet(), doInputOutputRequest() to fix <a href="http://acme208.acme.com:6091/issue/UNIFIED_CC-412">UNIFIED_CC-412</a></li>
+	<li>11/11/2017 JDBCClient.java Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-91">CLOUD_CORE-91</a>Cloud Core-Reports: Arvato MS SQL JDBC upsert bugs</li>
+	<li>11/08/2017 Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-90">CLOUD_CORE-90</a> (ServiceStatus.java) Console NPEs on new service clean install.</li>
+	<li>11/07/2017 HotStandbyWithNotification.java auto recover triggers when node is off-line and failed services == 0.</li>
+	<li>Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-89">CLOUD_CORE-89</a> (L4JAudit.java, NodeConfiguration.java) Cloud Console AUDIT file in saved to TCROOT/null/AUDIT-[NODENAME].log.</li>
+	<li>Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-86">CLOUD_CORE-86</a> Console combo box sorting: ServiceConfiguration.java, ConfigItem.java plus new class OrderedProperties.java</li>
+	<li>11/02/2017 New class Container.java with default container log information: paths, etc.</li>
+	<li>11/01/2017 NodeConfiguration, CloudFailoverService.java: Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-87">CLOUD_CORE-87</a>CentOS7 config folder permissions</li>
+	</ul>
+</li>
+<li>
+	10/21/2017 v1.6.8 by VSilva
+	<ul>
+	<li>10/28/2017 WebClient.java doPut() changed method type from POST to PUT.</li>
+	<li>Auditor.java, HotStandbyWithNotification.java: New auto recovery mode (plain) - auto recover without notifications.</li>
+	<li>10/23/2017 ZipTool.java Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-83">CLOUD_CORE-83</a> ZIP tool invalid folder compression/decompression from win to Linux .</li>	
+	<li>BaseConfig.java Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-82">CLOUD_CORE-82</a> Cloud Config fails to clean removed keys on config update causing the auto tests to fail.</li>
+	<li>IOTools.java Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-80">CLOUD_CORE-80</a> Cloud Console Linux with IPv6 - security check violation.</li>
+	<li>L4jAudit.java Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-79">CLOUD_CORE-79</a> Cloud Console and Audit system log folder in Linux in the wrong location.</li>
+	<li>Auditor.java: new SMS alerts/notifications via Twilio.</li>
+	<li>ZipTool.java: Fixed unzip bug when zip entries contains '/' foo/bar.txt</li>
+	</ul>
+</li>
+
+<li>
+	9/4/2017 v1.6.7 fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-75">CLOUD_CORE-75</a>: Make the log system configurable.
+	<pre>
+	* Renamed MultiFileLogConfigurator to L4JConfigurator.
+	* NodeConfiguration.java: Added new logging config keys: logPath, logRotationPolicy.
+	* NodeConfiguration.java: logic for log file path and policy configuration.
+	* 9/23/2017 JDBC[com.cloud.core.db]: Moved DB upsert logic from Databse.java to JDBCClient.java.
+	* 9/24/2017 JDBC[com.cloud.core.db]: new method batchUpsert to INSERT/UPDATE JSON batches.
+	* 9/29/2017 Interface [com.cloud.core.providerIServiceLifeCycleV2] new method String getConfigProperty(key)  Get a value from the service configuration.
+	* 10/5/2017 JDBC[com.cloud.core.db]: Bug fixes, cleanup plus enhancements to the JDBC/JSON Api.
+	* 10/19/2017 JDBCClient.java Findbugs fixes round #1.
+	</pre>
+</li>
+
+<li>
+	8/13/2017 v1.6.7 New class com.cloud.core.io.ObjectIO: for object/memory serialization and compression.
+</li>
+
+<li>
+	6/6/2017 v1.6.7 fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-70">CLOUD_CORE-70</a>: New widget type for file uploads.
+	<pre>
+	* ServiceConfiguration.java: Added new widget type 'file' (file upload for HTTP INPUT TYPE=file)
+	* Increased manifest version to 1.6.7
+	* IOTools.java new functions to save a stream and/or character data to a file.
+	* 7/12/2017 WebClient.java fixed static analysis (Findbugs) errors that abort the auto build.
+	* 7/13/2017 IOTools.java new methods to read/write from streams.
+	* 7/13/2017 WebClient.java Added basic authorization for POST, DELETE requests.
+	</pre>
+</li>
+
+<li>
+	6/13/2017 v1.6.6 
+	<pre>
+	* WebClient.java: debug messages plus stdout clean-up.
+	</pre>
+</li>
+<li>
+	6/6/2017 v1.6.6 fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-69">CLOUD_CORE-69</a>.
+	<pre>
+	* NodeConfiguration.java new property supports clustering (product_supportsClsutering). Used by products that don't include any cluster library.
+	* NodeConfiguration.java new property supports notification (product_supportsNotifications). Used by console to hide notification UI.
+	* WebClient.java: doGet Check the error stream if the connection failed but the server sent useful data nonetheless.
+	</pre>
+</li>
+<li>
+	5/20/2017 v1.6.6 See <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-65">CLOUD_CORE-65</a> 
+	<ul>
+		<li>CloudProfilerNotificationService.java Added new license notifications code.</li>
+		<li>CloudProfilerNotificationService.java renamed to CloudNotificationService.java</li>
+		<li>CloudServicesMasterTask.java: refactorings for CloudNotificationService plus additions for the CloudCronService for license metrics cron task.</li>
+		<li>CoreTypes.java Added new system property LINE_SEPARATOR (line.separator).</li>
+		<li>5/24/2017 Cloud cron-like service and package (com.cloud.core.cron.CloudCronService) capable of executing tasks @ a given date/time.</li>
+	</ul>
+</li>
+
+<li>
+	5-09-2017 v1.6.5 by Vsilva: Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-63">CLOUD_CORE-63</a>CloudServices.java: Node save exception on apps without cluster library.
+</li>
+<li>
+	4-11-2017 v1.6.3 by Vsilva: Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-57">CLOUD_CORE-57</a>
+	<ul>
+		<li>
+		EncryptionTool.java, Nodeconfiguration.java Removed MD5, SHA-1. See https://security.googleblog.com/2017/02/announcing-first-sha1-collision.html.
+		</li>
+		<li>4/15/2017 v1.6.4 CloudServices.java: Added code to start/stop cluster when node configuration saved from the cloud console.</li>
+		<li>4/19/2017 ClusterTool.java: Class refactorings for updated cluster library v1.2.1.</li>
+		<li>4/21/2017 CloudServices.java: If cluster initialization fails, fall back to single node mode.</li>
+		<li>4/21/2017 NodeConfiguration.java: Added keys for cluster Data-store configuration to the node config.</li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li>
+	4-3-2017 version 1.6.3 by Vsilva
+	<ul>
+		<li>
+		Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-55">COULD_CORE-55</a> Service Hours message showing up in cloud console.
+		</li>
+		<li>
+		4/4/2017 Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-56">COULD_CORE-56</a> cloud console index.jsp compilation error.
+		</li>
+		
+		<li>Removed class com.cloud.core.services ServiceHoursScheduler.</li>
+		<li>CloudServices.java: Deprecated methods: isOutsideServiceHours, enforceServiceHours (removed ServiceHoursScheduler code). </li>
+	</ul>
+</li>
+<li>
+	3-23-2017 version 1.6.2 by Vsilva
+	<ul>
+		<li>
+		SecurityTool.java Added SSL protocol name to disableClientSSLVerificationFromHttpsURLConnection
+		</li>
+	</ul>
+</li>
+<li>
+	3-11-2017 version 1.6.1 by Vsilva
+	<ul>
+		<li>New class com.cloud.core.db.JDBCMetaData to get DB connection information.</li>
+		<li>New class com.cloud.core.db.Database: DB singleton tool to do all kinds of DB updates/queries.</li>
+		<li>CloudServices.java - Bug fix IServiceLifeCycle.onServiceDestroy() not firing on container shutdown.</li>
+		<li>
+		3/21/2017 Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-54">COULD_CORE-54</a> Console NullPointer EX  in OSMetrics get thread info.
+		</li>
+	</ul>
+</li>
+<li>
+	2-24-2017 version 1.6 by Vsilva
+	<ul>
+		<li>
+		L4JAudit.java: Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-53">COULD_CORE-53</a> Cloud Console/Profiler SMTP auth failed when user/pwd not empty.
+		</li>
+		<li>
+		ScheduledExecutor.java: scheduler member changed to {@link ScheduledThreadPoolExecutor} + added an {@link RejectedExecutionHandler} that logs an {@link RejectedExecutionException} in case of failures.
+		</li>
+		<li>
+		IOTools.java - garbage cleanup.
+		</li>
+	</ul>
+</li>
+<li>
+	2-17-2017 version 1.6 by Vsilva
+	<ul>
+		<li>
+			New interface com.cloud.core.provider.IServiceLifeCycleV2 to notify services of a service config save and possibly other missing event(s) from IServiceLifeCycle.
+		</li>
+		<li>
+			Fixed URL encoding bugs in WebClient.java used by the notification system (added Junits to test OAuth1 via Twitter).
+		</li>
+		<li>
+			New class com.cloud.core.profiler.CloudProfileNotificationService to dispatch OS metrics alerts.
+		</li>
+		<li>
+			Changed com.cloud.core.services.CloudServicesMasterTask to accommodate the new micro-service.
+		</li>
+	 	<li>
+	 		Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-51">COULD_CORE-51</a>OS Profiler add notifications for high CPU usage, Thread count and low heap.  
+	 	</li>
+	</ul>
+</li>
+
+<li>
+	2-13-2017 version 1.6 by Vsilva
+	<ul>
+	 <li>OSMEtrics.java  Garbage cleanup. Removed obsolete: IHTMLFragment getOSMetricsAsHTML(), IHTMLFragment getThreadDetails().</li>
+	 <li>Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-49">COULD_CORE-49</a>. Web Client HTTPS with self signed certs. SecurityTool.java: new method disableClientSSLVerificationFromHttpsURLConnection to disable SSL host name verification when using the WebClient class 
+	 to access SSL sites with self-signed certificates.
+	 </li>
+	</ul>
+</li>
+<li>
+	1-22-2017 OSMEtrics.java new method findDeadlockedThreads to find threads that are in deadlock waiting to acquire object monitors or ownable synchronizers.
+</li>
+<li> 01-09-2017 version 1.6 by Vsilva
+	<ul>
+		<li>01-07-2017 WebClient added new method setUrl().</li>
+		<li>com.cloud.core.services.CloudFailOverManager renamed to CloudFailOverService.</li>
+		<li>
+		Thread consolidation: Removed the master task code from CloudServices.java into its own class CloudServicesMasterTask.java.
+		</li>
+	</ul>
+</li>
+<li> 12-15-2016 version 1.6 by Vsilva
+	<ul>
+		<li>
+		12-18-2016 CloudServices/CloudFailOverManager: Preserve the Thread interrupt status on Thread.sleep using Thread.currentTread().interrupt() when catching InterruptedException.
+		</li>
+		<li>
+		Classes WebClient, OAuth1, OAuth1WebClient moved from pkg com.cloud.core.io to com.cloud.core.w3 
+		</li>
+		<li>
+		Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-42">COULD_CORE-42</a>: CloudExecutor service should guard against rogue clients. . 
+		</li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> 12-07-2016 version 1.6 by Vsilva
+	<ul>
+	<li>
+		<li>
+		Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-38">COULD_CORE-38</a>: Core Libs FindBugs static analysis issues. 
+		</li>
+		<li>
+		Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-40">COULD_CORE-40</a>:  Core libs NullPointer exception via Adapter LP/AES. 
+		</li>
+		<li>
+		Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-41">COULD_CORE-41</a>: Cloud Services: Authorization required for all products REST APIs. 
+		</li>
+	
+		<li>
+		New OAuth1 WebClient @ com.cloud.core.io.OAuth1WebClient extends WebClient (zero dependencies). Replaces the Jersey OAuth JARs (1.5MB of trash).
+		</li>
+		<li>New OAut1 helper class @ com.cloud.core.io.OAuth1 to support REST API authorization.</li>
+		<li>Removed the obsolete Servlet failover code @ com.cloud.core.failover: FailOverServlet, FailOverTask, ServletFailOverManager.</li>
+		<li>Better comments to the com.cloud.services.CloudExecutorService</li>
+		<li>com.cloud.core.services.NodeConfiguration: Will only save config to the file system @ $HOME/.cloud/{PRODUCT}/{NODENAME}.ini (removed class path save) </li>
+		<li>com.clod.core.services.CloudServices: Thread/Task consolidation with MessageManager.java and ServiceScheduler.java</li>
+		<li>Renamed Class com.clod.core.services.MessageManager to CloudMessageService</li>
+		<li>Renamed Class com.clod.core.services.ServiceScheduler to ServiceHoursScheduler</li>
+	</ul>
+</li>
+
+<li> 11-15-2016 version 1.6 by Vsilva
+	<ul>
+		<li>
+		Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-35">COULD_CORE-35</a>: Console Logging filters missing levels. 
+		</li>
+	
+		<li>com.cloud.core.profiler.LatencyTracker improvements to LatencyDescriptor. The tracker JSON is:
+		<pre>{"id":"ctiTracker","latencies":[{"Login":434},{"Logoff":448.5}], "latencyCounts":[{"Login":5},{"Logoff":5}] , "description":"Average CT Latencies (ms)"}</pre>
+		</li>
+		<li>
+		Cleaned up com.cloud.core.db.JDBCClient. New static public method unloadDrivers (to de-register all drivers).
+		</li>
+	</ul>
+</li>
+<li> 11-08-2016 version 1.6 by Vsilva
+	<ul>
+	<li>Garbage file cleanup in pkg com.cloud.core.config.</li>
+	<li>com.cloud.core.profiler.OSMetrics: New method (getThreadInfo) to provide thread list information.</li>
+	<li>Fixed <a target="_new" href="http://acme208.acme.com:6091/issue/CLOUD_CORE-34">CLOUD_CORE-34</a>: CloudExecutorService scheduler methods need to return ScheduledFutures.</li> 
+	<li>Fixed <a target="_new" href="http://acme208.acme.com:6091/issue/CLOUD_CORE-33">CLOUD_CORE-33</a>: Base support for Console Performance > OS Profiler: Get rid of the google charts API.</li>
+	</ul>
+</li>
+<li>
+	10-26-2016 version 1.6 By VSilva. Fixed <a target="_new" href="http://acme208.acme.com:6091/issue/UNIFIED_CC-137">UNIFIED_CC-137</a>: Connector License NOT the same for all versions/updates/patches of the same node.
+</li>
+<li>
+	10-24-2016 version 1.6 By VSilva. Fixed <a target="_new" href="http://acme208.acme.com:6091/issue/CLOUD_CORE-29">CLOUD_CORE-30</a>: Cloud Console: App Security Scan issues.
+	<ul>
+		<li>X-Frame Options Header</li>
+		<li>Web Browser XSS Protection</li>
+		<li>X-Content-Type Options</li>
+		<li>Script injection + Buffer overflow attacks</li>
+	</ul>
+</li>
+
+<li>
+	10-11-2016 version 1.5 By VSilva. Fixed <a target="_new" href="http://acme208.acme.com:6091/issue/CLOUD_CORE-29">CLOUD_CORE-29</a>: com.cloud.core.io.WebClient improvements
+	<ul>
+		<li>HTTPS support</li>
+		<li>PUT, DELETE</li>
+		<li>Basic authentication</li>
+	</ul>
+</li>
+
+<li>10-01-2016 version 1.5 By VSilva. Fixed <a target="_new" href="http://acme208.acme.com:6091/issue/CLOUD_CORE-28">CLOUD_CORE-28</a>: 
+		Null pointers (or any errors) in the backend shutdown life cycle causing clustering shutdown exceptions and hanging the container.
+		<pre>
+SEVERE: The web application [/CloudConnectorUCCE01##release-1.1-20161001] appears to have started a thread named [hz./CloudConnectorUCCE01.cached.thread-6] but has failed to stop it. This is very likely to create a memory leak.
+Oct 01, 2016 3:48:11 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/CloudConnectorUCCE01##release-1.1-20161001] appears to have started a thread named [hz./CloudConnectorUCCE01.HealthMonitor] but has failed to stop it. This is very likely to create a memory leak.
+Oct 01, 2016 3:48:12 PM org.apache.catalina.startup.HostConfig undeploy
+INFO: Undeploying context [/CloudConnectorFinesse01##release-1.1-20161001]
+Oct 01, 2016 3:48:12 PM org.apache.catalina.loader.WebappClassLoader loadClass
+INFO: Illegal access: this web application instance has been stopped already.  Could not load com.hazelcast.cluster.impl.operations.MemberRemoveOperation.  The eventual following stack trace is caused by an error thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access, and has no functional impact.
+java.lang.IllegalStateException
+	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1612)
+	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1571)
+	at com.hazelcast.nio.ClassLoaderUtil.tryLoadClass(ClassLoaderUtil.java:124)
+	at com.hazelcast.nio.ClassLoaderUtil.loadClass(ClassLoaderUtil.java:97)
+	at com.hazelcast.nio.ClassLoaderUtil.newInstance(ClassLoaderUtil.java:66)
+	at com.hazelcast.nio.serialization.DataSerializer.read(DataSerializer.java:109)
+	at com.hazelcast.nio.serialization.DataSerializer.read(DataSerializer.java:39)
+	at com.hazelcast.nio.serialization.StreamSerializerAdapter.toObject(StreamSerializerAdapter.java:65)
+	at com.hazelcast.nio.serialization.SerializationServiceImpl.toObject(SerializationServiceImpl.java:260)
+	at com.hazelcast.spi.impl.NodeEngineImpl.toObject(NodeEngineImpl.java:186)
+	at com.hazelcast.spi.impl.BasicOperationService$OperationPacketHandler.loadOperation(BasicOperationService.java:654)
+	at com.hazelcast.spi.impl.BasicOperationService$OperationPacketHandler.handle(BasicOperationService.java:637)
+	at com.hazelcast.spi.impl.BasicOperationService$OperationPacketHandler.access$1500(BasicOperationService.java:630)
+	at com.hazelcast.spi.impl.BasicOperationService$BasicDispatcherImpl.dispatch(BasicOperationService.java:582)
+	at com.hazelcast.spi.impl.BasicOperationScheduler$OperationThread.process(BasicOperationScheduler.java:466)
+	at com.hazelcast.spi.impl.BasicOperationScheduler$OperationThread.processPriorityMessages(BasicOperationScheduler.java:480)
+	at com.hazelcast.spi.impl.BasicOperationScheduler$OperationThread.doRun(BasicOperationScheduler.java:457)
+	at com.hazelcast.spi.impl.BasicOperationScheduler$OperationThread.run(BasicOperationScheduler.java:432)
+		</pre>
+</li>
+
+<li>08-29-2016 version 1.5 By VSilva. Fixes for
+	<ul>
+		<li>
+		9/11/2016: NodeConfiguration.java cleanup, changed visibility for some static constants used by the console + JDBC client updates.
+		</li>
+		<li>
+		New reusable, flexible JDBC Database client @ com.cloud.core.db.
+		</li>
+		<li>
+		Fixed <a target="_new" href="http://acme208.acme.com:6091/issue/CLOUD_CORE-23">CLOUD_CORE-23</a> Cloud Console: License Expired typo "Licence" @ com.cloud.core.license.License.java
+		</li>
+	</ul>
+</li>
+
+<li>08-10-2016 version 1.5 By VSilva. Fixes for
+	<ul>
+		<li>
+			Update 8/15/2016 Fixed <a target="_new" href="http://acme208.acme.com:6091/issue/UNIFIED_CC-104">UNIFIED_CC-104</a> CONNECTOR: Long poll crashing with LibCloudCore-1.5.jar.
+			<pre>
+	Exception in thread "http-bio-8080-exec-373" java.lang.NoSuchMethodError: com.cloud.core.io.IOTools.sleep(J)V
+                at com.connector.servlet.Operations.doPoll(Operations.java:149)
+                at com.connector.servlet.AsynchProcessor.processOperation(AsynchProcessor.java:148)
+                at com.connector.servlet.AsynchProcessor.access$0(AsynchProcessor.java:145)
+                at com.connector.servlet.AsynchProcessor$ProcessorJob.run(AsynchProcessor.java:86)
+                at org.apache.catalina.core.AsyncContextImpl$RunnableWrapper.run(AsyncContextImpl.java:475)
+                at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+                at java.lang.Thread.run(Unknown Source)
+			</pre>
+		</li>
+	
+		<li>
+			Fixed <a target="_new" href="http://acme208.acme.com:6091/issue/CLOUD_CORE-21">CLOUD_CORE-21</a> Configuration Items: Text boxes required/optional rule must be configurable.
+		</li>
+		<li>
+		IOTools::sleep signature changed to: static public boolean sleep(long ms).
+		</li>
+		<li>
+		New class com.cloud.core.security.SecurityTool for TLSv1.2 support and other SSL helpers. See lib javadoc.
+		</li>
+	</ul>
+</li>
+
+<li>06-30-2016 version 1.4 By VSilva. Fixes for
+	<ul>
+		<li>
+			Fixed <a target="_new" href="http://acme208.acme.com:6091/issue/UNIFIED_CC-87">UNIFIED_CC-87</a> CONNECTOR: License expired - Not blocking users.
+		</li>
+	</ul>
+</li>
+
+<li>04-12-2016 version 1.3 By VSilva. Fixes for
+	<ul>
+		<li>
+			<a target="_new" href="http://acme208.acme.com:6091/issue/CLOUD_CORE-14">CLOUD_CORE-14</a> Cloud Console: Genesys config save error (org.xml.sax.SAXParseException).
+		</li>
+	
+		<li>
+			<a target="_new" href="http://acme208.acme.com:6091/issue/UNIFIED_CC-69">UNIFIED_CC-69</a> Adapter: Fix to catch Service Startup java.lang.NoClassDefFoundError when missing a message broker.
+		</li>
+		<li>
+			<a target="_new" href="http://acme208.acme.com:6091/issue/UNIFIED_CC-73">UNIFIED_CC-73</a> Changes required for cluster manager (CM) to display: missing vendor, run mode (CloudServices.java).
+		</li>
+		
+	</ul>
+</li>
+<li>01-12-2016 version 1.3 By VSilva. Fixes for
+	<ul>
+		<li>
+			<a target="_new" href="http://acme208.acme.com:6091/issue/UNIFIED_CC-51">UNIFIED_CC-51</a> Adapter Install error (1st install - when there is no profile installed).
+		</li>
+		<li>
+			<a target="_new" href="http://acme208.acme.com:6091/issue/UNIFIED_CC-50">UNIFIED_CC-50</a> Cluster Manager: Run time error clicking Cluster Action > Configure.
+		</li>
+		<li>
+		Class com.cloud.core.services.ServerConfiguration renamed to NodeConfiguration.
+		</li>
+		<li>Method: com.cloud.core.services.ServerConfiguration.getServerConfig() renamed to com.cloud.core.services.NodeConfiguration.getNodeConfig()</li>
+		<li>
+		New LOGJ4 Appender com.cloud.core.logging.CyclicBufferAppender used by the NEW console HTML log viewer.
+		</li>
+		<li>CyclicBufferAppender initialized in CloudServices.initialize()</li>
+		<li>PropertiesConfig.updateProperties: links will not be updated from the FS to the CLASSPATH for the config auto update.</li>
+	</ul>
+</li>
+
+<li>12-20-2015 version 1.3 By VSilva. Fixes for
+	<ul>
+		<li><a target="_new" href="http://acme208.acme.com:6091/issue/CLOUD_CORE-7">CLOUD_CORE-7</a> Add support for service XML configuration.
+		<ul>
+		<li>com.cloud.core.config.ConfigWrapper renamed to com.cloud.core.config.ServiceConfiguration.</li>
+		<li>New XML config class: com.cloud.core.config.XmlConfig.</li>
+		<li>Class ConfigGroup decoupled from ConfigWrapper (moved to a new file).</li>
+		<li>Junits for XmlConfig.</li>
+		</ul>
+		</li>
+	</ul>
+</li>
+
+<li>12-09-2015 version 1.2 By VSilva. Fixes for
+	<ul>
+		<li><a target="_new" href="http://acme208.acme.com:6091/issue/CLOUD_CORE-6">CLOUD_CORE-6</a> Security: Encrypted passwords should be salted so the same pwd won't produce the same output.
+		</li>
+	</ul>
+</li>
+
+<li>12-03-2015 version 1.1 By VSilva. Fixes for
+	<ul>
+		<li><a target="_new" href="http://acme208.acme.com:6091/issue/CLOUD_CORE-4">CLOUD_CORE-4</a> Add support for manual TCP node discovery.
+		Note: Plus changes to the admin console to support this.
+		</li>
+	</ul>
+</li>
+<li>09-19-2015 version 1.1 By VSilva. Fixes for
+	<ul>
+		<li><a target="_new" href="http://acme208.acme.com:6091/issue/CLOUD_CORE-1">CLOUD_CORE-1</a> Encrypt passwords for all clients in all config files.
+		</li>
+	</ul>
+</li>
+
+<li>Many bug fixes not included since this log was created. See <a href="http://acme208.acme.com:6091/issues?q=project%3A+{Cloud+Core+Libraries}">Issue Tracker</a></li>
+<li>Initial log tracking.</li>
+</ul>
+

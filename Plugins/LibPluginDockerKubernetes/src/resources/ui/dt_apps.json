@@ -1,0 +1,22 @@
+{
+	"id": "tblCharts",
+	"usePanel" : false,
+	"colVis" : true,
+	"panelToolbar" : [
+		{ "widget" : "refresh-button", "class": "", "title": "Click to refresh", "onclick": "return refreshCharts()"},
+		{ "widget" : "dropdown"
+			, "menus" : [
+				{"label": "List Repos", "onclick": "return helmListRepos(node)"},
+				{"label": "Add Repo", "onclick": "return helmAddRepo()"},
+				{"label": "Update Repos", "onclick": "return helmUpdateRepos(node)"},
+				{"label": "Install Chart", "onclick": "return modal8Show( { basePath: '../../', node: node, chart: '', version: '', hubUrl: '' } )"},
+				{"label": "DIVIDER"},
+				{"label": "About Helm", "target": "_blank", "href": "https://helm.sh/"},
+				{"label": "About Helm Hub", "target": "_blank", "href": "https://hub.helm.sh/"},
+			]
+		},
+	],
+	"header": {
+		"labels" : ["App", "Chart", "Version", "Updated", "Namespace", "Status", "Action"]
+	}
+}

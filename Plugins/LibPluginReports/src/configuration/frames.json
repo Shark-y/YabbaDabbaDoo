@@ -1,0 +1,32 @@
+{"frameSets": [
+ {
+  "frames": [
+   {
+    "style": "width:100%; height: 50%",
+    "dash": "Sample Call Metrics by SPLIT"
+   },
+   {
+    "style": "width:100%; height: 50%",
+    "dash": "Sample Call Metrics By VDN"
+   }
+  ],
+  "name": "Sample SPLIT/VDN"
+ },
+ {
+  "frames": [
+   {
+    "style": "width:75%; height: 50%",
+    "dash": "Sample Call Metrics By VDN"
+   },
+   {
+    "style": "width:25%; height: 50%",
+    "dash": "SampleTotalsFromSPLIT"
+   },
+   {
+    "style": "width:100%; height: 50%",
+    "dash": "SampleTotalsBySkill"
+   }
+  ],
+  "name": "Sample VDN/SPLIT Totals"
+ }
+]}

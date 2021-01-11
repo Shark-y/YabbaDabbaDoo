@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Specification-Title: Cloud Reports WebApp
+Specification-Version: 1.0.2
+Specification-Vendor: ACME
+Implementation-Title: Cloud Reports WebApp
+Implementation-Vendor: ACME

@@ -1,0 +1,50 @@
+{
+	"version": "1.0",
+	"service.class" : "com.rts.service.RealTimeStatsService",
+	"service.config" : "rts-cfg.xml",
+	"service.vendor" : "Cloud Reports Plugin",
+	"service.vendorId" : "C1ReportsService",
+	
+	"ui.sideBarMenus": [
+		{
+			"id": "02_configure_ds",
+			"label" : "Data Sources",
+			"parent" : "Configuration",
+			"url" : "conf/ds.jsp?mode=PLUGIN&id=C1ReportsService",
+			"iconCss" : ""
+		},
+
+		{
+			"id": "01_rep_submenu1",
+			"label" : "Editor",
+			"parent" : "Performance",
+			"url" : "dash/dash.jsp?mode=PLUGIN&id=C1ReportsService",
+			"iconCss" : ""
+		},
+		{
+			"id": "02_rep_submenu1",
+			"label" : "Grid Views",
+			"parent" : "Performance",
+			"url" : "conf/views.jsp?mode=PLUGIN&id=C1ReportsService",
+			"iconCss" : ""
+		},
+		{
+			"id": "03_rep_submenu1",
+			"label" : "Aggregates",
+			"parent" : "Performance",
+			"url" : "conf/aggr.jsp?mode=PLUGIN&id=C1ReportsService",
+			"iconCss" : ""
+		},
+		
+
+		{
+			"id": "00_sys_diag",
+			"label" : "Diagnostics",
+			"parent" : "System",
+			"url" : "conf/diag1.jsp?mode=PLUGIN&id=C1ReportsService",
+			"iconCss" : ""
+		}
+		
+	]
+
+}

@@ -1,0 +1,103 @@
+{ "dashboards" :
+	[{
+		"displayKey": "VDN",
+		"keyRange": "1000,1001",
+		"displayHeading": "",
+		"listener": "Sample CVDN",
+		"metrics": [{
+			"widget": "GAUGE",
+			"name": "CALLS_WAITING",
+			"description": "Calls Waiting",
+			"type": "NUMBER"
+		}, {
+			"widget": "GAUGE",
+			"name": "ACTIVECALLS",
+			"description": "Active Calls",
+			"type": "NUMBER"
+		}, {
+			"widget": "AREA_CHART",
+			"name": "ACDCALLS",
+			"description": "ACD Calls",
+			"type": "NUMBER"
+		}, {
+			"widget": "GAUGE",
+			"name": "ABNCALLS",
+			"description": "Abandoned",
+			"type": "NUMBER"
+		}],
+		"title": "Sample Call Metrics By VDN"
+	}, {
+		"displayKey": "SPLIT",
+		"keyRange": "1-3",
+		"displayHeading": "",
+		"listener": "Sample CSPLIT",
+		"metrics": [{
+			"widget": "AREA_CHART",
+			"name": "CALLS_WAITING",
+			"description": "Calls Waiting",
+			"type": "NUMBER"
+		}, {
+			"widget": "AREA_CHART",
+			"name": "ABNCALLS",
+			"description": "Abandoned",
+			"type": "NUMBER"
+		}, {
+			"widget": "AREA_CHART",
+			"name": "ACDCALLS",
+			"description": "ACD Calls",
+			"type": "NUMBER"
+		}, {
+			"widget": "PANEL",
+			"name": "AVG_SPEED_ANS",
+			"description": "Avg. speed of answer",
+			"type": "STRING"
+		}, {
+			"widget": "GAUGE",
+			"name": "AVAILABLE",
+			"description": "Agents Available",
+			"type": "NUMBER"
+		}, {
+			"widget": "PANEL",
+			"name": "AGINRING",
+			"description": "Agents: Ringing",
+			"type": "NUMBER"
+		}, {
+			"widget": "PANEL",
+			"name": "ONACD",
+			"description": "Agents: ACD",
+			"type": "NUMBER"
+		}],
+		"title": "Sample Call Metrics by SPLIT"
+	}, {
+		"displayKey": "SPLIT",
+		"keyRange": "1-2",
+		"displayHeading": "SPLIT_NAME",
+		"branding": {
+			"bgColor": "F5F5F5"
+		},
+		"listener": "Sample CAGENT",
+		"metrics": [{
+			"widget": "PANEL",
+			"name": "AGENTID",
+			"description": "Agent Id",
+			"type": "NUMBER"
+		}, {
+			"widget": "PANEL",
+			"name": "AGENT_NAME",
+			"description": "Name",
+			"type": "NUMBER"
+		}, {
+			"widget": "PANEL",
+			"name": "STATE",
+			"description": "State",
+			"type": "NUMBER"
+		}, {
+			"widget": "PANEL",
+			"name": "TIME_IN_STATE",
+			"description": "Time in state",
+			"type": "NUMBER"
+		}],
+		"title": "Sample Custom Agent metrics by SKILL"
+	}
+	]
+}

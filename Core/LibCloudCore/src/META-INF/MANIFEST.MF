@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Specification-Title: Cloud Core
+Specification-Version: 1.6.39
+Specification-Vendor: ACME
+Implementation-Title: Cloud Core
+Implementation-Vendor: ACME

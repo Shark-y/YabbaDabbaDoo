@@ -1,0 +1,1 @@
+server.service.type=NodePort,alertmanager.service.type=NodePort,alertmanager.persistentVolume.enabled=false,server.persistentVolume.enabled=false

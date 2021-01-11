@@ -1,0 +1,31 @@
+{
+  "kind": "StorageClassList",
+  "apiVersion": "storage.k8s.io/v1",
+  "metadata": {
+    "selfLink": "/apis/storage.k8s.io/v1/storageclasses",
+    "resourceVersion": "35345824"
+  },
+  "items": [
+    {
+      "metadata": {
+        "name": "glusterfs",
+        "selfLink": "/apis/storage.k8s.io/v1/storageclasses/glusterfs",
+        "uid": "ab2bb1ef-b7c4-11e9-9378-000c297a5447",
+        "resourceVersion": "15170786",
+        "creationTimestamp": "2019-08-05T21:04:52Z",
+        "annotations": {
+          "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"storage.k8s.io/v1\",\"kind\":\"StorageClass\",\"metadata\":{\"annotations\":{\"storageclass.kubernetes.io/is-default-class\":\"true\"},\"name\":\"glusterfs\"},\"parameters\":{\"clusterid\":\"c55d532111d3f3c3cc77663bb466b0a7\",\"resturl\":\"http://cecil.cloudlab.com:8080\",\"volumetype\":\"replicate:3\"},\"provisioner\":\"kubernetes.io/glusterfs\"}\n",
+          "storageclass.kubernetes.io/is-default-class": "true"
+        }
+      },
+      "provisioner": "kubernetes.io/glusterfs",
+      "parameters": {
+        "clusterid": "c55d532111d3f3c3cc77663bb466b0a7",
+        "resturl": "http://cecil.cloudlab.com:8080",
+        "volumetype": "replicate:3"
+      },
+      "reclaimPolicy": "Delete",
+      "volumeBindingMode": "Immediate"
+    }
+  ]
+}

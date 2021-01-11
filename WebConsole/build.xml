@@ -1,0 +1,117 @@
+<project name="My Project" default="war">
+
+	<property name="projectHome" location="." />
+	<property name="version" value="1.0" />
+	<property name="projectPrefix" value="WebConsole" />
+	<property name="projectName" value="WebConsole##${version}" />
+	
+	<!-- project Jar name -->
+	<property name="jarName" location="${projectName}.war" />
+	
+	<!-- Base file destination -->
+	<property name="destRoot" value="../LibCloudDoc" />
+	
+	<!-- JAR destination -->
+	<property name="destDir" location="${destRoot}/lib" />
+
+	<!-- Javadoc/src destination -->
+	<property name="destDoc" location="${destRoot}/doc" />
+	<property name="destSrc" location="${destRoot}/src" />
+	<property name="core.dir" location="../LibCloudDoc" />
+	
+	<property file="../build.properties" />
+
+	<path id="classpath">
+		<!-- Project BASE/lib Note: baseProject set in JAR args (Note: Ignore error if missing dir) -->
+		<!-- This must be included before ${core.dir}/lib to avoid javac errors caused by JAR collisions -->
+	    
+	    <fileset dir="${core.dir}/lib" erroronmissingdir="true">
+            <include name="**/*.jar"/>
+	    	<!--
+  			<exclude name="LibCloud*.jar"/>
+  			-->
+        </fileset>
+        
+        <!-- Product depenedencies Libdependencies/lib -->
+        <fileset dir="lib" includes="**/*.jar" excludes="Legacy/*.jar,Patches/*.jar" />
+
+		<!-- TC lib for servlets -->
+		<fileset dir="${tomcat.root}/lib" includes="**/*.jar"/>
+    </path>
+
+	<target name="init">
+	    <!-- 
+		<mkdir dir="build/classes" />
+		<mkdir dir="dist" />
+		 -->
+	</target>
+	
+	<!-- Requires a javac compiler in the system path -->
+	<target name="compile" depends="init">
+		<javac srcdir="src" destdir="build/classes" classpathref="classpath" />
+		
+		<!-- copy common resources (optional) 
+		<copy todir="bin/META-INF/resources" failonerror="true">
+		    <fileset dir="src/META-INF/resources"/>
+		</copy> -->
+		<!-- config -->
+		<copy todir="build/classes/configuration" failonerror="true">
+			<fileset dir="src/configuration"/>
+		</copy>
+		<copy todir="build/classes/bootstrap" failonerror="true">
+			<fileset dir="src/bootstrap" />
+		</copy>
+	</target>
+	
+	<!-- depends="compile" -->
+	<target name="war" depends="compile,changelog">
+	    <!-- Create the time stamp -->
+		<tstamp />
+	    	    
+	    <echo message="Creating ${jarName} from base dir ${projectHome}"/>
+		<war destfile="${jarName}" needxmlfile="false">
+			
+			<fileset dir="WebContent">
+				<exclude name="**/*.wsdd"/>
+			</fileset>
+			<!--  branch release-1.2+ 
+			<zipfileset dir="src/bootstrap" prefix="WEB-INF/classes/bootstrap" erroronmissingdir="true"/>
+			-->
+			<classes dir="build/classes" excludes="console/**,junit/*" />
+
+			<!-- base libs -->
+			<lib dir="../LibCloudDoc/lib">
+				<exclude name="Legacy/**"/>
+			</lib>
+			
+			<!-- plugin libs -->
+			<lib dir="../Plugins/LibPluginDockerKubernetes/lib" />
+		</war>    
+		<!--
+		<echo message="Moving ${jarName} to dir ${destDir}"/>
+		<move file="${jarName}" todir="${destDir}"/>
+		-->
+	</target>
+	
+	<target name="changelog">
+		<copy failonerror="false" overwrite="true" file="ChangeLog.html" tofile="${destDir}/${projectPrefix}-ChangeLog.html" />    
+	</target>
+	
+    <target name="javadoc">
+        <javadoc access="public" author="true" classpath="lib/json.jar;lib/log4j-1.2.15.jar;" 
+            destdir="doc"  nodeprecated="false" nodeprecatedlist="false" noindex="false" 
+            nonavbar="false" notree="false" packagenames="com.cloud.*" 
+            source="1.6" sourcepath="src" splitindex="true" use="true" version="true"/>
+        
+        <!-- pack javadoc -->
+        <zip destfile="${destDoc}/${projectName}.zip" 
+            basedir="doc" />
+
+        <!-- pack src -->
+        <zip destfile="${destSrc}/${projectName}.zip" 
+            basedir="src" />
+        
+        <delete dir="doc"/>
+    </target>
+		
+</project>

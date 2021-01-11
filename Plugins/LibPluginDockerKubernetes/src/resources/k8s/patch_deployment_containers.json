@@ -1,0 +1,12 @@
+{
+	"spec": {
+		"template": {
+			"spec": {
+				"containers": [{
+					"name": "${NAME]",
+					"image": "${IMAGE]"
+				}]
+			}
+		}
+	}
+}

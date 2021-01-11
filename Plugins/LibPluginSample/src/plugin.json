@@ -1,0 +1,33 @@
+{
+	"version": "1.0",
+	"service.class" : "com.plugin.sample.SamplePlugin",
+	"service.config" : "sample.xml",
+	"service.vendor" : "Sample Plugin",
+	"service.vendorId" : "C1Sample",
+	
+	"ui.sideBarMenus": [
+		{
+			"id": "00_sample_menu",
+			"label" : "Sample Menu",
+			"parent" : "/",
+			"url" : "",
+			"iconCss" : "people"
+		},
+		{
+			"id": "01_sample_submenu1",
+			"label" : "Sample SubMenu1",
+			"parent" : "Sample Menu",
+			"url" : "sample/view1.jsp",
+			"iconCss" : ""
+		},
+		{
+			"id": "02_sample_submenu2",
+			"label" : "Sample SubMenu1",
+			"parent" : "Sample Menu",
+			"url" : "sample/view2.jsp",
+			"iconCss" : ""
+		}
+		
+	]
+
+}

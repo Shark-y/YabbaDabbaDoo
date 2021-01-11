@@ -1,0 +1,447 @@
+{
+  "kind": "DeploymentList",
+  "apiVersion": "apps/v1",
+  "metadata": {
+    "selfLink": "/apis/apps/v1/deployments",
+    "resourceVersion": "84133"
+  },
+  "items": [
+    {
+      "metadata": {
+        "name": "bunking-sabertooth-nginx",
+        "namespace": "default",
+        "selfLink": "/apis/apps/v1/namespaces/default/deployments/bunking-sabertooth-nginx",
+        "uid": "6c5084f5-5b1c-11e9-9e35-08002758a3b5",
+        "resourceVersion": "81691",
+        "generation": 1,
+        "creationTimestamp": "2019-04-09T23:08:44Z",
+        "labels": {
+          "app": "bunking-sabertooth-nginx",
+          "chart": "nginx-2.2.1",
+          "heritage": "Tiller",
+          "release": "bunking-sabertooth"
+        },
+        "annotations": {
+          "deployment.kubernetes.io/revision": "1"
+        }
+      },
+      "spec": {
+        "replicas": 1,
+        "selector": {
+          "matchLabels": {
+            "app": "bunking-sabertooth-nginx",
+            "release": "bunking-sabertooth"
+          }
+        },
+        "template": {
+          "metadata": {
+            "creationTimestamp": null,
+            "labels": {
+              "app": "bunking-sabertooth-nginx",
+              "chart": "nginx-2.2.1",
+              "heritage": "Tiller",
+              "release": "bunking-sabertooth"
+            }
+          },
+          "spec": {
+            "containers": [
+              {
+                "name": "bunking-sabertooth-nginx",
+                "image": "docker.io/bitnami/nginx:1.14.2",
+                "ports": [
+                  {
+                    "name": "http",
+                    "containerPort": 8080,
+                    "protocol": "TCP"
+                  }
+                ],
+                "resources": {
+                  
+                },
+                "livenessProbe": {
+                  "httpGet": {
+                    "path": "/",
+                    "port": "http",
+                    "scheme": "HTTP"
+                  },
+                  "initialDelaySeconds": 30,
+                  "timeoutSeconds": 5,
+                  "periodSeconds": 10,
+                  "successThreshold": 1,
+                  "failureThreshold": 6
+                },
+                "readinessProbe": {
+                  "httpGet": {
+                    "path": "/",
+                    "port": "http",
+                    "scheme": "HTTP"
+                  },
+                  "initialDelaySeconds": 5,
+                  "timeoutSeconds": 3,
+                  "periodSeconds": 5,
+                  "successThreshold": 1,
+                  "failureThreshold": 3
+                },
+                "terminationMessagePath": "/dev/termination-log",
+                "terminationMessagePolicy": "File",
+                "imagePullPolicy": "IfNotPresent"
+              }
+            ],
+            "restartPolicy": "Always",
+            "terminationGracePeriodSeconds": 30,
+            "dnsPolicy": "ClusterFirst",
+            "securityContext": {
+              
+            },
+            "schedulerName": "default-scheduler"
+          }
+        },
+        "strategy": {
+          "type": "RollingUpdate",
+          "rollingUpdate": {
+            "maxUnavailable": 1,
+            "maxSurge": 1
+          }
+        },
+        "revisionHistoryLimit": 2147483647,
+        "progressDeadlineSeconds": 2147483647
+      },
+      "status": {
+        "observedGeneration": 1,
+        "replicas": 1,
+        "updatedReplicas": 1,
+        "readyReplicas": 1,
+        "availableReplicas": 1,
+        "conditions": [
+          {
+            "type": "Available",
+            "status": "True",
+            "lastUpdateTime": "2019-04-09T23:08:44Z",
+            "lastTransitionTime": "2019-04-09T23:08:44Z",
+            "reason": "MinimumReplicasAvailable",
+            "message": "Deployment has minimum availability."
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "name": "coredns",
+        "namespace": "kube-system",
+        "selfLink": "/apis/apps/v1/namespaces/kube-system/deployments/coredns",
+        "uid": "ee469142-579f-11e9-a4d9-08002758a3b5",
+        "resourceVersion": "79526",
+        "generation": 1,
+        "creationTimestamp": "2019-04-05T12:40:02Z",
+        "labels": {
+          "k8s-app": "kube-dns"
+        },
+        "annotations": {
+          "deployment.kubernetes.io/revision": "1"
+        }
+      },
+      "spec": {
+        "replicas": 2,
+        "selector": {
+          "matchLabels": {
+            "k8s-app": "kube-dns"
+          }
+        },
+        "template": {
+          "metadata": {
+            "creationTimestamp": null,
+            "labels": {
+              "k8s-app": "kube-dns"
+            }
+          },
+          "spec": {
+            "volumes": [
+              {
+                "name": "config-volume",
+                "configMap": {
+                  "name": "coredns",
+                  "items": [
+                    {
+                      "key": "Corefile",
+                      "path": "Corefile"
+                    }
+                  ],
+                  "defaultMode": 420
+                }
+              }
+            ],
+            "containers": [
+              {
+                "name": "coredns",
+                "image": "k8s.gcr.io/coredns:1.3.1",
+                "args": [
+                  "-conf",
+                  "/etc/coredns/Corefile"
+                ],
+                "ports": [
+                  {
+                    "name": "dns",
+                    "containerPort": 53,
+                    "protocol": "UDP"
+                  },
+                  {
+                    "name": "dns-tcp",
+                    "containerPort": 53,
+                    "protocol": "TCP"
+                  },
+                  {
+                    "name": "metrics",
+                    "containerPort": 9153,
+                    "protocol": "TCP"
+                  }
+                ],
+                "resources": {
+                  "limits": {
+                    "memory": "170Mi"
+                  },
+                  "requests": {
+                    "cpu": "100m",
+                    "memory": "70Mi"
+                  }
+                },
+                "volumeMounts": [
+                  {
+                    "name": "config-volume",
+                    "readOnly": true,
+                    "mountPath": "/etc/coredns"
+                  }
+                ],
+                "livenessProbe": {
+                  "httpGet": {
+                    "path": "/health",
+                    "port": 8080,
+                    "scheme": "HTTP"
+                  },
+                  "initialDelaySeconds": 60,
+                  "timeoutSeconds": 5,
+                  "periodSeconds": 10,
+                  "successThreshold": 1,
+                  "failureThreshold": 5
+                },
+                "readinessProbe": {
+                  "httpGet": {
+                    "path": "/health",
+                    "port": 8080,
+                    "scheme": "HTTP"
+                  },
+                  "timeoutSeconds": 1,
+                  "periodSeconds": 10,
+                  "successThreshold": 1,
+                  "failureThreshold": 3
+                },
+                "terminationMessagePath": "/dev/termination-log",
+                "terminationMessagePolicy": "File",
+                "imagePullPolicy": "IfNotPresent",
+                "securityContext": {
+                  "capabilities": {
+                    "add": [
+                      "NET_BIND_SERVICE"
+                    ],
+                    "drop": [
+                      "all"
+                    ]
+                  },
+                  "readOnlyRootFilesystem": true,
+                  "allowPrivilegeEscalation": false,
+                  "procMount": "Default"
+                }
+              }
+            ],
+            "restartPolicy": "Always",
+            "terminationGracePeriodSeconds": 30,
+            "dnsPolicy": "Default",
+            "nodeSelector": {
+              "beta.kubernetes.io/os": "linux"
+            },
+            "serviceAccountName": "coredns",
+            "serviceAccount": "coredns",
+            "securityContext": {
+              
+            },
+            "schedulerName": "default-scheduler",
+            "tolerations": [
+              {
+                "key": "CriticalAddonsOnly",
+                "operator": "Exists"
+              },
+              {
+                "key": "node-role.kubernetes.io/master",
+                "effect": "NoSchedule"
+              }
+            ],
+            "priorityClassName": "system-cluster-critical"
+          }
+        },
+        "strategy": {
+          "type": "RollingUpdate",
+          "rollingUpdate": {
+            "maxUnavailable": 1,
+            "maxSurge": "25%"
+          }
+        },
+        "revisionHistoryLimit": 10,
+        "progressDeadlineSeconds": 600
+      },
+      "status": {
+        "observedGeneration": 1,
+        "replicas": 2,
+        "updatedReplicas": 2,
+        "readyReplicas": 2,
+        "availableReplicas": 2,
+        "conditions": [
+          {
+            "type": "Progressing",
+            "status": "True",
+            "lastUpdateTime": "2019-04-05T12:53:32Z",
+            "lastTransitionTime": "2019-04-05T12:53:32Z",
+            "reason": "NewReplicaSetAvailable",
+            "message": "ReplicaSet \"coredns-fb8b8dccf\" has successfully progressed."
+          },
+          {
+            "type": "Available",
+            "status": "True",
+            "lastUpdateTime": "2019-04-09T22:44:49Z",
+            "lastTransitionTime": "2019-04-09T22:44:49Z",
+            "reason": "MinimumReplicasAvailable",
+            "message": "Deployment has minimum availability."
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "name": "tiller-deploy",
+        "namespace": "kube-system",
+        "selfLink": "/apis/apps/v1/namespaces/kube-system/deployments/tiller-deploy",
+        "uid": "937d8c69-5a58-11e9-8db6-08002758a3b5",
+        "resourceVersion": "74780",
+        "generation": 1,
+        "creationTimestamp": "2019-04-08T23:46:48Z",
+        "labels": {
+          "app": "helm",
+          "name": "tiller"
+        },
+        "annotations": {
+          "deployment.kubernetes.io/revision": "1"
+        }
+      },
+      "spec": {
+        "replicas": 1,
+        "selector": {
+          "matchLabels": {
+            "app": "helm",
+            "name": "tiller"
+          }
+        },
+        "template": {
+          "metadata": {
+            "creationTimestamp": null,
+            "labels": {
+              "app": "helm",
+              "name": "tiller"
+            }
+          },
+          "spec": {
+            "containers": [
+              {
+                "name": "tiller",
+                "image": "gcr.io/kubernetes-helm/tiller:v2.13.1",
+                "ports": [
+                  {
+                    "name": "tiller",
+                    "containerPort": 44134,
+                    "protocol": "TCP"
+                  },
+                  {
+                    "name": "http",
+                    "containerPort": 44135,
+                    "protocol": "TCP"
+                  }
+                ],
+                "env": [
+                  {
+                    "name": "TILLER_NAMESPACE",
+                    "value": "kube-system"
+                  },
+                  {
+                    "name": "TILLER_HISTORY_MAX",
+                    "value": "200"
+                  }
+                ],
+                "resources": {
+                  
+                },
+                "livenessProbe": {
+                  "httpGet": {
+                    "path": "/liveness",
+                    "port": 44135,
+                    "scheme": "HTTP"
+                  },
+                  "initialDelaySeconds": 1,
+                  "timeoutSeconds": 1,
+                  "periodSeconds": 10,
+                  "successThreshold": 1,
+                  "failureThreshold": 3
+                },
+                "readinessProbe": {
+                  "httpGet": {
+                    "path": "/readiness",
+                    "port": 44135,
+                    "scheme": "HTTP"
+                  },
+                  "initialDelaySeconds": 1,
+                  "timeoutSeconds": 1,
+                  "periodSeconds": 10,
+                  "successThreshold": 1,
+                  "failureThreshold": 3
+                },
+                "terminationMessagePath": "/dev/termination-log",
+                "terminationMessagePolicy": "File",
+                "imagePullPolicy": "IfNotPresent"
+              }
+            ],
+            "restartPolicy": "Always",
+            "terminationGracePeriodSeconds": 30,
+            "dnsPolicy": "ClusterFirst",
+            "automountServiceAccountToken": true,
+            "securityContext": {
+              
+            },
+            "schedulerName": "default-scheduler"
+          }
+        },
+        "strategy": {
+          "type": "RollingUpdate",
+          "rollingUpdate": {
+            "maxUnavailable": 1,
+            "maxSurge": 1
+          }
+        },
+        "revisionHistoryLimit": 2147483647,
+        "progressDeadlineSeconds": 2147483647
+      },
+      "status": {
+        "observedGeneration": 1,
+        "replicas": 1,
+        "updatedReplicas": 1,
+        "readyReplicas": 1,
+        "availableReplicas": 1,
+        "conditions": [
+          {
+            "type": "Available",
+            "status": "True",
+            "lastUpdateTime": "2019-04-08T23:46:49Z",
+            "lastTransitionTime": "2019-04-08T23:46:49Z",
+            "reason": "MinimumReplicasAvailable",
+            "message": "Deployment has minimum availability."
+          }
+        ]
+      }
+    }
+  ]
+}

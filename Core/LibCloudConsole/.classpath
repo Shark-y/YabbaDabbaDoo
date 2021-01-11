@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/LibCloudCore"/>
+	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v8.5">
+		<attributes>
+			<attribute name="owner.project.facets" value="#system#;jst.utility"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/LibCloudDoc/lib/javax.mail.jar"/>
+	<classpathentry kind="lib" path="/LibCloudDoc/lib/json-1.0.jar"/>
+	<classpathentry kind="lib" path="/LibCloudDoc/lib/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="/LibCloudDoc/lib/hazelcast-3.4.2.jar"/>
+	<classpathentry kind="lib" path="/LibCloudDoc/lib/LibProfiler.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/LibCloudCluster"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.8.0_271">
+		<attributes>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

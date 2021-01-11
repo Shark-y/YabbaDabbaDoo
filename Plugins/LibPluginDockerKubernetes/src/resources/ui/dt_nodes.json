@@ -1,0 +1,16 @@
+{
+	"id": "tblNodes",
+	"usePanel" : false,
+	"colVis" : true,
+	"panelToolbar" : [
+		{ "widget" : "refresh-button", "class": "", "title": "Click to refresh"},
+		{ "widget" : "dropdown"
+			, "menus" : [
+				{"label": "About Kubernetes Nodes", "target": "_blank", "href": "https://kubernetes.io/docs/concepts/architecture/nodes/"}
+			]
+		},
+	],
+	"header": {
+		"labels" : ["Name", "Id", "Details", "Status", "Action"]
+	}
+}

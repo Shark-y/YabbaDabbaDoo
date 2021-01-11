@@ -1,0 +1,89 @@
+kubectl --v=10 exec -it calico-termite-mongodb-5d6fbfdb44-srnhn -c calico-termite-mongodb  -- /bin/bash
+
+I0618 15:51:44.367119   12429 round_trippers.go:419] curl -k -v -XPOST  
+ -H "X-Stream-Protocol-Version: v4.channel.k8s.io" 
+ -H "X-Stream-Protocol-Version: v3.channel.k8s.io"
+ -H "X-Stream-Protocol-Version: v2.channel.k8s.io"
+ -H "X-Stream-Protocol-Version: channel.k8s.io" 
+ -H "User-Agent: kubectl/v1.14.0 (linux/amd64) kubernetes/641856d" 'https://10.226.67.20:6443/api/v1/namespaces/default/pods/austere-pika-cc-aes-667cb7c868-zshbd/exec?command=%2Fbin%2Fbash&container=cc-aes&stdin=true&stdout=true&tty=true'
+ 
+I0618 15:51:44.405369   12429 round_trippers.go:438] POST https://10.226.67.20:6443/api/v1/namespaces/default/pods/austere-pika-cc-aes-667cb7c868-zshbd/exec?command=%2Fbin%2Fbash&container=cc-aes&stdin=true&stdout=true&tty=true 101 Switching Protocols in 38 milliseconds
+I0618 15:51:44.405396   12429 round_trippers.go:444] Response Headers:
+I0618 15:51:44.405406   12429 round_trippers.go:447]     Connection: Upgrade
+I0618 15:51:44.405412   12429 round_trippers.go:447]     Upgrade: SPDY/3.1
+I0618 15:51:44.405418   12429 round_trippers.go:447]     X-Stream-Protocol-Version: v4.channel.k8s.io
+I0618 15:51:44.405424   12429 round_trippers.go:447]     Date: Tue, 18 Jun 2019 19:51:44 GMT
+
+-----------------------------------------------------------------------------------------------------------
+#!/bin/bash
+curl -k -v -XPOST -H "X-Stream-Protocol-Version: v4.channel.k8s.io" -H "X-Stream-Protocol-Version: v3.channel.k8s.io" -H "X-Stream-Protocol-Version: v2.channel.k8s.io" \
+ -H "X-Stream-Protocol-Version: channel.k8s.io" \
+ -H "User-Agent: kubectl/v1.14.0 (linux/amd64) kubernetes/641856d" \
+ 'https://10.226.67.20:6443/api/v1/namespaces/default/pods/austere-pika-cc-aes-667cb7c868-zshbd/exec?command=%2Fbin%2Fbash&container=cc-aes&stdin=true&stdout=true&tty=true'
+
+
+* STATE: INIT => CONNECT handle 0x80068390; line 1332 (connection #-5000)
+* Uses proxy env variable NO_PROXY == '192.168.99.100,192.168.99.101'
+* Added connection 0. The cache now contains 1 members
+*   Trying 10.226.67.20:6443...
+* TCP_NODELAY set
+* STATE: CONNECT => WAITCONNECT handle 0x80068390; line 1388 (connection #0)
+* Connected to 10.226.67.20 (10.226.67.20) port 6443 (#0)
+* STATE: WAITCONNECT => SENDPROTOCONNECT handle 0x80068390; line 1508 (connection #0)
+* Marked for [keep alive]: HTTP default
+* ALPN, offering h2
+* ALPN, offering http/1.1
+* error setting certificate verify locations, continuing anyway:
+*   CAfile: /etc/pki/tls/certs/ca-bundle.crt
+  CApath: none
+* TLSv1.3 (OUT), TLS handshake, Client hello (1):
+* STATE: SENDPROTOCONNECT => PROTOCONNECT handle 0x80068390; line 1523 (connection #0)
+* TLSv1.3 (IN), TLS handshake, Server hello (2):
+* TLSv1.2 (IN), TLS handshake, Certificate (11):
+* TLSv1.2 (IN), TLS handshake, Server key exchange (12):
+* TLSv1.2 (IN), TLS handshake, Request CERT (13):
+* TLSv1.2 (IN), TLS handshake, Server finished (14):
+* TLSv1.2 (OUT), TLS handshake, Certificate (11):
+* TLSv1.2 (OUT), TLS handshake, Client key exchange (16):
+* TLSv1.2 (OUT), TLS change cipher, Change cipher spec (1):
+* TLSv1.2 (OUT), TLS handshake, Finished (20):
+* TLSv1.2 (IN), TLS handshake, Finished (20):
+* SSL connection using TLSv1.2 / ECDHE-RSA-AES128-GCM-SHA256
+* ALPN, server accepted to use h2
+* Server certificate:
+*  subject: CN=kube-apiserver
+*  start date: Apr 10 17:20:23 2019 GMT
+*  expire date: Apr  9 17:20:25 2020 GMT
+*  issuer: CN=kubernetes
+*  SSL certificate verify result: unable to get local issuer certificate (20), continuing anyway.
+* STATE: PROTOCONNECT => DO handle 0x80068390; line 1542 (connection #0)
+* Using HTTP2, server supports multi-use
+* Connection state changed (HTTP/2 confirmed)
+* Copying HTTP/2 data in stream buffer to connection buffer after upgrade: len=0
+* Using Stream ID: 1 (easy handle 0x80068390)
+> POST /api/v1/namespaces/default/pods/austere-pika-cc-aes-667cb7c868-zshbd/exec?command=%2Fbin%2Fbash&container=cc-aes&stdin=true&stdout=true&tty=true HTTP/2
+> Host: 10.226.67.20:6443
+> Accept: */*
+> X-Stream-Protocol-Version: v4.channel.k8s.io
+> X-Stream-Protocol-Version: v3.channel.k8s.io
+> X-Stream-Protocol-Version: v2.channel.k8s.io
+> X-Stream-Protocol-Version: channel.k8s.io
+> User-Agent: kubectl/v1.14.0 (linux/amd64) kubernetes/641856d
+>
+* STATE: DO => DO_DONE handle 0x80068390; line 1597 (connection #0)
+* multi changed, check CONNECT_PEND queue!
+* STATE: DO_DONE => PERFORM handle 0x80068390; line 1719 (connection #0)
+* Connection state changed (MAX_CONCURRENT_STREAMS == 250)!
+* multi changed, check CONNECT_PEND queue!
+* HTTP/2 found, allow multiplexing
+< HTTP/2 403
+< content-type: application/json
+< x-content-type-options: nosniff
+< content-length: 355
+< date: Tue, 18 Jun 2019 20:34:28 GMT
+<
+{"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"pods \"austere-pika-cc-aes-667cb7c868-zshbd\" is forbidden: User \"system:anonymous\" cannot create resource \"pods/exec\" in API group \"\" in the namespace \"default\"","reason":"Forbidden","details":{"name":"austere-pika-cc-aes-667cb7c868-zshbd","kind":"pods"},"code":403}
+* nread <= 0, server closed connection, bailing
+* STATE: PERFORM => DONE handle 0x80068390; line 1909 (connection #0)
+* multi_done
+* Connection #0 to host 10.226.67.20 left intact

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSources>
+<!--
+Avaya Split Table
+================
+	F1|  1|   0|  41|  :00|  0|1|  :00| 13| 2:18|     |  0|  4|  1| 34|  0| 80|     |     |     |  0|100|  20|  13
+	F1|  2|   0|  47|  :00|  0|1|  :00|  8| 3:39|     |  0|  5|  0| 27|  1| 80|     |     |     |  0|100|   0|   8
+	F1|  3|   0|  46|  :00|  0|1|  :00| 26| 3:05|     |  0| 12|  0| 21|  1| 80|     |     |     |  0|100|   0|  26
+	F1|  4|   0|  31|  :00|  0|1|  :00| 30| 3:25|     |  0| 22|  0| 26|  1| 80|     |     |     |  0|100|   0|  30
+	F1|  5|   0|  39|     |  0|1|  :00|  0|     |     |  0|  0|  0| 40|  1| 80|     |     |     |  0|   |   0|   0
+	F3|END_OF_DATA
+	
+	DATA ITEM	Field size	Type	Description
+	F1				2	string	Static “F1” string
+	SPLIT			4	number	Split/Skill number
+	INQUEUE+INRING	4	number	Calls waiting
+	AVAILABLE		3	number	Agents Available
+	ANSTIME/ACDCALLS	5	mm:ss	Avg. speed of answer
+	ABNCALLS		3	number	Abandon calls
+	ACD				1	number	ACD number
+	OLDESTCALL		5	mm:ss	Oldest call waiting
+	ACDCALLS		3	number	ACD calls
+	ACDTIME/ACDCALLS	5	mm:ss	Avg. ACD talk time
+	ABNTIME/ABNCALLS	5	mm:ss	Avg. time to abandon
+	AGINRING		3	number	Agents: Ringing
+	ONACD			3	number	Agents: ACD calls
+	INACW			3	number	Agents: After call work
+	OTHER			3	number	Agents: Other
+	INAUX			3	number	Agents: Aux work
+	STAFFED			3	number	Agents: Staffed
+	EWTHIGH			5	mm:ss	Expected wait time (high)
+	EWTMEDIUM		5	mm:ss	Expected wait time (medium)
+	EWTLOW			5	mm:ss	Expected wait time (low)
+	DA_INQUEUE+DA_INRING	3	number	Direct agent calls waiting
+	100*(ACCEPTABLE/CALLSOFFERED)	3	number	% Answered within service level
+	SERVICELEVEL	4	number	Service level
+	CALLSOFFERED	4	number	Calls that queued to the split/skill
+ -->    
+	<dataSource>
+		<name>Sample CSPLIT</name>
+		<port>7000</port>
+		<description><![CDATA[Agent, Call Metrics by SPLIT]]></description>
+		<format>
+			<header>F0|</header>
+			<footer>F3|END_OF_DATA</footer>
+			<fieldSep>\|</fieldSep>
+			<fields>F1,SPLIT,SPLIT_NAME,CALLS_WAITING,AVAILABLE,AVG_SPEED_ANS,ABNCALLS,ACD,OLDESTCALL,ACDCALLS,AVG_ACD_TALK,AVG_ABNTIME,AGINRING,ONACD,INACW,OTHER,INAUX,STAFFED,EWTHIGH,EWTMEDIUM,EWTLOW,DA_CALLS_WAITING,PCT_ANS,SERVICELEVEL,CALLSOFFERED</fields>
+		</format>
+	</dataSource>
+	
+	<!-- 5/25/2019 Sample Agent Metrics
+	DATA ITEM	Field size	Type	Description
+	F1					2	string	Static “F1” string
+	AGENTID				7	number	VDN number
+	AGENT-NAME			20	synonym	VDN synonym
+	SPLIT-ID			2	SPLIT Id
+	SPLIT-NAME			20	synonym	SPLIT name
+	INPROGRESS-ATAGENT	4	number	Calls waiting
+	OLDESTCALL			5	mm:ss	Oldest call
+	AVG_ANSWER_SPEED	5	mm:ss	Average answer speed
+	ABNCALLS			4	number	Abandoned calls
+	AVG_ABANDON_TIME	5	mm:ss	Average Abandon Time
+	ACDCALLS			4	number	ACD calls
+	AVG_ACD_TALK_TIME	5	mm:ss	Avg. ACD talk time
+	ACTIVECALLS			4	Number	Active calls
+	STATE				20	string	Agent State: Hold, Ring, ...
+	TIME_IN_STATE		4	Number	time in state above
+	
+	Sample data stream:
+	
+	F1|11057|Western Sales|0|:00||0||0|||
+	F1|11058|Eastern Sales|0|:00||0||0|||
+	F3|END_OF_RECORDS
+	-->	
+	<dataSource>
+		<name>Sample CAGENT</name>
+		<port>7002</port>
+		<description><![CDATA[Sample Agent Metrics]]></description>
+		<format>
+			<header>F0|</header>
+			<footer>F3|END_OF_DATA</footer>
+			<fieldSep>\|</fieldSep>
+			<fields>F1,AGENTID,AGENT_NAME,SPLIT,SPLIT_NAME,CALLS_WAITING,OLDESTCALL,AVG_ANSWER_SPEED,ABNCALLS,AVG_ABANDON_TIME,ACDCALLS,AVG_ACD_TALK_TIME,ACTIVECALLS,STATE,TIME_IN_STATE</fields>
+		</format>
+	</dataSource>
+	
+	
+	<!-- 
+	Avaya VDN Table
+	================
+	DATA ITEM	Field size	Type	Description
+	F1					2	string	Static “F1” string
+	VDN					7	number	VDN number
+	VDN					20	synonym	VDN synonym
+	INPROGRESS-ATAGENT	4	number	Calls waiting
+	OLDESTCALL			5	mm:ss	Oldest call
+	AVG_ANSWER_SPEED	5	mm:ss	Average answer speed
+	ABNCALLS			4	number	Abandoned calls
+	AVG_ABANDON_TIME	5	mm:ss	Average Abandon Time
+	ACDCALLS			4	number	ACD calls
+	AVG_ACD_TALK_TIME	5	mm:ss	Avg. ACD talk time
+	ACTIVECALLS			4	Number	Active calls
+	
+	Sample data stream:
+	
+	F1|11057|Western Sales|0|:00||0||0|||
+	F1|11058|Eastern Sales|0|:00||0||0|||
+	F3|END_OF_DATA
+	 -->	
+	<dataSource>
+		<name>Sample CVDN</name>
+		<port>7003</port>
+		<description><![CDATA[Call Metrics by VDN]]></description>
+		<format>
+			<header>F0|</header>
+			<footer>F3|END_OF_DATA</footer>
+			<fieldSep>\|</fieldSep>
+			<fields>F1,VDN,VDN_SYN,CALLS_WAITING,OLDESTCALL,AVG_ANSWER_SPEED,ABNCALLS,AVG_ABANDON_TIME,ACDCALLS,AVG_ACD_TALK_TIME,ACTIVECALLS</fields>
+		</format>
+	</dataSource>
+</dataSources>

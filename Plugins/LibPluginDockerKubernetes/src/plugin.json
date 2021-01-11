@@ -1,0 +1,41 @@
+{
+	"version": "1.1",	
+	"service.class" : "com.cluster.ClusterDaemon",
+	"service.config" : "cluster_mgr.xml",
+	"service.vendor" : "Kubernetes Manager",
+	"service.vendorId" : "C1ASCM",
+	
+	"ui.sideBarMenus": [
+		{
+			"id": "00_cmCfg",
+			"label" : "Kubernetes",
+			"parent" : "Configuration",
+			"url" : "jsp/config/config_backend.jsp?mode=PLUGIN&id=C1ASCM",
+			"iconCss" : ""
+		},
+		
+		{
+			"id": "00_kube",
+			"label" : "Kubernetes",
+			"parent" : "/",
+			"url" : "",
+			"iconCss" : "wifi"
+		},
+		{
+			"id": "01_kube_API",
+			"label" : "Clusters View",
+			"parent" : "Kubernetes",
+			"url" : "jsp/k8s/nodes.jsp",
+			"iconCss" : ""
+		},
+		{
+			"id": "02_kube_helm",
+			"label" : "Apps View",
+			"parent" : "Kubernetes",
+			"url" : "jsp/k8s/helm/helm.jsp",
+			"iconCss" : ""
+		}
+		
+	]
+
+}

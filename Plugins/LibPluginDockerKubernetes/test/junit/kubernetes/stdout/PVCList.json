@@ -1,0 +1,331 @@
+{
+  "kind": "PersistentVolumeClaimList",
+  "apiVersion": "v1",
+  "metadata": {
+    "selfLink": "/api/v1/persistentvolumeclaims",
+    "resourceVersion": "35346501"
+  },
+  "items": [
+    {
+      "metadata": {
+        "name": "data-kissed-squid-rabbitmq-0",
+        "namespace": "conversations",
+        "selfLink": "/api/v1/namespaces/conversations/persistentvolumeclaims/data-kissed-squid-rabbitmq-0",
+        "uid": "12932490-6bac-11ea-a941-000c297a5447",
+        "resourceVersion": "35236289",
+        "creationTimestamp": "2020-03-21T19:42:17Z",
+        "labels": {
+          "app": "rabbitmq",
+          "release": "kissed-squid"
+        },
+        "annotations": {
+          "volume.beta.kubernetes.io/storage-provisioner": "kubernetes.io/glusterfs"
+        },
+        "finalizers": [
+          "kubernetes.io/pvc-protection"
+        ]
+      },
+      "spec": {
+        "accessModes": [
+          "ReadWriteOnce"
+        ],
+        "resources": {
+          "requests": {
+            "storage": "8Gi"
+          }
+        },
+        "storageClassName": "glusterfs",
+        "volumeMode": "Filesystem"
+      },
+      "status": {
+        "phase": "Pending"
+      }
+    },
+    {
+      "metadata": {
+        "name": "data-rabbitmq-0",
+        "namespace": "default",
+        "selfLink": "/api/v1/namespaces/default/persistentvolumeclaims/data-rabbitmq-0",
+        "uid": "83a70a93-6b8c-11ea-a941-000c297a5447",
+        "resourceVersion": "35210931",
+        "creationTimestamp": "2020-03-21T15:56:23Z",
+        "labels": {
+          "app": "rabbitmq",
+          "release": "rabbitmq"
+        },
+        "annotations": {
+          "volume.beta.kubernetes.io/storage-provisioner": "kubernetes.io/glusterfs"
+        },
+        "finalizers": [
+          "kubernetes.io/pvc-protection"
+        ]
+      },
+      "spec": {
+        "accessModes": [
+          "ReadWriteOnce"
+        ],
+        "resources": {
+          "requests": {
+            "storage": "8Gi"
+          }
+        },
+        "storageClassName": "glusterfs",
+        "volumeMode": "Filesystem"
+      },
+      "status": {
+        "phase": "Pending"
+      }
+    },
+    {
+      "metadata": {
+        "name": "data-rabbitmq-1584831190-0",
+        "namespace": "default",
+        "selfLink": "/api/v1/namespaces/default/persistentvolumeclaims/data-rabbitmq-1584831190-0",
+        "uid": "bdaf431c-6bc6-11ea-a941-000c297a5447",
+        "resourceVersion": "35257329",
+        "creationTimestamp": "2020-03-21T22:53:11Z",
+        "labels": {
+          "app": "rabbitmq",
+          "release": "rabbitmq-1584831190"
+        },
+        "annotations": {
+          "volume.beta.kubernetes.io/storage-provisioner": "kubernetes.io/glusterfs"
+        },
+        "finalizers": [
+          "kubernetes.io/pvc-protection"
+        ]
+      },
+      "spec": {
+        "accessModes": [
+          "ReadWriteOnce"
+        ],
+        "resources": {
+          "requests": {
+            "storage": "8Gi"
+          }
+        },
+        "storageClassName": "glusterfs",
+        "volumeMode": "Filesystem"
+      },
+      "status": {
+        "phase": "Pending"
+      }
+    },
+    {
+      "metadata": {
+        "name": "nfs-pvc",
+        "namespace": "default",
+        "selfLink": "/api/v1/namespaces/default/persistentvolumeclaims/nfs-pvc",
+        "uid": "ae658694-6bd2-11ea-a941-000c297a5447",
+        "resourceVersion": "35266788",
+        "creationTimestamp": "2020-03-22T00:18:40Z",
+        "annotations": {
+          "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"PersistentVolumeClaim\",\"metadata\":{\"annotations\":{},\"name\":\"nfs-pvc\",\"namespace\":\"default\"},\"spec\":{\"accessModes\":[\"ReadWriteOnce\"],\"resources\":{\"requests\":{\"storage\":\"1Gi\"}},\"storageClassName\":\"manual\"}}\n",
+          "pv.kubernetes.io/bind-completed": "yes",
+          "pv.kubernetes.io/bound-by-controller": "yes"
+        },
+        "finalizers": [
+          "kubernetes.io/pvc-protection"
+        ]
+      },
+      "spec": {
+        "accessModes": [
+          "ReadWriteOnce"
+        ],
+        "resources": {
+          "requests": {
+            "storage": "1Gi"
+          }
+        },
+        "volumeName": "nfs-pv",
+        "storageClassName": "manual",
+        "volumeMode": "Filesystem"
+      },
+      "status": {
+        "phase": "Bound",
+        "accessModes": [
+          "ReadWriteOnce"
+        ],
+        "capacity": {
+          "storage": "1Gi"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "name": "elasticsearch-logging-elasticsearch-logging-0",
+        "namespace": "kube-system",
+        "selfLink": "/api/v1/namespaces/kube-system/persistentvolumeclaims/elasticsearch-logging-elasticsearch-logging-0",
+        "uid": "2af842ec-b942-11e9-91ab-000c297a5447",
+        "resourceVersion": "15474542",
+        "creationTimestamp": "2019-08-07T18:35:45Z",
+        "labels": {
+          "k8s-app": "elasticsearch-logging",
+          "version": "v7.2.0"
+        },
+        "annotations": {
+          "pv.kubernetes.io/bind-completed": "yes",
+          "pv.kubernetes.io/bound-by-controller": "yes",
+          "volume.beta.kubernetes.io/storage-provisioner": "kubernetes.io/glusterfs"
+        },
+        "finalizers": [
+          "kubernetes.io/pvc-protection"
+        ]
+      },
+      "spec": {
+        "accessModes": [
+          "ReadWriteOnce"
+        ],
+        "resources": {
+          "requests": {
+            "storage": "10Gi"
+          }
+        },
+        "volumeName": "pvc-2af842ec-b942-11e9-91ab-000c297a5447",
+        "storageClassName": "glusterfs",
+        "volumeMode": "Filesystem"
+      },
+      "status": {
+        "phase": "Bound",
+        "accessModes": [
+          "ReadWriteOnce"
+        ],
+        "capacity": {
+          "storage": "10Gi"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "name": "elasticsearch-logging-elasticsearch-logging-1",
+        "namespace": "kube-system",
+        "selfLink": "/api/v1/namespaces/kube-system/persistentvolumeclaims/elasticsearch-logging-elasticsearch-logging-1",
+        "uid": "31aa9219-b942-11e9-91ab-000c297a5447",
+        "resourceVersion": "15474598",
+        "creationTimestamp": "2019-08-07T18:35:56Z",
+        "labels": {
+          "k8s-app": "elasticsearch-logging",
+          "version": "v7.2.0"
+        },
+        "annotations": {
+          "pv.kubernetes.io/bind-completed": "yes",
+          "pv.kubernetes.io/bound-by-controller": "yes",
+          "volume.beta.kubernetes.io/storage-provisioner": "kubernetes.io/glusterfs"
+        },
+        "finalizers": [
+          "kubernetes.io/pvc-protection"
+        ]
+      },
+      "spec": {
+        "accessModes": [
+          "ReadWriteOnce"
+        ],
+        "resources": {
+          "requests": {
+            "storage": "10Gi"
+          }
+        },
+        "volumeName": "pvc-31aa9219-b942-11e9-91ab-000c297a5447",
+        "storageClassName": "glusterfs",
+        "volumeMode": "Filesystem"
+      },
+      "status": {
+        "phase": "Bound",
+        "accessModes": [
+          "ReadWriteOnce"
+        ],
+        "capacity": {
+          "storage": "10Gi"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "name": "elasticsearch-logging-elasticsearch-logging-2",
+        "namespace": "kube-system",
+        "selfLink": "/api/v1/namespaces/kube-system/persistentvolumeclaims/elasticsearch-logging-elasticsearch-logging-2",
+        "uid": "3ac02bf8-b942-11e9-91ab-000c297a5447",
+        "resourceVersion": "15474656",
+        "creationTimestamp": "2019-08-07T18:36:11Z",
+        "labels": {
+          "k8s-app": "elasticsearch-logging",
+          "version": "v7.2.0"
+        },
+        "annotations": {
+          "pv.kubernetes.io/bind-completed": "yes",
+          "pv.kubernetes.io/bound-by-controller": "yes",
+          "volume.beta.kubernetes.io/storage-provisioner": "kubernetes.io/glusterfs"
+        },
+        "finalizers": [
+          "kubernetes.io/pvc-protection"
+        ]
+      },
+      "spec": {
+        "accessModes": [
+          "ReadWriteOnce"
+        ],
+        "resources": {
+          "requests": {
+            "storage": "10Gi"
+          }
+        },
+        "volumeName": "pvc-3ac02bf8-b942-11e9-91ab-000c297a5447",
+        "storageClassName": "glusterfs",
+        "volumeMode": "Filesystem"
+      },
+      "status": {
+        "phase": "Bound",
+        "accessModes": [
+          "ReadWriteOnce"
+        ],
+        "capacity": {
+          "storage": "10Gi"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "name": "elasticsearch-logging-elasticsearch-logging-3",
+        "namespace": "kube-system",
+        "selfLink": "/api/v1/namespaces/kube-system/persistentvolumeclaims/elasticsearch-logging-elasticsearch-logging-3",
+        "uid": "94dc180f-b942-11e9-91ab-000c297a5447",
+        "resourceVersion": "15474973",
+        "creationTimestamp": "2019-08-07T18:38:42Z",
+        "labels": {
+          "k8s-app": "elasticsearch-logging",
+          "version": "v7.2.0"
+        },
+        "annotations": {
+          "pv.kubernetes.io/bind-completed": "yes",
+          "pv.kubernetes.io/bound-by-controller": "yes",
+          "volume.beta.kubernetes.io/storage-provisioner": "kubernetes.io/glusterfs"
+        },
+        "finalizers": [
+          "kubernetes.io/pvc-protection"
+        ]
+      },
+      "spec": {
+        "accessModes": [
+          "ReadWriteOnce"
+        ],
+        "resources": {
+          "requests": {
+            "storage": "10Gi"
+          }
+        },
+        "volumeName": "pvc-94dc180f-b942-11e9-91ab-000c297a5447",
+        "storageClassName": "glusterfs",
+        "volumeMode": "Filesystem"
+      },
+      "status": {
+        "phase": "Bound",
+        "accessModes": [
+          "ReadWriteOnce"
+        ],
+        "capacity": {
+          "storage": "10Gi"
+        }
+      }
+    }
+  ]
+}

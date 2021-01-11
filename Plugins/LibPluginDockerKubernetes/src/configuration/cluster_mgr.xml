@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+<version>2</version>
+
+<property>
+	<key>k00_00</key>
+	<name>k00_00</name>
+	<value><![CDATA[1.0]]></value>
+	<attributes>
+		<label>Version</label>
+		<group>cfg_group01</group>
+		<widget><![CDATA[label]]></widget>
+		<required>true</required>
+	</attributes>
+</property>
+
+<!-- 
+	Helm Hub:https://hub.helm.sh/api/chartsvc/v1/charts 
+	Monocular:http://192.168.40.84:32212/api/chartsvc/v1/charts
+	Artifact Hub:https://artifacthub.io/api/v1/packages/search?limit=60&offset=0&ts_query_web=
+-->
+<property>
+	<key>k01_00</key>
+	<name>k01_00</name>
+	<value><![CDATA[Artifact Hub:https://artifacthub.io/api/v1/packages/search?limit=60&offset=0&ts_query_web=]]></value>
+	<attributes>
+		<label>Hub Search URLs</label>
+		<group>cfg_group02</group>
+		<widget><![CDATA[dualmultiselect&Monocular:http://HOST:PORT/api/chartsvc/v1/charts,Artifact Hub:https://artifacthub.io/api/v1/packages/search?limit=60&offset=0&ts_query_web=]]></widget>
+		<required>true</required>
+	</attributes>
+</property>
+
+<group>
+	<name>cfg_group01</name>
+	<title>Main</title>
+</group>
+
+<group>
+	<name>cfg_group02</name>
+	<title>Helm</title>
+</group>
+
+</configuration>

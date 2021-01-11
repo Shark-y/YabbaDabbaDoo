@@ -1,0 +1,16 @@
+rabbitmq:
+  username: guest
+  password: guest
+
+service:
+  type: NodePort
+  
+securityContext:
+  runAsUser: 0
+  fsGroup: 0
+ 
+persistence:
+  existingClaim: nfs-pvc01
+  
+volumePermissions:
+  enabled: true

@@ -1,0 +1,23 @@
+{
+	"uuid" : "%s",
+	"nodeAddress": "%s",
+	"nodeName": "%s",
+	"messageType" : "%s",
+	"timeCreated": %d ,
+	"timeSent": %d ,
+	"attributes" : %s,
+	"lifeCycle": {
+		"start": %s,
+		"stop" : %s,
+		"status": %s
+	},
+	"configure": {
+		"get": %s,
+		"store" : %s
+	},
+	"logging": {
+		"get": %s,
+		"view": %s,
+		"clear" : %s
+	}
+}

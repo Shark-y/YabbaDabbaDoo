@@ -1,0 +1,309 @@
+<h2>Cloud Cluster Console Change Log</h2>
+<hr>
+
+<h3>Branch release-1.1</h3>
+
+<ul>
+
+<li> 08-09-2020 Docker/Kubernetes console update #18 By VSilva. 
+	<ol>
+		<li>Kubernetes, JSPK8S, K8SServlet, K8SServlethandler k8s/nodes.jsp, helm/helm.jsp: Changed the clusters UI from a table to a set of panels.</li>
+		<li>security.json, SSHExec, SSHTerminalConnector.java: Added logic to login via private keys.</li>
+		<li>plugin.jon: UI Menus renamed to Clusters, Apps view.</li>
+		<li>MANIFEST.MF: Version set to 1.0.1</li>
+	</ol>
+</li>
+
+<li> 06-01-2020 Docker/Kubernetes console update #17 By VSilva. 
+	<ol>
+		<li>K8SServklet.java: Fixed NPE when creating namespace</li>
+		<li>helm.jsp, helm.js, helm-repos.js: Added menu option 'Update repos' form "helm repo update"</li>
+		<li>docker/tile_modal_repos.jsp Fixed JS error: Uncaught TypeError: Cannot read property 'split' of undefined (nameType)</li>
+	</ol>
+</li>
+
+<li> 05-31-2020 Docker/Kubernetes console update #16 By VSilva. 
+	<ol>
+		<li>Implemented all code as a console plugin.</li>
+		<li>Added version support to the plugin descriptor (plugin.json).</li>
+	</ol>
+</li>
+
+<li> 05-10-2020 Docker/Kubernetes console update #15 By VSilva. 
+	<ol>
+		<li>K8Servlet, JSPK8S, nodes.jsp: Nodes page added support to fix error: pods is forbidden: User \"system:serviceaccount:default:default\" cannot list resource \"pods\"...</li>
+	</ol>
+</li>
+
+<li> 04-05-2020 Docker/Kubernetes console update #13 By VSilva. 
+	<ol>
+		<li>Helm, K8Servlet, K8SServletHandler: Helm, show chart meta data.</li>
+		<li>Helm installer modal: new support to fetch/install using chart values.yaml</li>
+		<li>helm.jsp and related: Added logic to search for Apps (services) and build a link for the chart name.</li>		
+		<li>Pod table, show nodeName</li>
+		<li>SSH: New class ssh.Scp for remote copy.</li>
+		<li>SSH: method SSHExec.top to get remote host metrics as JSON.</li>
+		<li>Some JS bug fixes</li>
+		<li>cluster_mgr.xml: Changes the C1AS local helm hub URk to HTTP (http://192.168.40.84:32212/api/chartsvc/v1/charts) to avoid browser errors.</li>
+	</ol>
+</li>
+
+<li> 03-31-2020 Docker/Kubernetes console update #12 By VSilva. 
+	<ol>
+		<li>tile_modal_chart_param.jsp: Fixed broken advanced install after latest commit.</li>
+		<li>helm.jsp, manange.jsp, typeahead,css: Updated Helm Hub serach styles. </li>
+		<li>04/02/2020 logs.jsp: Fixed undefined display for a specific type K8s pod.</li>
+	</ol>
+</li>
+<li> 03-28-2020 Docker/Kubernetes console update #11 By VSilva. 
+	<ol>
+		<li>k8s/manage.jsp, helm.jsp, K8S* Create/delete namespaces: for HELM, and Kubernetes manager.</li>
+		<li>Private repo code update to support namespaces.</li>
+		<li>Pod table label coloring bug fix for string 'Succeeded'.</li>
+		<li>manage.jsp Pod table: new menu to add/delete namespaces.</li>
+		<li>Storage view: Create, delete persistent volumes and claims, delete multiple items.</li>
+		<li>Service: Enabled configuration menu</li>
+		<li>Helm Hub search: new logic to search multiple hubs (from config)</li>
+		<li>Service config: set default Helm hubs: Helm Hub:https://hub.helm.sh/api/chartsvc/v1/charts,C1AS:https://192.168.40.84:32543/api/chartsvc/v1/charts</li>
+		<li>Moved common type ahead code to tile_type_ahead.jsp</li>
+	</ol>
+</li>
+
+<li> 03-23-2020 Docker/Kubernetes update #10 By VSilva. 
+	<ol>
+		<li>3/21/2020 k8s/manage.jsp, events.js New logic to display events </li>
+		<li>3/21/2020 k8s/manage.jsp [K8SServletHandler, ServletRepo].java New logic to install from Helm hub using parameters.</li>
+		<li>3/21/2020 New functionality: Persistent Volumes, Volume claims.</li>
+		<li>k8s/manage.jsp: Added spinner to deployment replicas plus basic PacthDeployment logic.</li>
+		<li>apis_ke8.json: New PatchDeployment operation.</li>
+		<li>Enabled HOME button in the left nav menu.</li>
+	</ol>
+</li>
+
+<li> 03-19-2020 Docker/Kubernetes update #9 By VSilva. 
+	<ol>
+		<li>k8s/manage.jsp, tile_modal_manage.jsp, manage.js, helm-repo.js, New TAB to display secrets plus b64 decode for secret payload.</li>
+		<li>K8SParams, K8Servlet, api_k8s.json, manage.jsp, secrets.js: New logic for create/delete/view secrets.</li>
+		<li>log.jsp: Fixed Kubernetes pod log display for objects and arrays.</li>
+		<li>docker/manage.jsp Fixed container modal image select JS error with null (empty) names.</li>
+		<li>ClusterDaemon.java: Daemon service fixes, renamed index.jsp to index_zconf.jsp</li>
+	</ol>
+</li>
+
+<li> 03-17-2020 Docker/Kubernetes update #8 By VSilva. 
+	<ol>
+		<li>k8s/manage.js Added colorized label badges for node, pod status.</li>
+		<li>PrivateRepo,ServletRepo.java: Fixed repo type serialization type errors (Changed repo.type to String).</li>
+	</ol>
+</li>
+
+<li> 02-24-2020 Docker/Kubernetes update #7 By VSilva. 
+	<ol>
+		<li>Moved AbstractRestClient and AbstractRest to LibCore, renamed to RestClient, RestException.</li>
+		<li>Helm.java: fixes for Helm 3.x</li>
+	</ol>
+</li>
+<li> 06-17-2019 Docker/Kubernetes update #6 By VSilva. 
+	<ol>
+		<li>DockerHttpHijack.java: Moved createDefaultSocketFactory () to Security.createAllTrustingSocketFactory () </li>
+		<li>K8SParams.java, api_k8s.json, logs.jsp: GetPodLogs: Added extra query string parameter tailLines=N to the API endpoint: GET /api/v1/namespaces/{namespace}/pods/{name}/log</li>
+		<li>jsp/docker/xterm/term.{jsp,js}: Added support for Kubernetes (pod,container) terminal using a websocket chain to the API server.</li>
+		<li>New file: PodTerminalConnector.java for web socket terminal to a (pod,container) via Kubernetes.executeCommandInPod().</li>
+		<li>k8s/[manage.jsp, manage.js, tile_modal_manage.jsp] Added support for terminal access to a (pod,container) tuple.</li>
+		<li>jsp/docker/xterm/term.js: Fixed bug where pasting text in terminals displays the text twice.</li>
+		<li>DockerHttpHijack.java: New service method for GET, POST, etc. plus default SSL socket factory that ignores self signed certificates and cleanup.</li>
+		<li>Kubernetes.java: New method executeCommandInPod(node, namespace, pod, container, command).</li>
+	</ol>
+</li>
+
+<li> 06-07-2019 Docker/Kubernetes update #5 By VSilva. 
+	<ol>
+		<li>helm.jsp: UI cleanup.</li>
+		<li>Kubernetes/Docker.java: New method contains(node-name)</li>
+		<li>WebApp: Added SankeYAML LIB (snakeyaml.jar) used to parse HELM repo index.yaml containing chart information.</li>
+		<li>PrivateRepo.java: Added logic to fetch chart information from HELM repos. </li>
+		<li>ServletRepo.java: Added fetch tags/charts plus Install charts logic.</li>
+		<li>docker/tile_modal_repos.jsp: Added logic for HELM chart repos.</li>
+		<li>Helm.java, SSH.java: Added getters to return the stdout and statys codes.</li>
+		<li>tile_helm_addrepo.jsp: Moved HELM add repo modal to this page (for reuse by manage.jsp/helm.jsp)</li>
+		<li>JSPK8S.java: New method to build a reusable tool-bar for manage.jsp</li>
+		<li>manage.jsp: Added Shell/HELM tool bar for rapid access. </li>
+		<li>helm.jsp, helm.js, helm-repo.js: moved reusable code to helm-repo.js to be used in manage.jsp</li>
+		<li>k8s/manage.jsp, manage.js, K8SServlet.java, K8SParams.java: Implemented Get POD UI/server logic </li>
+		<li>api_k8s.js: New rest API call GetPodLogs</li>
+		<li>logs.jsp: Added UI support for K8S get pod logs</li>
+		<li>k8s/nodes.jsp: Renamed label SSH to Shell.</li>
+	</ol>
+</li>
+
+<li> 06-01-2019 Docker/Kubernetes update #4 By VSilva. 
+	<ol>
+		<li>nodes.jsp: Label change SSH - Shell</li>
+		<li>manage.jsp: Added the repo browser modal UI.</li>
+		<li>ClusterDaemon.java: Changes to initialize the repo-manager.</li>
+		<li>New package com.cloud.repo.* with classes to support the Repo manager UI. </li>
+		<li>New private REPO manager modal UI dialog (tile_modal_repos.jsp) to load/save/install-tags from DOCKER, GOOGLE-GCR, HELM private repos.</li>
+		<li>DockerHandlerImage.java: New method handleCreateImage(..) to reuse the class across multiple servlets. Made all methods public. </li>
+		<li>JSONFileSerializer.java: New reusable JSON file disk serializer to quickly load/save files.</li>
+		<li>JSONSerializer.java: Update to include enums in the final payload.</li>
+		<li>AbstractRestException.java: Added content type member parameter.</li>
+	</ol>
+</li>
+
+<li> 05-16-2019 Kubernetes update #3 By VSilva. 
+	<ol>
+		<li>5/20/2019 logs.jsp Preformat log stdout/stderr</li>
+		<li>5/19/2019 tile_modal_image.jsp Load pwd/keys from file system.</li>
+		<li>5/18/2019 security-com.cluster.json: Made password param 0-4096 bytes in size</li>
+		<li>5/18/2019 Docker,DockerSwarm.java Fix for X-Registry-Auth: must be base64 encoded (fixes failure to install images from private repos).</li>
+		<li>5/17/2019 main_theme.ini Removed load balancer (doesn't work properly for some URLs)</li>
+		<li>K8SServletHandler.java Fixed Helm install failures with version param (Trying both w/ and without a version)</li>
+		<li>tile_modal_image.jsp, snackbar.js: Changes to display chuncked responses (as JSON arrays)</li>
+		<li>AbstractrestClient.java: Added logic to handle Chuncked Response: [POST]  [HDR] Transfer-Encoding = [chunked] responses(put chunks messages in a JSON array)</li>
+	</ol>
+</li>
+
+<li> 04-10-2019 Kubernetes update #2 By VSilva. 
+	<ol>
+		<li>4/29/2019 Helm.java Fix for listCharts throwing an exception when empty response.</li>
+		<li>4/16/2019 Mostly bug fixes and updates.</li>
+		<li>4/16/2019 DockerServlet.java, docker/manage.(js,jsp): Added logic for remove volumes plus added image details (MORE) to typeahead docker hub search results.</li>
+		<li>4/15/2019 tile_moddal_container.jsp, DockerParams.java, container_create.json, api_docker.json: Create container - added name and restart policy support.</li>
+		<li>4/15/2019 tile_moddal_container.jsp: Fix for fetch container command modal: Entrypoint[] + Cmd[], before: Cmd[]</li>
+		<li>4/15/2019 manage.js: fix for image tag &lt;none> not showing up plus volumes(CreatedAt) optional column and Networks(Ingress) undefined.</li>
+		<li>4/13/2019 New Helm functionality: list/delete charts, add/list repos.</li>
+		<li>Service, Pod data tables.</li>
+		<li>Helm search and install support</li>
+		<li>Code Cleanup.</li>
+	</ol>
+</li>
+
+<li> 03-29-2019 By VSilva. 
+	<ol>
+		<li>04/03/2019 Xterm support for /bin/bash or sh shells.</li>
+		<li>04/02/2019 Docker run code compete + ANSI escape codes for foreground.</li>
+		<li>04/01/2019 Docker run wizards plus initial Kubernetes support.</li>
+		<li>03/30/2019 Task/Service cleanup, bug fixes.</li>
+		<li>Initial support for docker services, tasks: UI, classes, tests.</li>
+		<li>Service/task Junits.</li>
+	</ol>
+</li>
+
+<li> 03-12-2019 By VSilva. 
+	<ol>
+		<li>03/27/2019 Initial implementation for docker swarm support.</li>
+		<li>03/22/2019 DockerHttpHijack, DockerTerminalConnector.java: Made the websocket upgrade mechanism optional. New interface DockerHttpHijack.OutputSink extends PrintStreamSource.</li>
+		<li>03/22/2019 manage.jsp, manage.js: Added 'View' link for started containers.</li>
+		<li>03/21/2019 Docker.java BUILD FAILURE Fix: [javac] Workspace-Server\CloudClusterManager\src\com\cloud\cloud\docker\Docker.java:10: error: package junit.docker does not exist (import junit.docker.TestDockerContainerNoTLS)</li>
+		<li>03/15/2019 Docker batch update #3: New container terminal (shell) support using XTerm.js</li>
+		<li>03/15/2019 Docker batch update #2.</li>
+		<li>New pkg com.cloud.docker (for docker classes)</li>
+		<li>Docker initial implementation: Images, Containers, Hub searches</li>
+		<li>New abstract REST client com.cloud.rest</li>
+		<li>Some Docker junits</li>
+	</ol>
+</li>
+
+
+<li> 03-01-2019 By VSilva. 
+	<ol>
+		<li>03/04/2019 Initial Docker API support.</li>
+		<li>Switched webapp main theme to clouds.</li>
+		<li>Deprecated config_backend.jsp/JSPConfigBackend.java (implemented remote logic in LibCloudConsole) </li>
+	</ol>
+</li>
+
+<li>
+	<ul>
+	<li>02/17/2019 DropboxClient.java moved to LibCloudCore plus refactoring for this update.</li>
+	<li>02/16/2019 TestMulticaster.java: Refactorings for NetMulticaster moved to LibCloudCore.</li>
+	<li>02/11/2019 dash_poll.js, dash_charts.js: Remote Node Attribute address renamed to nodeAddress.</li>
+	<li>02/06/2019 index.jsp Added display node number select combo.</li>
+	<li> 1/29/2019 JSPConfigCluster.java
+java.lang.NullPointerException
+	com.cloud.cluster.CloudCluster.dumpAllInstances(CloudCluster.java:297)
+	com.cluster.jsp.JSPConfigCluster.execute(Unknown Source)
+	org.apache.jsp.jsp.config.config_005fcluster_jsp._jspService(config_005fcluster_jsp.java:142)
+	org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)	
+	</li>
+	</ul>
+</li>
+<li> 01-02-2019 By VSilva. 
+	<ol>
+		<li>New support for Zeroconf multicast services.</li>
+		<li>New remote service configuration page.</li>
+		<li>Rebuilt the web app as a cloud service (IServiceLifecycle)</li>
+		<li>1/8/2019 tile_top_bar.jsp: new menu OS 'Profiler'.</li>
+		<li>1/8/2019 ClusterManager, ZeroConfService: Singleton bug fixes.</li>
+		<li>1/15/2019 New view to inspect distributed data structures.</li>
+		<li>1/16/2019 Derby embedded datqabase logic has been deprecated (removed). </li>
+		<li>1/17/2019 ZeroConfService.java (173)Fixed NPE in handleObjectUpdate (ADD).</li>
+		<li>1/23/2019 index.jsp Added support for data tables for the node table.</li>
+		<li>1/25/2019 data.jsp Added JSON viewer formatting support for data structures.</li>
+	</ol>
+</li>
+
+<li> 06-15-2018 By VSilva. 
+	<ol>
+		<li>config_cluster.jsp Removed Hazelcast node list table logic. Added the configurations for the: Log error notification and auto update systems.</li>
+		<li>New package and classes for the Log error notification and update systems: com.cluster.update</li>
+	</ol>
+</li>
+
+<li> 02-21-2018 By VSilva. 
+	<ol>
+		<li>index.jsp fixed bug on menu Action > Select Nodes where rows are not checked/selected in table mode.</li>
+		<li>Removed duplicate JS justgage.js</li>
+	</ol>
+</li>
+
+<li>
+	9-4-2017 changes for LibCloudCore MultiFileLogConfigurator to L4JConfigurator.
+</li>
+<li>
+	8-22-2017 Fixed the IDE deployment descriptor to use json-1.0.jar.
+</li>
+<li>
+	04-19-2017 ClusterManager.java class refactorings for new cluster library v1.2.1.
+</li>
+<li> 11-18-2016 By VSilva. JSP Fixed <a target="_new" href="http://acme208.acme.com:6091/issue/UNIFIED_CC-159">UNIFIED_CC-159</a>
+	<ol>
+		<li>Replaced Morris Charts with the Chart.js lib (wwww.chartjs.org)</li>
+		<li>Chart rendering performance improvements for IE.</li>
+		<li>New list view and dashboard views to display nodes.</li>
+	</ol>
+</li>
+<li>04-15-2016 By VSilva. JSP Fixes for  
+	<ol>
+	<li>
+		<a target="_new" href="http://acme208.acme.com:6091/issue/UNIFIED_CC-73">UNIFIED_CC-73</a> Get rid of google charts.
+	</li>
+	<li>Fixed Broken links in Home > Configure when the remote node is not configured or has failed to initialize.</li>
+	<li>Added Home page new menu Administer > Log (Log viewer)</li>
+	<li>Home Page: log link now uses the latest log viewer.</li>
+	</ol>
+</li>
+
+<li>02-18-2016 By VSilva. JSP Fixes for the Could Console multiple skin/theme support
+	<ol>
+	<li>bootstrap: Skin build by twitter Bootstrap v3.3.1 (http://getbootstrap.com)</li>
+	<li>material: Material theme by google by Meterialize (http://materialize.com)</li>
+	<li>booterial: A material/bootstrap hybrid built using Bootstrap v3.3.6 (http://getbootstrap.com)</li>
+	</ol>
+</li>
+
+<li>01-12-2016 By VSilva. Fixes for
+	<ul>
+		<li>
+			<a target="_new" href="http://acme208.acme.com:6091/issue/UNIFIED_CC-51">UNIFIED_CC-51</a> Adapter Install error (1st install - when there is no profile installed).
+		</li>
+		<li>
+			<a target="_new" href="http://acme208.acme.com:6091/issue/UNIFIED_CC-50">UNIFIED_CC-50</a> Cluster Manager: Run time error clicking Cluster Action > Configure.
+		</li>
+	</ul>
+</li>
+
+<li>Many bug fixes not included since this log was created. See <a href="http://acme208.acme.com:6091/issues?q=project%3A+{Cloud+Core+Libraries}">Issue Tracker</a></li>
+<li>Initial log tracking.</li>
+</ul>
+

@@ -1,0 +1,20 @@
+# https://hub.helm.sh/charts/bitnami/rabbitmq
+# $ helm install my-release --set rabbitmq.username=admin,rabbitmq.password=secretpassword,rabbitmq.erlangCookie=secretcookie bitnami/rabbitmq
+
+rabbitmq:
+  username: guest
+  password: guest
+#  erlangCookie:secretcookie
+
+service:
+  type: NodePort
+  
+securityContext:
+  runAsUser: 0
+  fsGroup: 0
+ 
+persistence:
+  existingClaim: nfs-pvc01
+  
+volumePermissions:
+  enabled: true

@@ -1,0 +1,1 @@
+Put any required libraries in this folder. They will be included in the final WAR by the auto build.

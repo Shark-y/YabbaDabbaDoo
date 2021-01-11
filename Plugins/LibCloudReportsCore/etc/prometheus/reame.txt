@@ -1,0 +1,22 @@
+Prometheus URLS
+----------------
+
+Query metrics
+
+http://192.168.40.84:32206/api/v1/label/__name__/values?_=1596217970606
+
+Last Value Query
+================
+http://192.168.40.84:32206/api/v1/query?query=container_cpu_load_average_10s
+
+
+Query Ranges
+============
+Get metric (container_file_descriptors)
+http://192.168.40.84:32206/api/v1/query_range?query=container_file_descriptors&start=1596215065.211&end=1596218665.211&step=1000
+
+(container_fs_inodes_free - last)
+http://192.168.40.84:32206/api/v1/query_range?query=container_fs_inodes_free&start=1596215065.211&end=1596218665.211&step=10000
+
+(container_cpu_load_average_10s)
+http://192.168.40.84:32206/api/v1/query_range?query=container_cpu_load_average_10s&start=1596215065.211&end=1596218665.211&step=14

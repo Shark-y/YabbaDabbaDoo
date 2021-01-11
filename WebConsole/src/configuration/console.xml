@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+<version>1</version>
+
+<property>
+	<key>k00_00</key>
+	<name>k00_00</name>
+	<value><![CDATA[1.0]]></value>
+	<attributes>
+		<label>Version</label>
+		<group>cfg_group01</group>
+		<widget><![CDATA[label]]></widget>
+		<required>true</required>
+	</attributes>
+</property>
+
+
+<group>
+	<name>cfg_group01</name>
+	<title>Main</title>
+</group>
+
+
+</configuration>

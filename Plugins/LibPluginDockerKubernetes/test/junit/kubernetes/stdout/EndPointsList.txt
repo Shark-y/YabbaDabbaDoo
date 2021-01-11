@@ -1,0 +1,80 @@
+{
+  "kind": "EndpointsList",
+  "apiVersion": "v1",
+  "metadata": {
+    "selfLink": "/api/v1/endpoints",
+    "resourceVersion": "10253"
+  },
+  "items": [
+    {
+      "metadata": {
+        "name": "kubernetes",
+        "namespace": "default",
+        "selfLink": "/api/v1/namespaces/default/endpoints/kubernetes",
+        "uid": "27a863af-564d-11e9-a4d0-08002758a3b5",
+        "resourceVersion": "158",
+        "creationTimestamp": "2019-04-03T20:14:58Z"
+      },
+      "subsets": [
+        {
+          "addresses": [
+            {
+              "ip": "192.168.42.59"
+            }
+          ],
+          "ports": [
+            {
+              "name": "https",
+              "port": 6443,
+              "protocol": "TCP"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "metadata": {
+        "name": "kube-controller-manager",
+        "namespace": "kube-system",
+        "selfLink": "/api/v1/namespaces/kube-system/endpoints/kube-controller-manager",
+        "uid": "26e20975-564d-11e9-a4d0-08002758a3b5",
+        "resourceVersion": "10251",
+        "creationTimestamp": "2019-04-03T20:14:57Z",
+        "annotations": {
+          "control-plane.alpha.kubernetes.io/leader": "{\"holderIdentity\":\"kubemaster_57017646-5679-11e9-97e1-08002758a3b5\",\"leaseDurationSeconds\":15,\"acquireTime\":\"2019-04-04T01:31:42Z\",\"renewTime\":\"2019-04-04T02:29:31Z\",\"leaderTransitions\":1}"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "name": "kube-dns",
+        "namespace": "kube-system",
+        "selfLink": "/api/v1/namespaces/kube-system/endpoints/kube-dns",
+        "uid": "316b71ac-564d-11e9-a4d0-08002758a3b5",
+        "resourceVersion": "318",
+        "creationTimestamp": "2019-04-03T20:15:15Z",
+        "labels": {
+          "k8s-app": "kube-dns",
+          "kubernetes.io/cluster-service": "true",
+          "kubernetes.io/name": "KubeDNS"
+        },
+        "annotations": {
+          "endpoints.kubernetes.io/last-change-trigger-time": "2019-04-03T20:15:00Z"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "name": "kube-scheduler",
+        "namespace": "kube-system",
+        "selfLink": "/api/v1/namespaces/kube-system/endpoints/kube-scheduler",
+        "uid": "2774b2dc-564d-11e9-a4d0-08002758a3b5",
+        "resourceVersion": "10252",
+        "creationTimestamp": "2019-04-03T20:14:58Z",
+        "annotations": {
+          "control-plane.alpha.kubernetes.io/leader": "{\"holderIdentity\":\"kubemaster_56f08173-5679-11e9-ae4c-08002758a3b5\",\"leaseDurationSeconds\":15,\"acquireTime\":\"2019-04-04T01:31:40Z\",\"renewTime\":\"2019-04-04T02:29:31Z\",\"leaderTransitions\":1}"
+        }
+      }
+    }
+  ]
+}

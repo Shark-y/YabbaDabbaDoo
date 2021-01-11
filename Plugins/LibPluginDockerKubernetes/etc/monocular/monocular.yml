@@ -1,0 +1,35 @@
+# https://github.com/helm/monocular/blob/master/chart/monocular/README.md
+# Configuring chart repositories
+# $ helm install monocular monocular/monocular -f cloud_values.yml
+# https://github.com/helm/monocular/blob/master/chart/monocular/values.yaml
+# securityContext: { "runAsUser": 0}
+
+sync:
+  repos:
+    - name: convergeone
+      url: https://charts_cloud.storage.googleapis.com/
+    - name: monocular
+      url: https://helm.github.io/monocular/
+
+
+# Chartsvc is used to serve chart metadata over a REST API.
+chartsvc:
+  replicas: 1
+  
+ui:
+  replicaCount: 1
+
+mongodb:
+  enabled: false
+  
+# External MongoDB connection URL.
+# This must be set if mongodb.enabled is set to false, following the pattern:
+# `mongodb://${MONGODB_USER}:${MONGODB_ROOT_PASSWORD}@${MONGODB_DNS}:${MONGODB_PORT}/${MONGODB_DATABASE}`
+# ref: https://docs.mongodb.com/manual/reference/connection-string/
+# mongodb://admin:admin@10.244.5.200:27017/db
+# mongodb://admin:admin@192.168.40.84:27017/db
+global:
+  mongoUrl: mongodb://${MONGODB_USER}:${MONGODB_ROOT_PASSWORD}@${MONGODB_DNS}:${MONGODB_PORT}/${MONGODB_DATABASE}
+  
+  
+  

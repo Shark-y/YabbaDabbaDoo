@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Class-Path: 
+Specification-Title: Kubernetes Plugin
+Specification-Version: 1.0.1
+Specification-Vendor: ACME
+Implementation-Title: Kubernetes Console
+Implementation-Vendor: ACME

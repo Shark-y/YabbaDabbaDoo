@@ -1,0 +1,49 @@
+{
+  "Name": "${NAME}",
+  "TaskTemplate": {
+    "ContainerSpec": {
+      "Image": "${IMAGE}",
+      "Command": ${COMMAND},
+      "Args": ${ARGS} , 
+      ${MOUNTS}
+      "User": "root"
+    },
+    ${NETWORKS}
+    "LogDriver": {
+      "Name": "json-file",
+      "Options": {
+        "max-file": "3",
+        "max-size": "10M"
+      }
+    },
+    "Placement": {
+      "Constraints": [
+        "node.role == worker"
+      ]
+    },
+    "Resources": {
+      "Limits": {
+      },
+      "Reservations": {
+      }
+    },
+    "RestartPolicy": {
+      "Condition": "on-failure",
+      "Delay": 10000000000,
+      "MaxAttempts": 10
+    }
+  },
+  "Mode": {
+    "Replicated": {
+      "Replicas": ${REPLICAS}
+    }
+  },
+  "UpdateConfig": {
+    "Delay": 30000000000,
+    "Parallelism": 2,
+    "FailureAction": "pause"
+  },
+  "EndpointSpec": {
+    "Ports": ${PORTS}
+  }
+}

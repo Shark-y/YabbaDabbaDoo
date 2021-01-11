@@ -1,0 +1,70 @@
+{ "dashboards" :
+	[
+{
+  "displayKey": "pod",
+  "keyRange": "",
+  "branding": {"bgColor": "F5F5F5"},
+  "listener": "Kube1",
+  "metrics": [
+   {
+    "widget": "AREA_CHART",
+    "name": "container_cpu_system_seconds_total",
+    "description": "CPU SYS",
+    "type": "NUMBER"
+   },
+   {
+    "widget": "AREA_CHART",
+    "name": "container_cpu_user_seconds_total",
+    "description": "CPU USER",
+    "type": "NUMBER"
+   },
+   {
+    "widget": "PANEL",
+    "name": "container_memory_usage_bytes",
+    "description": "Mem (bytes)",
+    "type": "NUMBER"
+   },
+   {
+    "widget": "AREA_CHART",
+    "name": "container_cpu_usage_seconds_total",
+    "description": "CPU USAGE",
+    "type": "NUMBER"
+   },
+   {
+    "widget": "GAUGE",
+    "name": "container_sockets",
+    "description": "Sockets",
+    "type": "NUMBER"
+   }
+  ],
+  "title": "Sample Kube - Container CPU/Sockets"
+ },
+ 
+ {
+  "displayKey": "pod",
+  "keyRange": "namespace='kube-system'",
+  "displayHeading": "",
+  "branding": {
+   "bgColor": "F5F5F5",
+   "logo": ""
+  },
+  "listener": "Kube1",
+  "metrics": [
+   {
+    "widget": "GAUGE",
+    "name": "container_file_descriptors",
+    "description": "File Descriptors",
+    "type": "NUMBER"
+   },
+   {
+    "widget": "GAUGE",
+    "name": "container_cpu_load_average_10s",
+    "description": "CPU Load",
+    "type": "NUMBER"
+   }
+  ],
+  "title": "Sample Kube-System"
+ }
+ 
+	]
+}

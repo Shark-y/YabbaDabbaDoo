@@ -1,0 +1,19 @@
+{
+	"id": "tblStorage",
+	"usePanel" : false,
+	"panelToolbar" : [
+		{ "widget" : "icon-button", "class": "", "title": "Delete selected volumes", "onclick": "return delVolumes();", "icon": "delete"},
+		{ "widget" : "refresh-button", "class": "", "title": "Click to refresh"},
+		{ "widget" : "dropdown"
+			, "menus" : [
+				{"label": "Add Volume", "onclick": "return addVolume('../../', node)"},
+				{"label": "Add Volume Claim", "onclick": "return addVolumeClaim('../../', node)"},
+				{"label": "DIVIDER"},
+				{"label": "About Kubernetes Volumes", "target": "_blank", "href": "https://kubernetes.io/docs/concepts/storage/persistent-volumes/"}
+			]
+		},
+	],
+	"header": {
+		"labels" : ["Kind", "Name", "Status", "Created", "Details"]
+	}
+}

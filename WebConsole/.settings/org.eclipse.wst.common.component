@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="CloudConsole">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <dependent-module archiveName="LibCloudConsoleThemes.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/LibCloudConsoleThemes/LibCloudConsoleThemes">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="LibCloudCore.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/LibCloudCore/LibCloudCore">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="LibCloudCluster.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/LibCloudCluster/LibCloudCluster">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="LibCloudConsole.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/LibCloudConsole/LibCloudConsole">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module deploy-path="/WEB-INF/lib" handle="module:/resource/LibPluginDockerKubernetes/LibPluginDockerKubernetes">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="WebSocket-1.4.0.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/LibPluginDockerKubernetes/lib/WebSocket-1.4.0.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="snakeyaml-1.24.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/LibPluginDockerKubernetes/lib/snakeyaml-1.24.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jsch-0.1.55.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/LibPluginDockerKubernetes/lib/jsch-0.1.55.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="LibPluginReports.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/LibPluginReports/LibPluginReports">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="LibCloudReportsCore.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/LibCloudReportsCore/LibCloudReportsCore">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="hazelcast-3.4.2.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/LibCloudDoc/lib/hazelcast-3.4.2.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="json-1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/LibCloudDoc/lib/json-1.0.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="javax.mail.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/LibCloudDoc/lib/javax.mail.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="LibProfiler.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/LibCloudDoc/lib/LibProfiler.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="log4j-1.2.17.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/LibCloudDoc/lib/log4j-1.2.17.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="java-output-path" value="/CloudConsole/build/classes"/>
+        <property name="context-root" value="WebConsole"/>
+    </wb-module>
+</project-modules>

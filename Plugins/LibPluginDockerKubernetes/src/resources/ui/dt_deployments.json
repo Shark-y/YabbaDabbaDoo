@@ -1,0 +1,15 @@
+{
+	"id": "tblDeployments",
+	"usePanel" : false,
+	"panelToolbar" : [
+		{ "widget" : "refresh-button", "class": "", "title": "Click to refresh"},
+		{ "widget" : "dropdown"
+			, "menus" : [
+				{"label": "About Kubernetes Deployments", "target": "_blank", "href": "https://kubernetes.io/docs/concepts/workloads/controllers/deployment/"}
+			]
+		},
+	],
+	"header": {
+		"labels" : ["Name", "Namespace", "Created", "Replicas", "Action"]
+	}
+}

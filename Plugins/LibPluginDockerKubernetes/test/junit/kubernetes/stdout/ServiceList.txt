@@ -1,0 +1,169 @@
+{
+  "kind": "ServiceList",
+  "apiVersion": "v1",
+  "metadata": {
+    "selfLink": "/api/v1/services",
+    "resourceVersion": "83881"
+  },
+  "items": [
+    {
+      "metadata": {
+        "name": "bunking-sabertooth-nginx",
+        "namespace": "default",
+        "selfLink": "/api/v1/namespaces/default/services/bunking-sabertooth-nginx",
+        "uid": "6c4f7e70-5b1c-11e9-9e35-08002758a3b5",
+        "resourceVersion": "81597",
+        "creationTimestamp": "2019-04-09T23:08:44Z",
+        "labels": {
+          "app": "bunking-sabertooth-nginx",
+          "chart": "nginx-2.2.1",
+          "heritage": "Tiller",
+          "release": "bunking-sabertooth"
+        }
+      },
+      "spec": {
+        "ports": [
+          {
+            "name": "http",
+            "protocol": "TCP",
+            "port": 80,
+            "targetPort": "http",
+            "nodePort": 32366
+          }
+        ],
+        "selector": {
+          "app": "bunking-sabertooth-nginx"
+        },
+        "clusterIP": "10.109.141.122",
+        "type": "LoadBalancer",
+        "sessionAffinity": "None",
+        "externalTrafficPolicy": "Cluster"
+      },
+      "status": {
+        "loadBalancer": {
+          
+        }
+      }
+    },
+    {
+      "metadata": {
+        "name": "kubernetes",
+        "namespace": "default",
+        "selfLink": "/api/v1/namespaces/default/services/kubernetes",
+        "uid": "ed265669-579f-11e9-a4d9-08002758a3b5",
+        "resourceVersion": "152",
+        "creationTimestamp": "2019-04-05T12:40:00Z",
+        "labels": {
+          "component": "apiserver",
+          "provider": "kubernetes"
+        }
+      },
+      "spec": {
+        "ports": [
+          {
+            "name": "https",
+            "protocol": "TCP",
+            "port": 443,
+            "targetPort": 6443
+          }
+        ],
+        "clusterIP": "10.96.0.1",
+        "type": "ClusterIP",
+        "sessionAffinity": "None"
+      },
+      "status": {
+        "loadBalancer": {
+          
+        }
+      }
+    },
+    {
+      "metadata": {
+        "name": "kube-dns",
+        "namespace": "kube-system",
+        "selfLink": "/api/v1/namespaces/kube-system/services/kube-dns",
+        "uid": "ee4e5a3a-579f-11e9-a4d9-08002758a3b5",
+        "resourceVersion": "213",
+        "creationTimestamp": "2019-04-05T12:40:02Z",
+        "labels": {
+          "k8s-app": "kube-dns",
+          "kubernetes.io/cluster-service": "true",
+          "kubernetes.io/name": "KubeDNS"
+        },
+        "annotations": {
+          "prometheus.io/port": "9153",
+          "prometheus.io/scrape": "true"
+        }
+      },
+      "spec": {
+        "ports": [
+          {
+            "name": "dns",
+            "protocol": "UDP",
+            "port": 53,
+            "targetPort": 53
+          },
+          {
+            "name": "dns-tcp",
+            "protocol": "TCP",
+            "port": 53,
+            "targetPort": 53
+          },
+          {
+            "name": "metrics",
+            "protocol": "TCP",
+            "port": 9153,
+            "targetPort": 9153
+          }
+        ],
+        "selector": {
+          "k8s-app": "kube-dns"
+        },
+        "clusterIP": "10.96.0.10",
+        "type": "ClusterIP",
+        "sessionAffinity": "None"
+      },
+      "status": {
+        "loadBalancer": {
+          
+        }
+      }
+    },
+    {
+      "metadata": {
+        "name": "tiller-deploy",
+        "namespace": "kube-system",
+        "selfLink": "/api/v1/namespaces/kube-system/services/tiller-deploy",
+        "uid": "93901a5b-5a58-11e9-8db6-08002758a3b5",
+        "resourceVersion": "51609",
+        "creationTimestamp": "2019-04-08T23:46:49Z",
+        "labels": {
+          "app": "helm",
+          "name": "tiller"
+        }
+      },
+      "spec": {
+        "ports": [
+          {
+            "name": "tiller",
+            "protocol": "TCP",
+            "port": 44134,
+            "targetPort": "tiller"
+          }
+        ],
+        "selector": {
+          "app": "helm",
+          "name": "tiller"
+        },
+        "clusterIP": "10.96.212.92",
+        "type": "ClusterIP",
+        "sessionAffinity": "None"
+      },
+      "status": {
+        "loadBalancer": {
+          
+        }
+      }
+    }
+  ]
+}

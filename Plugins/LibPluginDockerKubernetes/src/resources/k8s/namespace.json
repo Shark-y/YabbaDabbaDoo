@@ -1,0 +1,18 @@
+{
+  "kind": "Namespace",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "${NAME}",
+    "selfLink": "/api/v1/namespaces/${NAME}",
+    "uid": "${UID}",
+    "creationTimestamp": "${DATECREATED}"
+  },
+  "spec": {
+    "finalizers": [
+      "kubernetes"
+    ]
+  },
+  "status": {
+    "phase": "Active"
+  }
+}

@@ -1,0 +1,21 @@
+Cluster name	Server
+kubernetes	https://192.168.42.59:6443
+Cluster      kubernetes
+API server   https://192.168.42.59:6443
+
+# Explore the API with TOKEN
+curl -X GET $APISERVER/api --header "Authorization: Bearer $TOKEN" --insecure
+
+Access Token eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImRlZmF1bHQtdG9rZW4tdzQycnMiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC5uYW1lIjoiZGVmYXVsdCIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50LnVpZCI6IjMxYzNlNzdmLTU2NGQtMTFlOS1hNGQwLTA4MDAyNzU4YTNiNSIsInN1YiI6InN5c3RlbTpzZXJ2aWNlYWNjb3VudDpkZWZhdWx0OmRlZmF1bHQifQ.sXAOLZ2cRdinsE2N0VGTKm8x2IZjPs4Xu5MXb4odWYemG57lxGVec-4ox2DYcntPlihtNTbhz5JPuxlxi8zihHGLWc9bo8k2icV8Lhd6hVw9wS2IaECHufQEiVeMWcJH0vBShynrL_XZOTcRm292fScA0ounZuX8uqSppjLwQfEF9JGMk_NCFLaDrE93ErHll7eMY-Bo_jDojd3GIfagvF54CkfPVrGPcpJAj5yvd4V--FKDx4tRinh9WTNXPPVsDjxemDkS01sxA15P1n98qtvJwZApwJssNhnpHbhhqRtEgwkNwN9kH2wMNuEQMKwkD_NgzdzUW8BczgM0Tbi1fQ
+{
+  "kind": "APIVersions",
+  "versions": [
+    "v1"
+  ],
+  "serverAddressByClientCIDRs": [
+    {
+      "clientCIDR": "0.0.0.0/0",
+      "serverAddress": "192.168.42.59:6443"
+    }
+  ]
+}

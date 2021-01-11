@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Specification-Title: Cloud Reports Core
+Specification-Version: 1.0.11
+Specification-Vendor: ACME
+Implementation-Title: Cloud Reports Core
+Implementation-Vendor: ACME
+

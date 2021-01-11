@@ -1,0 +1,72 @@
+<project name="My Project" default="createjar">
+
+	<property name="projectHome" location="." />
+	<property name="version" value="1.1" />
+	<property name="projectPrefix" value="LibCloudConsoleThemes" />
+	<property name="projectName" value="${projectPrefix}-${version}" />
+	
+	<!-- project Jar name -->
+	<property name="jarName" location="${projectName}.jar" />
+	
+	<!-- Base file destination -->
+	<property name="destRoot" value="../../LibCloudDoc" />
+	
+	<!-- JAR destination -->
+	<property name="destDir" location="${destRoot}/lib" />
+
+	<!-- Javadoc/src destination -->
+	<property name="destDoc" location="${destRoot}/doc" />
+	<property name="destSrc" location="${destRoot}/src" />
+		
+	<target name="init">
+	    <!-- 
+		<mkdir dir="build/classes" />
+		<mkdir dir="dist" />
+		 -->
+	</target>
+	
+	<!-- Requires a javac compiler in the system path -->
+	<target name="compile" depends="init">
+		<javac srcdir="src" destdir="bin" />
+	</target>
+	
+	<!-- depends="compile" -->
+	<target name="createjar" depends="compile,changelog">
+	    <!-- Create the time stamp -->
+		<tstamp />
+	    	    
+	    <echo message="Creating ${jarName} from base dir ${projectHome}/bin"/>
+	    
+		<jar destfile="${jarName}" basedir="${projectHome}/bin" manifest="src/META-INF/MANIFEST.MF">
+		    <manifest>
+		        <attribute name="Implementation-Version" value="${DSTAMP}" />
+		    </manifest>
+		</jar>
+		
+		<echo message="Moving ${jarName} to dir ${destDir}"/>
+		<move file="${jarName}" todir="${destDir}"/>
+		
+	</target>
+
+	<target name="changelog">
+		<copy failonerror="false" overwrite="true" file="ChangeLog.html" tofile="${destDir}/${projectPrefix}-ChangeLog.html" />    
+	</target>
+			
+    <target name="javadoc">
+        <javadoc access="public" author="true" classpath="lib/json.jar;lib/log4j-1.2.15.jar;" 
+            destdir="doc"  nodeprecated="false" nodeprecatedlist="false" noindex="false" 
+            nonavbar="false" notree="false" packagenames="com.*" 
+            source="1.6" sourcepath="src" splitindex="true" use="true" version="true"/>
+        
+        <!-- pack javadoc -->
+        <zip destfile="${destDoc}/${projectName}.zip" 
+            basedir="doc" />
+
+        <!-- pack src -->
+        <zip destfile="${destSrc}/${projectName}.zip" 
+            basedir="src" />
+        
+        <delete dir="doc"/>
+    </target>
+		
+</project>

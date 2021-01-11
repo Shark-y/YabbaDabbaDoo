@@ -1,0 +1,19 @@
+{
+	"params" : {
+			"notification_frequency":	"WEEKLY",
+			"notification_proto": 		"smtps",
+			"notification_host":		"smtp.mail.yahoo.com",
+			"notification_port": 		"465",
+			"notification_folder":		"Inbox",
+			"notification_starttls.enable": 	false,
+			"notification_debug" :				false,
+			"notification_from" :			"converge_one@yahoo.com",
+			"notification_to" :				"cloud_git@convergeone.com",
+			"notification_user" : 			"converge_one@yahoo.com",
+			"notification_password" : 		"Thenewcti1",
+			"notification_filter" : 		"RegExp:(?s).*(NullPointerException|OutOfMemory|ATTACK).*",
+			"notification_logsFolderToken":	"F1S6eC-N7sAAAAAAAAAAJbGhvc4h17DcZjLRSCcztey9Ig-KKjwYp1InqylkyrGk",
+			"notification_logsUploadToCloudStorage": true,
+			"update_token":					"F1S6eC-N7sAAAAAAAAAADApR55PokUZoqQ909QXQR861ZX_qnZx-FfZvfFs1oEw-"
+	}
+}

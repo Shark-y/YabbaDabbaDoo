@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listeners>
+	<listener>
+		<name>CSPLIT Table</name>
+		<port>7000</port>
+		<description>CSPLIT Table Listener</description>
+		<format>
+			<header></header>
+			<footer>F3|END_OF_DATA</footer>
+			<fieldSep>|</fieldSep>
+			<fields>F1,SPLIT,CALLS_WAITING,AVAILABLE,ANSTIME/ACDCALLS,ABNCALLS,ACD,OLDESTCALL,ACDCALLS,ACDTIME/ACDCALLS,ABNTIME/ABNCALLS,AGINRING,ONACD,INACW,OTHER,INAUX,STAFFED,EWTHIGH,EWTMEDIUM,EWTLOW,DA_INQUEUE+DA_INRING,100*(ACCEPTABLE/CALLSOFFERED),SERVICELEVEL,CALLSOFFERED</fields>
+		</format>
+	</listener>
+	<listener>
+		<name>CVDN Table</name>
+		<port>7001</port>
+		<description>CVDN Table Listener</description>
+		<format>
+			<header></header>
+			<footer>F3|END_OF_DATA</footer>
+			<fieldSep>|</fieldSep>
+			<fields>F1,VDN,VDN SYN,INPROGRESS-ATAGENT,OLDESTCALL,AVG_ANSWER_SPEED,ABNCALLS,AVG_ABANDON_TIME,ACDCALLS,AVG_ACD_TALK_TIME,ACTIVECALLS</fields>
+		</format>
+	</listener>
+</listeners>

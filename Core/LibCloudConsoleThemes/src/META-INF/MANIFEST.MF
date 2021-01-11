@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Class-Path: 
+Specification-Title: Cloud Console Themes
+Specification-Version: 1.0.11
+Specification-Vendor: ACME
+Implementation-Title: Cloud Console
+Implementation-Vendor: ACME

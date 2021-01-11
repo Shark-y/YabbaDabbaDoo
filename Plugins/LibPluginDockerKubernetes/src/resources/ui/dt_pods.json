@@ -1,0 +1,19 @@
+{
+	"id": "tblPods",
+	"usePanel" : false,
+	"colVis" : true,
+	"panelToolbar" : [
+		{ "widget" : "refresh-button", "class": "", "title": "Click to refresh"},
+		{ "widget" : "dropdown"
+			, "menus" : [
+				{"label": "Add Namespace", "onclick": "$('#btnModal9').click();return false;"},
+				{"label": "Delete Namespace", "onclick": "return modal10Show('../../', node)"},
+				{"label": "DIVIDER"},
+				{"label": "About Kubernetes Pods", "target": "_blank", "href": "https://kubernetes.io/docs/concepts/workloads/pods/pod/"}
+			]
+		},
+	],
+	"header": {
+		"labels" : ["Name", "Id", "Namespace", "Node", "Status", "Action"]
+	}
+}

@@ -1,0 +1,31 @@
+{
+	"exceptions": [
+		{ "uri": "RawMessage", "method": "post", "contentType": "x-www-form-urlencoded"}
+	],
+
+	"validators": [
+	
+		{ "param": "CALL_CENTER09_00_specializationParameters", "regexp": "^[A-z0-9#:/';,\\|\\-\\s\\?\\.]{1,13312}$"},
+		{ "param": "CALL_CENTER04_09_callLogCustomFields", "regexp": "^[A-z0-9#:/'\\|\\-\\s]{1,4096}$"},
+	
+		{ "param": "CALL_CENTER10_02_mscrmLogUri", "regexp": "http://localhost"},
+		{ "param": "CALL_CENTER10_01_mscrmPopUri", "regexp": "http://localhost"},
+		{ "param": "CALL_CENTER09_00_specializationParameters", "regexp": "http://localhost"},
+		
+		{ "param": "server_runMode", "regexp": "\\b(PRIMARY|SECONDARY)\\b"},
+		{ "param": "server_failOverType", "regexp": "\\b(CLUSTER|SERVLET)\\b"},
+		{ "param": "server_serviceScheduleStartHHMM", "regexp": "\\d\\d \\d\\d"},
+		{ "param": "server_serviceScheduleStopHHMM", "regexp": "\\d\\d \\d\\d"}
+		
+	],
+
+	"authenticate": [
+		{ "uri": "^(?!.*login.jsp).*\\.jsp.*" , "type": "BASIC"}
+	],
+	
+	"authorize": [
+		{ "uri": "/Amq", "type:": "oauth1" },
+		{ "uri": "/RawMessage", "type:": "oauth1" }
+	]	
+	
+}

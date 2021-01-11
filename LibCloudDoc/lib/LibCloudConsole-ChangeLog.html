@@ -1,0 +1,864 @@
+<h2>Cloud Console Library Change Log</h2>
+<hr>
+
+<h3>Branch release-1.1</h3>
+
+<ul>
+	<li>
+		09/10/2020 v1.8.41 Azure IAM Authentication Update #2
+		<ul>
+			<li>IAM.java: Code cleanup.</li>
+			<li>error.jsp: Return BAD REQUEST if exceptions are null.</li>
+		</ul>
+	</li>
+	<li>
+		09/05/2020 v1.8.41 Azure IAM Authentication Update #1 <a href="http://prd210.acme.com:6090/issue/CLOUD_CORE-138">CLOUD_CORE-138</a>
+		<ul>
+			<li>index, login.jsp, config_node.jsp: Moved Rbac.java to package com.cloud.console.iam</li>
+			<li>login.jsp: Updated look and feel.</li>
+			<li>New AzureAD IAM classes: IMA.java, MSGraph.java</li>
+			<li>New Azure/WinAD UI view: tile_config_node_iam.jsp</li>
+			<li>Rbac.java: new method isConsoleAdmin(session)</li>
+			<li>jsp/config/config.js: New function modalSetStatus (id, text, color).</li>
+			<li>SysadminServlet.java: New operation iam_save (save IAM resource)</li>
+			<li>OWASPGateKeeper.java: Change to authorize external requests only (logged-in=false). Internal (logged-in=true) will pass thru.</li>
+			<li>MANIFEST.MF increased version to 1.8.41</li>
+		</ul>
+	</li>
+	<li>
+		00/02/2020 v1.8.40 Authorization Update #1 <a href="http://prd210.acme.com:6090/issue/CLOUD_CORE-137">CLOUD_CORE-137</a>
+		<ul>
+			<li>login.jsp: Removed sys-admin user name from text box.</li>
+			<li>config_node.jsp, tile_config_node_auth.jsp: Changes to enable JWT authorization.</li>
+			<li>NodeConfiguration.java: Set default authorization enabled to true.</li>
+			<li>OWASPGatekeeper, CloudSecurity: Updates for JWT authorization support.</li>
+			<li>MANIFEST.MF increased version to 1.8.40</li>
+		</ul>
+	</li>
+	<li>
+		08/27/2020 v1.8.39 PenTest Update #1
+		<ul>
+			<li>error.jsp: Replaced fatal Exception stack trace with ex.toString()</li>
+			<li>confg_backend.jsp, JSPBackendConfig.java: Added support for HTML display password masking.</li>
+			<li>MANIFEST.MF increased version to 1.8.39</li>
+		</ul>
+	</li>
+	<li>
+		08/07/2020 1.8.38 PenTest Fixes by VSilva 
+		<ul>
+			<li>login.jsp: Added favicon to HTML page.</li>
+			<li>Upgraded JQuery/Bootstrap.</li>
+			<li>SysAdminServlet.java: Fixed <a href="http://prd210.acme.com:6090/issue/CLOUD_CORE-127">CLOUD_CORE-127</a> Remote execution.</li>
+			<li>security-com.cloud.console.json: Require authentication for /SysAdmin and /LogServlet servlet endpoints. <a href="http://prd210.acme.com:6090/issue/CLOUD_CORE-128">CLOUD_CORE-128</a></li>
+			<li>LogServlet.java: Code cleanup.</li>
+			<li>JSPNodeConfig.java: Fixed java.util.ConcurrentModificationException
+	at java.util.Hashtable$Enumerator.remove(Hashtable.java:1388)
+	at com.cloud.console.jsp.JSPNodeConfig.cleanupProps(JSPNodeConfig.java:354)</li>
+			<li>MANIFEST.MF increased version to 1.8.38</li>
+		</ul>
+	</li>
+
+	<li>
+		07/31/2020 1.8.37 by VSilva 
+		<ul>
+			<li>Ace editor: added extension search-box</li>
+			<li>MANIFEST.MF increased version to 1.8.37</li>
+		</ul>
+	</li>
+	<li>
+		06/10/2020 1.8.36 by VSilva - <a href="http://prd210.acme.com:6090/issue/CLOUD_CORE-124">CLOUD_CORE-124</a>
+		<ul>
+			<li>Connection pooling config: moved from the AES backend to the node (config_node.jsp) for re-usability (tile_config_node_cnpool.jsp)</li>
+			<li>New CN pooling tile: tile_config_node_cnpool.jsp</li>
+			<li>MANIFEST.MF increased version to 1.8.36</li>
+		</ul>
+	</li>
+	<li>
+		05/31/2020 1.8.35 by VSilva
+		<ul>
+			<li>Plugin system: Added version display to the console/plugins view.</li>
+			<li>MANIFEST.MF increased version to 1.8.35</li>
+			<li>6/5/2020 PerformanceServlet.java:getNetStat() fixed Linux (if no netstat installed): java.io.IOException: Cannot run program &quot;netstat&quot;: error=2, No such file or directory</li>
+		</ul>
+	</li>
+
+	<li>
+		05/24/2020 1.8.34 by VSilva
+		<ul>
+			<li>Plugin system update #1: <a href="http://prd210.acme.com:6090/issue/CLOUD_CORE-123">CLOUD_CORE-123</a></li>
+			<li>ThemeMananger, SysAdminServlet, CloudSecurity: Updates to support CLOUD_CORE-123</li>
+			<li>MANIFEST.MF increased version to 1.8.34</li>
+		</ul>
+	</li>
+
+	<li>
+		05/08/2020 v1.8.33 by VSilva
+		<ul>
+			<li>login.jsp, index.jsp, Rbac.java: Started <a href="http://prd210.acme.com:6090/issue/CLOUD_CORE-122">CLOUD_CORE-122</a> Role based access control (RBAC) initial support.</li>
+			<li>MANIFEST.MF increased version to 1.8.33</li>
+		</ul>
+	</li>
+
+	<li>
+		05/08/2020 v1.8.32 by VSilva
+		<ul>
+			<li>login.jsp: Fixed <a href="http://prd210.acme.com:6090/issue/CLOUD_CORE-121">CLOUD_CORE-121</a> Linux login allows any password.</li>
+			<li>MANIFEST.MF increased version to 1.8.32</li>
+		</ul>
+	</li>
+
+	<li>
+		04/30/2020 v1.8.31 by VSilva
+		<ul>
+			<li>osp.jsp: Disabled attached VMs logic: fails in linux.</li>
+			<li>MANIFEST.MF increased version to 1.8.31</li>
+		</ul>
+	</li>
+
+	<li>
+		02/24/2020 v1.8.30 by VSilva
+		<ul>
+			<li>4/6/2020 config_backend.jsp: Dual Multiselect widget style updates.</li>
+			<li>HTTPServerTools::getOSMetrics() added file system information</li>
+			<li>index.jsp: New dashboard home page.</li>
+			<li>MANIFEST.MF increased version to 1.8.30</li>
+		</ul>
+	</li>
+
+	<li>
+		02/06/2020 v1.8.29 by VSilva
+		<ul>
+			<li>New feature <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-119">CLOUD_CORE-119</a>Cloud profiler attach to external VMs via Java attach API.</li>
+			<li>New JSP psp_tile_vm.jsp</li>
+			<li>Updated osp.jsp PerformanceServlet.java, HTTPServerTools.java</li>
+			<li>2/11/2020 tile_config_node_notif.jsp: fixed broken link to license historical peak usage (lhpi.jsp) plus updated labels</li>
+			<li>MANIFEST.MF increased version to 1.8.29</li>
+		</ul>
+	</li>
+
+	<li>
+		01/16/2020 v1.8.28
+		<ul>
+			<li>New feature <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-118">CLOUD_CORE-118</a>Alert system for all products.</li> 
+			<li>Alert system changes: JSPNodeCongig.java, config_node.jsp, tile_config_node_auth.jsp, tile_config_node_log.jsp, tile_config_node_notif.jsp </li>
+			<li>OSProfilerAlerts.java moved to LibClodCore</li>
+			<li>osp.jsp, osp_tile_smtp.jsp moved container exception notifications and CPU alerts to main node configuration (config_node.jap)</li>
+			<li>MANIFEST.MF increased version to 1.8.28</li>
+		</ul>
+	</li>
+
+	<li>
+		10/20/2019 v1.8.27
+		<ul>
+			<li>HTTPServerTools.queryStringToMap () fixed ArrayIndexOutOfBoundsException plus URL decode for (key, value) pairs.</li>
+			<li>logview.jsp: Added support for server side processing.</li>
+			<li>MANIFEST.MF increased version to 1.8.27</li>
+		</ul>
+	</li>
+
+	<li>
+		10/03/2019 v1.8.26
+		<ul>
+			<li>New ACE editor for modal dialogs at lib/ace used by the File widget.</li>
+			<li>config_backend.jsp, SysAdminServlet.java, JSPBAckendConfig.java updated to use the ACE editor.</li>
+			<li>JSPNodeConfig.java - clusterSubSystemDisabled() fixed findbugs high priority bug.</li>
+			<li>JSPBackendConfig.java: File upload widget code cleanup/uodate.</li>
+			<li>MANIFEST.MF increased version to 1.8.26</li>
+		</ul>
+	</li>
+
+	<li>
+		9/22/2019 v1.8.25
+		<ul>
+			<li>version.jsp: cleanup plus check package implementation before display.</li> 
+			<li>MANIFEST.MF increased version to 1.8.25</li>
+		</ul>
+	</li>
+	<li>
+		9/05/2019 v1.8.24
+		<ul>
+			<li>Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-108">CLOUD_CORE-108</a>Heap dump files not shown in cloud profiler.</li> 
+			<li>MANIFEST.MF increased version to 1.8.24</li>
+		</ul>
+	</li>
+
+	<li>
+		8/16/2019 v1.8.23
+		<ul>
+			<li>08/22/2019 config_cluster.jsp: Hazelcast: Added logic to display distributed objects.</li>
+			<li>Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-105">CLOUD_CORE-105</a>File widget won't display in new theme (config_backend.sp).</li> 
+			<li>login.jsp: Added support for Windows AD authentication.</li>
+			<li>MANIFEST.MF increased version to 1.8.23</li>
+		</ul>
+	</li>
+	<li>
+		5/09/2019 v1.8.21
+		<ul>
+			<li>8/3/2019 config_cluster.jsp: Fixed NodeConfiguration session bugs after cluster hot restart failing to update the UI.</li>
+			<li>8/3/2019 config_node.jsp, JSPNodeConfig.jsp auto cluster shutdown/restart when mode changed from console (no need to restart container).</li>
+			<li>8/2/2019 MANIFEST.MF increased version to 1.8.22</li>
+			<li>8/2/2019 tile_config_node_cluster.jsp Enabled cluster mode HAZELCAST. See <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-103">CLOUD_CORE-103</a></li>
+			<li>8/2/2019 config_cluster.jsp fixed few JS errors related to <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-103">CLOUD_CORE-103</a></li>
+			<li>06/14/2019 Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-102">CLOUD_CORE-102</a> JS errors in node configuration when clustering notifications are disabled.</li>
+			<li>5/10/2019 index.jsp Update to fix the UI state chart initialization on slow connections.</li>
+			<li>index.jsp Added logic to preserve the UI state for the CPU/Node Details tabs.</li>
+			<li>New js cookie.js used to save the UI state.</li>
+			<li>Increased version in MANIFEST.MF to 1.8.21.</li>
+		</ul>
+	</li>
+
+	<li>
+		2/13/2019 v1.8.20
+		<ul>
+			<li>03/02/2019 config_backend.jsp: Made panels collapse-enabled.</li>
+			<li>03/01/2019 config_backend.jsp, JSPBackendConfig.java: major JSP code cleanup plus implemented remote access logic from the cluster manager app.</li>
+			<li>02/22/2019 profiles.jsp: Fixed the import profile file upload button.</li>
+			<li>Increased version in MANIFEST.MF to 1.8.20.</li>
+			<li>Performance servlet: Initial multicast tunnel support implementation.</li>
+			<li>osp.jsp, osp_tole_mcast.jsp: Multicast tunnel implementation UI for the Cloud profiler.</li>
+		</ul>
+	</li>
+
+	<li>
+		2/1/2019 v1.8.19
+		<ul>
+			<li>Increased version in MANIFEST.MF to 1.8.19.</li>
+			<li>New diagnostics class com.cloud.console.performance.Diagnostics</li>
+			<li>osp.jsp: Changed to accommodate diagnostics.</li>
+			<li>New class TomcatAutoTuner.java to update container server.xml: Set maxThreads to 4096 and remove access log valve.</li>
+			<li>Diagnostics.java, TomcatAutoTunner.java, osp.jsp Findbugs fixes round #1.</li>
+			<li>02/07/2019 config_cluster.jsp: New multicast queue data tables view to monitor traffic.</li>
+			<li>22/07/2019 config_cluster.jsp: Added TTL to the data tables view for the cloud console.</li>
+			<li>02/09/2019 osp_tile_smtp.jsp: Added MONTHLY value to the error notification frequency.</li>
+			<li>02/10/2019 config_cluster.jsp Javascript node.address renamed to node.nodeAddress.</li>
+			<li>02/13/2019 index,jsp: Garbage cleanup.</li>
+		</ul>
+	</li>
+
+	<li>
+		1/14/2019 v1.8.18
+		<ul>
+			<li>Increased version in MANIFEST.MF to 1.8.18.</li>
+			<li>LogServlet.java: Remote log view Added Access-Control-Allow-Origin=* to the default response.</li>
+			<li>logview.jsp: Remote log view  UI changes.</li>
+			<li>config_cluster.jsp New cluster data view with information about distributed data structures.</li>
+			<li>tile_config_node_cluster.jsp: Hazelcast disabled (Zeroconf is the preferred cluster env).</li>
+			<li>1/25/2019 Added jQuery json-viewer JS/CSS to library.</li>
+			<li>1/26/2019 Data tables CSS/PNG FOR added row details open/close support. See https://datatables.net/examples/api/row_details.html</li>
+			<li>1/26/2019 config_cluster.jsp: Added JSON viewer support to cluster data view.</li>
+		</ul>
+	</li>
+
+	<li>
+		1/4/2019 v1.8.17
+		<ul>
+			<li>HTTPServerTools: new method exceptionToString(Exception)</li>
+			<li>SysAdminServlet: new Zeroconf service operations: get-configuration, store-configuration</li>
+			<li>Increased version in MANIFEST.MF to 1.8.17.</li>
+			<li>1/6/2019 config_cluster.jsp: Fixed Default Cluster group name (NULL) - Linux bug</li>
+			<li>1/9/2019 config_cluster.jsp: Fixed Node table IP address chops 1 character.</li>
+			<li>1/10/2019 JSPNodeConfig.java: Fixed node config log mask and regexp not being saved when 'Svae' button clicked.</li>
+		</ul>
+	</li>
+	<li>
+		12/27/2018 v1.8.16
+		<ul>
+			<li>index.jsp, tile-side_bar.jsp (All skins) updated for new cluster mode zeroconf.</li>
+			<li>Increased version in MANIFEST.MF to 1.8.16.</li>
+		</ul>
+	</li>
+
+	<li>
+		12/19/2018 v1.8.15
+		<ul>
+			<li>index.jsp updated with CPU,MEM, Thread charts.</li>
+			<li>Increased version in MANIFEST.MF to 1.8.15.</li>
+			<li>Console theme updated from BOOTSTRAP to CLOUDS for all products</li>
+			<li>HTTPServerTools.java: added service type to OSPErformace servlet.</li>
+		</ul>
+	</li>
+
+	<li>
+		10/17/2018 v1.8.13
+		<ul>
+			<li>10/17/2018 OWASPConfig.java cleanup plus OWASP regexp update for script injection via onload=...</li>
+			<li>Increased version in MANIFEST.MF to 1.8.13.</li>
+			<li>10/18/2018 Added support for container exception alerts via email.</li>
+			<li>10/18/2018 Increased version in MANIFEST.MF to 1.8.14.</li>
+			<li>10/18/2018 JSPLOggerTool new method LOG_INFO().</li>
+			<li>10/20/2018 Logservlet.java: Moved container exception parse logic LibCloudCore::Container.java.</li>
+			<li>10/23/2018 Auto recovery mode enabled by default for all vendors,</li>
+		</ul>
+	</li>
+
+	<li>
+		12/20/2017 v1.8.12
+		<ul>
+			<li>6/8/2018 Cleaned up com.cloud.console.servlet.LogServlet.java</li>
+			<li>Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-94">CLOUD_CORE-94</a>: Cloud Console: log file settings add log rotation sizes 100MB, 500 MB.</li>
+			<li>Increased version in MANIFEST.MF to 1.8.12.</li>
+		</ul>
+	</li>
+	<li>
+		12/20/2017 v1.8.11
+		<ul>
+			<li>Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-92">CLOUD_CORE-92</a>: Log System: add a feature to mask sensitive information from log messages</li>
+			<li>Updated HTMLConsoleLogUtil.java, JSPNodeConfig.java, config_node.jsp, tile_config_node_log.jsp for CLOUD_CORE-92.</li>
+		</ul>
+	</li>
+	<li>
+		11/02/2017 v1.8.10 by Vsilva
+		<ul>
+			<li>12/15/2017 login.jsp: Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-93">CLOUD_CORE-93</a> Console log file access errors causing a create password endless loop due to TCROOT/logs user permissions.</li>
+			<li>11/10/2017 <a target="_new" href="http://acme208.acme.com:6091/issue/UNIFIED_CC-412">UNIFIED_CC-412</a> OWASPConfig.java Removed SQL Injection check regexp. Causes WEBSOCKET Potential ATTACK for parameter sec-websocket-key = HN/4JThNuOr+fXUyh4swfw== @NODE/WSPhone Pattern:.*(AND|OR)[\+\s].*?=.* </li>
+			<li>11/08/2017 Material skin: tile_page_end.jsp added missing notify.js (required) to the list of javascript files.</li>
+			<li>11/05/2017 index.jsp Added dynamic node/service(s) status poll logic and update plus removed title.</li>
+			<li>11/05/2017 All skins (tile_page_start.jsp) Made the page title optional.</li>
+			<li>11/05/2017 HTTPServetTools.java Added node status info to getOSMetrics()</li>
+			<li>11/05/2017 Moved poll.js from reports lib to console library for re-usability.</li>
+			<li>Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-88">CLOUD_CORE-88</a> Connector Console Manage > Connection Profiles - import empty profile error.</li>
+			<li>Moved container information: log folders,etc form HTTPServetTools.java to its own class Container.java inside LibCloudCorte.jar</li>
+		</ul>
+	</li>
+	<li>
+		10/19/2017 v1.8.9 by Vsilva
+		<ul>
+			<li>10/24/2017 browser.jsp, (LogServlet, HTTPServerTools, HTMLConsoleLogutil).java: Switched the Tomcat path from system property catalina.base to catalina.home</li>
+			<li>10/22/2017 Modularized config_node.jsp into tile_config_node*.jsp</li>
+			<li>10/21/2017 OWASPGateKeeper.java removed Check (and display) fatal startup exceptions due to recursive call issues.</li>
+			<li>10/21/2017 Bootstrap theme: removed the 'Thread Inspector' from the Performance main menu.</li>
+			<li>10/20/2017 onfig_node.jsp: Failover and Notifications section - Replaced text 'Failover' with 'Auyto Recovery' </li>
+			<li>HTMLConsoleLogUtil: Replaced DailyRollingFileAppender due to synchronization issues and data loss with RollingFileAppender.</li>
+			<li>config_node.jsp Log rotation options changed to use the new RollingFileAppender.</li>
+			<li>OWASPGateKeeper.java and (error.jsp): Check (and display) fatal startup exceptions.</li>
+			<li>NEW SMS alerts/notifications via Twilio. See https://www.twilio.com/console/sms/dashboard</li>
+			<li>Profile manager (profiles.jsp) new functionality to export/import profiles.</li>
+		</ul>
+	</li>
+
+	<li>
+		10/7/2017 v1.8.8 by Vsilva
+		<ul>
+			<li>Bootsrap Skin: tile_side_bar.jsp: Added the ability to display dynamic Menu/Submenu pairs in the left side nav bar.</li>
+			<li>10/11/2017 Added Qtip2 tooltip support for all themes.</li>
+			<li>10/11/2017 Moved bootstrap growl notifications (notify.js) to js/notify.js</li>
+			<li>10/11/2017 OWASPValidator.validateValueEncoding(): Skip check 4 invalid chars if there is a validator for a param (key).</li>
+		</ul>
+	</li>
+
+	<li>
+		9/13/2017 v1.8.8 by Vsilva
+		<ul>
+			<li>Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-77">CLOUD_CORE-77</a> Log browser displays empty data on TC8.</li>
+			<li>Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-76">CLOUD_CORE-76</a> HTTP code 500 (server error) thrown by Security Scan.</li>
+			<li>index.jsp, logview.jsp: Added support to display container global (catalina) and STD err (tomcatX-stderr) logs for TC7 and TC8.</li>
+			<li>OWASPGateKeeper throw console to the error page if validation fails on any module security descriptor.</li>
+			<li>login.jsp: Added validations for Linux issues when the Node config fails to load due to permissions.</li>
+			<li>Console OWASP descriptor security-com.cloud.console.json: Skip authentication for error.jsp</li>
+			<li>error.jsp: Added node and system information/hints.</li>
+		</ul>
+	</li>
+
+	<li>
+		9/4/2017 v1.8.8 by Vsilva
+		<ul>
+			<li>Cleanup: removed junk cls com.cloud.console.HTMLFragmentLog4JLayout.java</li>
+			<li>Refactorings for Renamed MultiFileLogConfigurator to L4JConfigurator.</li>
+			<li>Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-75">CLOUD_CORE-75</a> Console: make the log system configurable.</li>
+			<li>config_node.jsp: Added UI for log configuration.</li>
+		</ul>
+	</li>
+
+	<li>
+		8/15/2017 v1.8.8 by Vsilva
+		<ul>
+			<li>Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-74">CLOUD_CORE-74</a> OWASP Security: Add ability to bypass authentication login for a specific resource.</li>
+		</ul>
+	</li>
+
+	<li>
+		8/6/2017 v1.8.8 Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-72">CLOUD_CORE-72</a> Security violation on console create pwd in TC 8.x plus:
+		<ul>
+			<li>Material skin: Enabled bread-crumbs for all pages.</li>
+			<li>8/11/2017 Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-73">CLOUD_CORE-73</a> OWASP security HTTP resp headers need to be configurable.</li>
+			<li>8/11/2017 Renamed gate-keeper filter OWASPFilter to OWASPGateKeeper</li>
+			<li>8/11/2017 CloudSecurity.java: New security JSON key resources: "resources": [ {uri: URI, preventClickJacking : false, headers: [k1:v1, k2,v2...]},.. ]</li>
+		</ul>
+	</li>
+	
+	<li>
+		7/27/2017 v1.8.8 Material skin: Added time_modal.jsp tile to fix Cloud Reports exception:
+<pre>
+javax.servlet.ServletException: File &quot;/skins/booterial/tiles/tile_modal.jsp&quot; not found
+	org.apache.jasper.servlet.JspServlet.handleMissingResource(JspServlet.java:412)
+	org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:379)
+	org.apache.jasper.servlet.JspServlet.service(JspServlet.java:334)
+</pre>		
+	</li>
+	<li>
+		7/18/2017 v1.8.8 Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-71">CLOUD_CORE-71</a>:
+		<ul>
+		<li> Increased MAFIFEST version to 1.8.8</li>
+		<li>JSPBackendConfig.java: Added support for multi valued HTTP params when content type is multipart/form-data.</li>
+		</ul>
+	</li>
+	<li>
+		7/11/2017 v1.8.7 Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-70">CLOUD_CORE-70</a>:
+		<ul>
+			<li> config_backend.jsp: Code cleanup, some code moved to JSPBackendConfig.java + new widget type file upload logic.
+			<li> New class com.cloud.console.jsp.JSPBackendConfig to simplify config_backend.jsp.
+			<li> Increased lib manifest version to 1.8.7
+			<li> 7/12/2017 JSPBackendConfig.java fixed Findbugs errors that abort the build.
+			<li> 7/13/2017 SkinTools.java Added support for a custom modal JSP tile.
+			<li> 7/13/2017 New JSP tile tile_modal.jsp to add custom skin modals to a JSP.
+			<li> 7/13/2017 JSPBackendConfig.java INPUT text size limit to 128, File upload limit 20K.
+			<li> 7/13/2017 SysAdminServlet.java: Added logic to display file upload data from the console service config.
+			<li> 7/16/2017 JSPBackendConfig.java: Some code checks related to issue http://acme208.acme.com:6091/issue/UNIFIED_CC-310
+			<li> 7/16/2017 OWASPFilter.java: Added security checks for multipart/form-data HTTP file upload (INPUT type=file forms)
+		</ul>
+	</li>
+
+	<li>
+		6/6/2017 v1.8.6 Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-68">CLOUD_CORE-68</a>:
+		<pre>
+	* config_node.jsp: Hide clustering and/or notifications options if the product doesn't support it (see CLOUD_CORE-69).
+	* ThemeManager.java:  Added the ability to mark static menus as hidden.
+	* Skins tile_side_bar.jsp Hide static menus marked as 'hidden'
+		</pre>
+	</li>
+	<li>6/3/2017 v1.8.6 Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-66">CLOUD_CORE-66</a> Node config: License field is required.
+		<pre>
+	* config_node.jsp: license field updated to required + code moved to JSPNodeConfig for clarity.
+	* New class com.cloud.console.jsp.JSPNodeConfig with node config logic.
+		</pre>
+	</li>
+	<li>
+		5/20/2017 v1.8.5 See <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-65">CLOUD_CORE-65</a> License notifications.
+		<pre>
+	* osp.jsp, osp.js Added License notifications code support.
+	* config_node.jsp 'Failover' label changed to 'Failover &amp; Notifications'.
+	* OSProfilerAlerts.java: CloudProfileNotificationService.java renamed to CloudNotificationService.java
+	* OSProfilerAlerts.java: Added code to save licensing alerts.
+	* Skins: Bootstrap, material (tile_side_bar.jsp) 'OS Profiler' menu renamed to 'Cloud Profiler'.
+	* index.jsp: removed all references to ServiceHoursScheduler.
+	* New historical license peak usage display JSP lhpu.jsp.
+		</pre>
+	</li>
+
+	<li>
+		5/15/2017 v1.8.4 OWASPFilter.java Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-64">CLOUD_CORE-64</a> Set the default character encoding to UTF-8 for HTTP POST requests by the Service config JSP and others.
+	</li>
+	<li>
+		5/4/2017 v1.8.3 LogServlet.java Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-62">CLOUD_CORE-62</a> Display UTF-8 (Kanji, etc) characters in log content properly.
+	</li>
+	<li>
+		4/25/2017 v1.8.2 config_node.jsp: Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-60">CLOUD_CORE-60</a> Console HTTP Status 400 - Security check violation when enabling cluster.
+		<pre>
+	* Renamed OWASP classes @ com.cloud.console.filter from XSS... to OWASP...
+	* New singleton class CloudConsole for event life cycle management.
+	* New interface IConsoleEventListener to listen for console life cycle events.
+		</pre>
+	</li>
+	<li>
+		4/22/2017 v1.8.2  Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-59">COULD_CORE-59</a> plus
+		<pre>
+	* config_node.jsp: Add cluster data store configuration items.
+	* New sysadmin hash (SHA-256) locks up previous installs using SHA-1
+		</pre>
+	</li>
+	<li>
+		4/18/2017 v1.8.2 login.jsp: Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-58">CLOUD_CORE-58</a> sysadmin hash (SHA-256) locks up previous installs using SHA-1.
+	</li>
+	<li>
+		4/15/2017 v1.8.2 config_node.jsp: The cluster can now be started/shutdown from the console at will.
+	</li>
+	<li>
+		4/11/2017 v1.8.1 login.jsp: Removed message digest SHA-1. See <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-57">CLOUD_CORE-57</a>.
+	</li>
+	<li>
+		3/22/2017 v1.8.1 heap.jsp: Added a download link to the heap display.
+	</li>
+	<li>
+		3/21/2017 v1.8.1 Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-54">COULD_CORE-54</a> Console NullPointer EX in OSMetrics get thread info.
+	</li>
+	
+	<li>
+	03-11-2017 v1.8.1 Changes
+	<pre>
+	* Invalid font paths in Bootstrap skin bootstrap.css.
+	* Moved duplicate fonts glyphicons-halflings-* to skins/fonts.
+	* Added bootstrap-growl.js for notifications to the bootstrap skin @ skins/bootstrap/js.
+	</pre>
+	</li>
+	
+	<li>
+	02-24-2017 Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-53">COULD_CORE-53</a> Cloud Console/Profiler SMTP auth failed when user/pwd not empty.
+	</li>
+
+	<li>
+	02-23-2017 Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-52">COULD_CORE-52</a> Unicode character support in browser.jsp, logview.jsp (Audit Trail, log view).
+	</li>
+	
+	<li>
+	02-20-2017 version 1.8  OS profiler alerts (osp.jsp). 
+		<ul>
+			<li>Fixed bugs in config_node.jsp when switching notification systems.</li>
+			<li>New class com.cloud.console.performance.OSProfilerAlerts to load/save OS profiler notification alerts.</li>
+			<li>New class com.cloud.console.performance.JMXTomcatMetrics to get container metrics using JMX: maxConnections, currentThreadsBusy, maxThreads, connectionCount, currentThreadCount.</li>
+			<li>HTTPServerTools.getOSMetrics - added container JMX metrics: maxConnections, currentThreadsBusy, maxThreads, connectionCount, currentThreadCount</li>
+			<li>OS Profiler (osp.jsp): Added new bar charts to display container metrics: Thread Poll information and Global request rates via JMX. </li>
+		</ul>
+	</li>
+	<li>
+		02-14-2017 version 1.8 fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-50">COULD_CORE-50</a> Static analysis bugs for: OSCommands.java, LogServlet.java.
+	</li>
+	<li>
+	02-13-2017 version 1.8  Garbage cleanup + Updates for <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-48">COULD_CORE-48</a>. 
+		<ul>
+			<li>Removed obsolete sortable.js, jquery.tablesorter.js, css/tablesorter (Sorting is now implemented using JQuery data tables).</li>
+			<li>OS Profiler: Added js/justgage.js to display a CPU load gauge in the OS Profiler JSP (osp.jsp)</li>
+			<li>OS Profiler: New NetStat section to look at TCP v4,6  network connections + New utility class OSCommands.java</li>
+		</ul>
+	</li>
+	<li>
+	02-11-2017  version 1.8 OS Profiler (osp.jsp) CPU load chart scaled from 0.0-1.0 to 0-100%. Labels changed to CPU/JVM load.
+	</li>
+	
+	<li> 02-09-2017 Fixed some ugly bugs:
+	in heap.jsp when clicking view on osp.jsp:
+<pre>
+java.lang.StringIndexOutOfBoundsException: String index out of range: -13
+	at java.lang.String.substring(Unknown Source)
+	at org.apache.jsp.jsp.perf.heap_jsp.getOSHeap(heap_jsp.java:68)
+	at org.apache.jsp.jsp.perf.heap_jsp._jspService(heap_jsp.java:228)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:727)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:432)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:390)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:334)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:727)
+</pre>
+Heap download servlet (LogServlet): http://localhost:8080/CloudConnectorAES01/LogServlet?op=download&amp;f=dump_20170209_014449_689.hprof
+<pre>
+java.io.FileNotFoundException: C:\Program Files (x86)\Apache Software Foundation\Tomcat 7.0\tempdump_20170209_014449_689.hprof (The system cannot find the file specified)
+	java.io.FileInputStream.open(Native Method)
+	java.io.FileInputStream.init(Unknown Source)
+	com.cloud.console.servlet.LogServlet.doGet(LogServlet.java:153)
+	javax.servlet.http.HttpServlet.service(HttpServlet.java:620)
+	javax.servlet.http.HttpServlet.service(HttpServlet.java:727)
+	org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	com.cloud.console.filter.XSSFilter.doFilter(XSSFilter.java:161)	
+</pre>	
+	</li>
+	<li> 02-08-2017 version 1.8 by Vsilva
+	<ul>
+		<li>Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-48">COULD_CORE-48</a> heap view/download logic added to the OS Profiler (osp.jsp).</li>
+		<li>LogServlet.java: Added logic to download a given file from java.io.tmpdir.</li>
+		<li>heap.jsp: Logic to view any heap dump from java.io.tmpdir or a new generated.</li>
+	</ul>
+	</li>
+</ul>
+
+<ul>
+	<li> 01-26-2017 version 1.8 by Vsilva
+		<ul>
+			<li> 1/28/2017 Fixed
+			<pre>
+17-01-28 15:10:50 JSPLoggerTool          [NODE2 ERROR] [OSPerformance] Get live threads stack traces.
+java.lang.NullPointerException
+	at com.cloud.console.performance.LiveThreadCollector.getAllThreadStackTraces(LiveThreadCollector.java:96)
+	at com.cloud.console.servlet.PerformanceServlet.getThreadStackTraces(PerformanceServlet.java:136)
+	at com.cloud.console.servlet.PerformanceServlet.doGet(PerformanceServlet.java:76)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:620)
+			</pre>
+			</li>
+			<li>1/27/2017 New class LiveThreadCollector to decouple the deadlock vs stalled thread detection code + Junits </li>
+			<li>1/27/2017 Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-47">COULD_CORE-47</a> ArrayIndexOutofBoundsExecption: 2 in PerformanceServlet.java deadlocked thread detection code.</li>
+			<li>OS Profiler: osp.jsp Changed the page to use TABS for OS Details, OS Charts and threads to improve visibility.</li>
+			<li>New Thread inspector (tr.jsp) to catch stalled threads and possibly interrupt them.</li>
+		</ul>
+	</li>
+</ul>
+<ul>
+	<li> 01-06-2017 version 1.8 by Vsilva
+		<ul>
+			<li>
+			Updates for <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-36">COULD_CORE-36</a> Changed/Improved the SQL Injection RegExp in XSSConfig.java.
+			</li>
+			<li>
+			Security descriptor (security-com.cloud.console.json) - moved the AES specific rules to its proper location (the AES backend module descriptor). - A proper descriptor has been added to that module.
+			</li>
+			<li>JSPLoggetTool.java: Added a log WARN method.</li>
+			<li>
+			1/9/20117 OWASP Security - <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-36">COULD_CORE-36</a> removed URI exceptions cuz they punch holes in the scanner and defeat its purpose.
+			All param value validation must be done via regular expressions.
+			</li>
+			<li>
+			1/9/2017 Fixes for com.cloud.core.services.CloudFailOverManager renamed to CloudFailOverService @ LibCloudCore.
+			</li>
+		</ul> 
+	</li>
+	<li> 12-07-2016 version 1.8 by Vsilva
+		<ul>
+			<li>
+			12/15/2016 Updated <a href="http://acme208.acme.com:6091/issue/UNIFIED_CC-141">UNIFIED_CC-141</a>: Connector ServletRawMessage not getting message from request body.
+			<pre>
+* Fix applied to CloudSecurity.java used by the web security filter. 
+* This affects all HTTP POST requests of content type application/x-www-form-urlencoded.
+			</pre>
+			</li>
+		
+			<li>
+			Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-41">COULD_CORE-41</a>: Cloud Services: Authorization required for all products REST APIs. 
+			</li>
+			<li>
+			Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-38">COULD_CORE-38</a>: CoreLibs FindBugs static analysis issues. 
+			</li>
+			<li>Fixes for Class com.clod.core.services.ServiceScheduler renamed to ServiceHoursScheduler</li>
+			<li>Log filters (log4j.jsp) uses the data tables style/functionality.</li>
+		</ul>
+	</li>
+
+	<li>11-27-2016 by VSilva version 1.8  Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-36">COULD_CORE-36</a> ZAP Security Scan fixes:
+		<ul>
+			<li>
+			Buffer Overflow, External Redirect,SQL Injection fixes for XSSFilter.java, XSSConfig.java
+			</li>
+			<li>
+			LogServlet.java: ZAP Security scan: Format String error 
+			</li>
+			<li>The console has been hardened against most security attacks reported by the ZAP OWASP Attack Proxy (pkg com.c1.cloud.console.filter).</li>
+			<li>Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-37">COULD_CORE-37</a> Require login for all JSP resources.</li>
+		</ul>
+	</li>
+</ul>
+<ul>
+	<li>11-08-2016 By VSilva version 1.7:
+	<ul>
+		<li>
+		11-16-2016 Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-35">COULD_CORE-35</a>: Console Logging filters missing levels. 
+		</li>
+		<li>11-15-2016 Cleaned up duplicate code in servlet pkg: com.cloud.console.servlet {PerformanceServlet, SysAdminServlet}</li>
+		<li>11-12-2016 Minor update to COULD_CORE-33 - OS Profiler.</li>
+		<li>
+		Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-33">COULD_CORE-33</a>: Console Performance > OS Profiler: Get rid of the google charts API.
+		</li>
+		<li>
+		Removed garbage folder (FLOT) @ META-INF/resources/js/plugings/flot	
+		</li>
+		<li>Added the new chart library js/Chart.js - http://www.chartjs.org/</li>
+		<li>New JSP logger class com.cloud.console.JSPLoggerTool.</li>
+	</ul>
+</ul>
+
+<ul>
+<li>10-24-2016 By VSilva version 1.7: 
+ <ul>
+ 	<li>
+ 		10/31/2016 Fixed <a href="http://acme208.acme.com:6091/issue/UNIFIED_CC-141">UNIFIED_CC-141</a>:  Connector ServletRawMessage not getting message from request.
+ 		<p>
+ 		Updated class com.cloud.console.filter.XSSFilter
+ 		</p>
+ 	</li>
+ 	<li>
+ 		Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-31">COULD_CORE-31</a>: Console - Change pwd HTTP code 400 error.
+ 	</li>
+   	<li>
+ 		Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-30">COULD_CORE-30</a>: Cloud Console: App Security Scan issues.
+ 		<pre>
+ * X-Frame Options Header
+ * Web Browser XSS Protection
+ * X-Content-Type Options
+ * Script injection + Buffer overflow attacks.
+ 		</pre>
+ 	</li>
+</ul>
+</li>
+</ul>
+
+<ul>
+<li>09-25-2016 By VSilva version 1.6: 
+ <ol>
+   	<li>
+ 		Updated <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-26">COULD_CORE-26</a>: Audit trail bugs and missing data.
+ 	</li>
+ 	<li>
+ 		Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-27">COULD_CORE-26</a>: Admin Console pages - label/value display alignment
+ 	</li>
+   	<li>
+ 		Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-26">COULD_CORE-26</a>: CONSOLE: Cloud Console: Audit trail browser.jsp script errors IE 10 Compat View.
+ 	</li>
+ 
+  	<li>
+ 		Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-25">COULD_CORE-25</a>: CONSOLE: Cloud Console log view script errors IE 10 Compat View.
+ 	</li>
+</ol>
+</li>
+</ul>
+
+<ul>
+<li>08-10-2016 By VSilva version 1.6. JSP Fixes for: 
+ <ol>
+ 	<li> 9/4/2016 by VSilva
+	 	<ul>
+	 		<li>
+	 		Brand new Audit trail system (<a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-24">COULD_CORE-24</a>) using log/browser.jsp and log/logview.jsp.
+	 		</li>
+			<li>
+			Added header Cache-Control content="NO-CACHE" to logview.jsp to prevent browser caching. Deleted obsolete logviewer.jsp.
+		  	</li>
+		  	<li>
+		  	Removed Administrator avatar icon image (avatar.png) from skin "booterial".
+		  	</li>
+		  	<li>
+		  	Brand new log file browser (log/browser.jsp) to display log files and visualize them. Updated the log viewer to work with this new code.
+		  	</li>
+		  	<li>
+		  	Cleanup in the performance JSPs: heap.jsp, osp.jsp.
+		  	</li>
+	 	</ul>
+ 	</li>
+ 
+ 	<li>
+ 	8/25/2016 New class com.cloud.console.HTTPServerTools with utils to dump HTTP request information.
+ 	</li>
+ 
+ 	<li>
+ 		8/18/2016 Fix for empty Password fields being saved. All passwords are required.
+ 	</li>
+   	<li>
+ 		Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-21">COULD_CORE-21</a>:  CONNECTOR Console: Text boxes required/optional rule must be configurable.
+ 	</li>
+ 
+  	<li>
+ 		Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-22">COULD_CORE-22</a>: CONNECTOR Console Multi select widget not saving data and other bugs.
+ 		<ul>
+ 			<li>Widget won't save selected attributes when all removed.</li>
+ 			<li>Available attributes not saved.</li>
+ 			<li>New button to remove an available attribute.</li>
+ 		</ul>
+ 	</li>
+</ol>
+</li>
+</ul>
+
+<ul>
+<li>07-19-2016 By VSilva version 1.5. JSP Fixes for: 
+ <ol>
+   	<li>
+ 		Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-20">COULD_CORE-20</a>: CONSOLE: IE10 Service 'Leave Page' dialog fires when the submenus are clicked.
+ 	</li>
+ 
+  	<li>
+ 		Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-19">COULD_CORE-19</a>: CONSOLE: Node Log, download link crash in TC 7.0.32.
+ 	</li>
+</ol>
+</li>
+</ul>
+
+<ul>
+<li>06-10-2016 By VSilva version 1.5. JSP Fixes for: 
+ <ol>
+  	<li>
+ 		Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-18">COULD_CORE-18</a>: CONNECTOR CONSOLE: Missing request license link when node is not configured.
+ 	</li>
+
+  	<li>
+ 		Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-17">COULD_CORE-17</a>: CONNECTOR CONSOLE: All Config Dropdown combos only shows default item. It does not show the list.
+ 	</li>
+ 
+ 	<li>
+ 		Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-16">COULD_CORE-16</a>: Console Get rid of the old log viewer (logviewer.jsp).
+ 	</li>
+ 
+ 	<li>
+	 	Home page: Connection profile 'Manage' link moved into the profile name itself.
+ 	</li>
+ 	<li>
+ 		Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-15">COULD_CORE-15</a>: Console Crash when there is no license installed (Connector).
+ 	</li>
+   	<li>
+ 		Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-13">COULD_CORE-13</a>: Bootstrap CSS warnings/errors logs by HTMLUnit test scripts.
+ 	</li>
+ 	<li>
+ 		Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-12">COULD_CORE-12</a>: License warnings in the console when the license is about to expire.
+ 		Applies to Cloud Connector or any product that uses a license.
+ 	</li>
+ </ol>
+</li>
+</ul>
+
+<ul>
+<li>04-12-2016 By VSilva version 1.4. JSP Fixes for:  
+	<ol>
+	<li>Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-11">COULD_CORE-11</a>: Log viewer: Add auto refresh check box + node log download link.
+		Files: logview.jsp.
+	</li>
+	<li>Fixed <a href="http://acme208.acme.com:6091/issue/CLOUD_CORE-10">COULD_CORE-10</a>: Guard against user trying to bypass the home page.
+		Files: version.jsp, osp.jsp (OS Profiler)
+	</li>
+	<li>login.jsp: Create password confirm field changed from type "text" to type "password"</li>
+	<li>
+		index.jsp: When the node or a service is not configured, a link will be displayed "SERVICE-X (or Node) must be configured" instead of "Server must be configured".
+		This will make the node/service easier to configure.
+	</li>
+	<li>Fixed broken links in Configure > Cluster (config_cluster.jsp) - Cluster Nodes section - when the remote node is not configured or has failed to initialize.</li>
+	<li>Cluster manager: Sys admin servlet moved to com.cloud.console.SysAdminServert from the adapter LIB com.adapter.servlet. 
+	This servlet is used to start/stop cluster nodes for all products: adapter, connector, etc.
+	</li>
+	</ol>
+</li>
+
+<li>03-02-2016 By VSilva version 1.4: Console Logger (logview.jsp) update to display XML properly in the message column.</li>
+
+<li>02-18-2016 By VSilva version 1.4. JSP Fixes for the Could Console multiple skin/theme support
+	<ol>
+	<li>bootstrap: Skin build by twitter Bootstrap v3.3.1 (http://getbootstrap.com)</li>
+	<li>material: Material theme by google by Meterialize (http://materialize.com)</li>
+	<li>booterial: A material/bootstrap hybrid built using Bootstrap v3.3.6 (http://getbootstrap.com)</li>
+	</ol>
+</li>
+</ul>
+<ul>
+<li>12-20-2015 version 1.4 By VSilva. Fixes for
+	<ul>
+		<li>UI Theme clean up: Removed garbage themes: dark, gray, green, light, red. Bootstarp common css moved to folder css/bootstrap-common. Updated tiles/tile_head.jsp, tiles/tile_top_bar.jsp.
+		</li>
+		<li>UI Theme clean up: Removed legacy garbage css/legacy_themes &amp; updated console pages that reference these stuff: login.jsp, log/logviewer.jsp.
+		</li>	
+		<li>Node/Backend configuration pages updated to work with LibCloudCore 1.4.
+		</li>
+		<li>
+		config_node.jsp Added id attribute to HTML SELECT: server_serviceScheduleEnabled, server_serviceScheduleDays ; INPUTS: server_serviceScheduleStartHHMM, server_serviceScheduleStopHHMM
+		</li>
+		<li>
+		New log viewer based on JQUERY Data-tables @ log/logview.jsp with support files css/jquery.dataTables.css, js/jquery.dataTables.js.
+		</li>
+		<li>log/logview.jsp  is now the default console log viewer @ tiles/tile_side_bar.jsp.</li>
+	</ul>
+</li>
+</ul>
+
+<ul>
+<li>12-09-2015 version 1.3 By VSilva. Fixes for
+	<ul>
+		<li><a target="_new" href="http://acme208.acme.com:6091/issue/CLOUD_CORE-8">CLOUD_CORE-8</a> Admin console crash when restarting a node in TCP mode.
+		</li>
+		<li><a target="_new" href="http://acme208.acme.com:6091/issue/CLOUD_CORE-7">CLOUD_CORE-7</a> Removed Google charts API blocked by some fire-walled VPNs like Xerox.
+		</li>
+		
+	</ul>
+</li>
+</ul>
+
+<ul>
+<li>12-03-2015 version 1.2 By VSilva. Fixes for
+	<ul>
+		<li><a target="_new" href="http://acme208.acme.com:6091/issue/CLOUD_CORE-4">CLOUD_CORE-4</a> Add support for manual TCP node discovery.
+		Note: Plus changes to the admin console to support this.
+		</li>
+	</ul>
+</li>
+<li>Initial log tracking.</li>
+</ul>
+

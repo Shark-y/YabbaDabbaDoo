@@ -1,0 +1,440 @@
+{
+  "kind": "EventList",
+  "apiVersion": "v1",
+  "metadata": {
+    "selfLink": "/api/v1/events",
+    "resourceVersion": "35215370"
+  },
+  "items": [
+    {
+      "metadata": {
+        "name": "analytics-kb-74bfb886df-f5fhd.15fe26d8e3b5b4a3",
+        "namespace": "conversations",
+        "selfLink": "/api/v1/namespaces/conversations/events/analytics-kb-74bfb886df-f5fhd.15fe26d8e3b5b4a3",
+        "uid": "533906ce-6b02-11ea-a941-000c297a5447",
+        "resourceVersion": "35214825",
+        "creationTimestamp": "2020-03-20T23:27:11Z"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "namespace": "conversations",
+        "name": "analytics-kb-74bfb886df-f5fhd",
+        "uid": "37f2196a-6b02-11ea-a941-000c297a5447",
+        "apiVersion": "v1",
+        "resourceVersion": "35102680",
+        "fieldPath": "spec.containers{kibana}"
+      },
+      "reason": "Unhealthy",
+      "message": "Readiness probe failed: HTTP probe failed with statuscode: 503",
+      "source": {
+        "component": "kubelet",
+        "host": "granny.cloudlab.com"
+      },
+      "firstTimestamp": "2020-03-20T23:27:11Z",
+      "lastTimestamp": "2020-03-21T16:31:30Z",
+      "count": 6147,
+      "type": "Warning",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": ""
+    },
+    {
+      "metadata": {
+        "name": "contextstore-es-default.15fccb530a8c5012",
+        "namespace": "conversations",
+        "selfLink": "/api/v1/namespaces/conversations/events/contextstore-es-default.15fccb530a8c5012",
+        "uid": "aaa6a6c5-6788-11ea-a941-000c297a5447",
+        "resourceVersion": "35215079",
+        "creationTimestamp": "2020-03-16T13:18:46Z"
+      },
+      "involvedObject": {
+        "kind": "PodDisruptionBudget",
+        "namespace": "conversations",
+        "name": "contextstore-es-default",
+        "uid": "22b9e735-b889-11e9-91ab-000c297a5447",
+        "apiVersion": "policy/v1beta1",
+        "resourceVersion": "15327987"
+      },
+      "reason": "NoControllers",
+      "message": "found no controllers for pod \"contextstore-es-sxk9mfnzmp\"",
+      "source": {
+        "component": "controllermanager"
+      },
+      "firstTimestamp": "2020-03-16T13:18:46Z",
+      "lastTimestamp": "2020-03-21T16:33:49Z",
+      "count": 14892,
+      "type": "Warning",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": ""
+    },
+    {
+      "metadata": {
+        "name": "contextstore-es-sxk9mfnzmp.15fe26cf26f14d4b",
+        "namespace": "conversations",
+        "selfLink": "/api/v1/namespaces/conversations/events/contextstore-es-sxk9mfnzmp.15fe26cf26f14d4b",
+        "uid": "3a4b8cff-6b02-11ea-a941-000c297a5447",
+        "resourceVersion": "35214871",
+        "creationTimestamp": "2020-03-20T23:26:30Z"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "namespace": "conversations",
+        "name": "contextstore-es-sxk9mfnzmp",
+        "uid": "39b50160-6b02-11ea-a941-000c297a5447",
+        "apiVersion": "v1",
+        "resourceVersion": "35102712"
+      },
+      "reason": "FailedMount",
+      "message": "MountVolume.NewMounter initialization failed for volume \"pvc-242f5144-b889-11e9-91ab-000c297a5447\" : endpoints \"glusterfs-dynamic-242f5144-b889-11e9-91ab-000c297a5447\" not found",
+      "source": {
+        "component": "kubelet",
+        "host": "marvinthemartian.cloudlab.com"
+      },
+      "firstTimestamp": "2020-03-20T23:26:30Z",
+      "lastTimestamp": "2020-03-21T16:31:55Z",
+      "count": 512,
+      "type": "Warning",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": ""
+    },
+    {
+      "metadata": {
+        "name": "contextstore-es-sxk9mfnzmp.15fe26eb91300a2d",
+        "namespace": "conversations",
+        "selfLink": "/api/v1/namespaces/conversations/events/contextstore-es-sxk9mfnzmp.15fe26eb91300a2d",
+        "uid": "8309caa1-6b02-11ea-a941-000c297a5447",
+        "resourceVersion": "35214413",
+        "creationTimestamp": "2020-03-20T23:28:32Z"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "namespace": "conversations",
+        "name": "contextstore-es-sxk9mfnzmp",
+        "uid": "39b50160-6b02-11ea-a941-000c297a5447",
+        "apiVersion": "v1",
+        "resourceVersion": "35102712"
+      },
+      "reason": "FailedMount",
+      "message": "Unable to mount volumes for pod \"contextstore-es-sxk9mfnzmp_conversations(39b50160-6b02-11ea-a941-000c297a5447)\": timeout expired waiting for volumes to attach or mount for pod \"conversations\"/\"contextstore-es-sxk9mfnzmp\". list of unmounted volumes=[elasticsearch-data]. list of unattached volumes=[elastic-internal-elasticsearch-bin-local elastic-internal-elasticsearch-config elastic-internal-elasticsearch-config-local elastic-internal-elasticsearch-plugins-local elastic-internal-http-certificates elastic-internal-probe-user elastic-internal-scripts elastic-internal-transport-certificates elastic-internal-unicast-hosts elastic-internal-xpack-file-realm elasticsearch-data elasticsearch-logs]",
+      "source": {
+        "component": "kubelet",
+        "host": "marvinthemartian.cloudlab.com"
+      },
+      "firstTimestamp": "2020-03-20T23:28:32Z",
+      "lastTimestamp": "2020-03-21T16:27:45Z",
+      "count": 451,
+      "type": "Warning",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": ""
+    },
+    {
+      "metadata": {
+        "name": "kissed-squid-rabbitmq-0.15fe26d06f6b8a9f",
+        "namespace": "conversations",
+        "selfLink": "/api/v1/namespaces/conversations/events/kissed-squid-rabbitmq-0.15fe26d06f6b8a9f",
+        "uid": "3d94a764-6b02-11ea-a941-000c297a5447",
+        "resourceVersion": "35214869",
+        "creationTimestamp": "2020-03-20T23:26:35Z"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "namespace": "conversations",
+        "name": "kissed-squid-rabbitmq-0",
+        "uid": "3d594b65-6b02-11ea-a941-000c297a5447",
+        "apiVersion": "v1",
+        "resourceVersion": "35102737"
+      },
+      "reason": "FailedMount",
+      "message": "MountVolume.NewMounter initialization failed for volume \"pvc-a8b134b2-b888-11e9-91ab-000c297a5447\" : endpoints \"glusterfs-dynamic-a8b134b2-b888-11e9-91ab-000c297a5447\" not found",
+      "source": {
+        "component": "kubelet",
+        "host": "porkypig.cloudlab.com"
+      },
+      "firstTimestamp": "2020-03-20T23:26:35Z",
+      "lastTimestamp": "2020-03-21T16:31:54Z",
+      "count": 512,
+      "type": "Warning",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": ""
+    },
+    {
+      "metadata": {
+        "name": "kissed-squid-rabbitmq-0.15fe26ecfd2beb3e",
+        "namespace": "conversations",
+        "selfLink": "/api/v1/namespaces/conversations/events/kissed-squid-rabbitmq-0.15fe26ecfd2beb3e",
+        "uid": "86ad9fbf-6b02-11ea-a941-000c297a5447",
+        "resourceVersion": "35214287",
+        "creationTimestamp": "2020-03-20T23:28:38Z"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "namespace": "conversations",
+        "name": "kissed-squid-rabbitmq-0",
+        "uid": "3d594b65-6b02-11ea-a941-000c297a5447",
+        "apiVersion": "v1",
+        "resourceVersion": "35102737"
+      },
+      "reason": "FailedMount",
+      "message": "Unable to mount volumes for pod \"kissed-squid-rabbitmq-0_conversations(3d594b65-6b02-11ea-a941-000c297a5447)\": timeout expired waiting for volumes to attach or mount for pod \"conversations\"/\"kissed-squid-rabbitmq-0\". list of unmounted volumes=[data]. list of unattached volumes=[data config-volume kissed-squid-rabbitmq-token-m2k2z]",
+      "source": {
+        "component": "kubelet",
+        "host": "porkypig.cloudlab.com"
+      },
+      "firstTimestamp": "2020-03-20T23:28:38Z",
+      "lastTimestamp": "2020-03-21T16:26:39Z",
+      "count": 450,
+      "type": "Warning",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": ""
+    },
+    {
+      "metadata": {
+        "name": "data-rabbitmq-0.15fe5cd4834dccb8",
+        "namespace": "default",
+        "selfLink": "/api/v1/namespaces/default/events/data-rabbitmq-0.15fe5cd4834dccb8",
+        "uid": "85755bf4-6b8c-11ea-a941-000c297a5447",
+        "resourceVersion": "35215342",
+        "creationTimestamp": "2020-03-21T15:56:26Z"
+      },
+      "involvedObject": {
+        "kind": "PersistentVolumeClaim",
+        "namespace": "default",
+        "name": "data-rabbitmq-0",
+        "uid": "83a70a93-6b8c-11ea-a941-000c297a5447",
+        "apiVersion": "v1",
+        "resourceVersion": "35210928"
+      },
+      "reason": "ProvisioningFailed",
+      "message": "Failed to provision volume with StorageClass \"glusterfs\": failed to create volume: failed to create volume: Post http://cecil.cloudlab.com:8080/volumes: dial tcp 192.168.40.90:8080: connect: no route to host",
+      "source": {
+        "component": "persistentvolume-controller"
+      },
+      "firstTimestamp": "2020-03-21T15:56:26Z",
+      "lastTimestamp": "2020-03-21T16:36:12Z",
+      "count": 25,
+      "type": "Warning",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": ""
+    },
+    {
+      "metadata": {
+        "name": "rabbitmq-0.15fe5cd3cf7621af",
+        "namespace": "default",
+        "selfLink": "/api/v1/namespaces/default/events/rabbitmq-0.15fe5cd3cf7621af",
+        "uid": "83a931e3-6b8c-11ea-a941-000c297a5447",
+        "resourceVersion": "35215238",
+        "creationTimestamp": "2020-03-21T15:56:23Z"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "namespace": "default",
+        "name": "rabbitmq-0",
+        "uid": "83a7b981-6b8c-11ea-a941-000c297a5447",
+        "apiVersion": "v1",
+        "resourceVersion": "35210927"
+      },
+      "reason": "FailedScheduling",
+      "message": "pod has unbound immediate PersistentVolumeClaims (repeated 5 times)",
+      "source": {
+        "component": "default-scheduler"
+      },
+      "firstTimestamp": "2020-03-21T15:56:23Z",
+      "lastTimestamp": "2020-03-21T16:35:16Z",
+      "count": 28,
+      "type": "Warning",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": ""
+    },
+    {
+      "metadata": {
+        "name": "rabbitmq.15fe5cd3ceec4df3",
+        "namespace": "default",
+        "selfLink": "/api/v1/namespaces/default/events/rabbitmq.15fe5cd3ceec4df3",
+        "uid": "83a7d9a7-6b8c-11ea-a941-000c297a5447",
+        "resourceVersion": "35210929",
+        "creationTimestamp": "2020-03-21T15:56:23Z"
+      },
+      "involvedObject": {
+        "kind": "StatefulSet",
+        "namespace": "default",
+        "name": "rabbitmq",
+        "uid": "83a4d98e-6b8c-11ea-a941-000c297a5447",
+        "apiVersion": "apps/v1",
+        "resourceVersion": "35210924"
+      },
+      "reason": "SuccessfulCreate",
+      "message": "create Claim data-rabbitmq-0 Pod rabbitmq-0 in StatefulSet rabbitmq success",
+      "source": {
+        "component": "statefulset-controller"
+      },
+      "firstTimestamp": "2020-03-21T15:56:23Z",
+      "lastTimestamp": "2020-03-21T15:56:23Z",
+      "count": 1,
+      "type": "Normal",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": ""
+    },
+    {
+      "metadata": {
+        "name": "rabbitmq.15fe5cd3cf4fe9d2",
+        "namespace": "default",
+        "selfLink": "/api/v1/namespaces/default/events/rabbitmq.15fe5cd3cf4fe9d2",
+        "uid": "83a8d2f6-6b8c-11ea-a941-000c297a5447",
+        "resourceVersion": "35210932",
+        "creationTimestamp": "2020-03-21T15:56:23Z"
+      },
+      "involvedObject": {
+        "kind": "StatefulSet",
+        "namespace": "default",
+        "name": "rabbitmq",
+        "uid": "83a4d98e-6b8c-11ea-a941-000c297a5447",
+        "apiVersion": "apps/v1",
+        "resourceVersion": "35210924"
+      },
+      "reason": "SuccessfulCreate",
+      "message": "create Pod rabbitmq-0 in StatefulSet rabbitmq successful",
+      "source": {
+        "component": "statefulset-controller"
+      },
+      "firstTimestamp": "2020-03-21T15:56:23Z",
+      "lastTimestamp": "2020-03-21T15:56:23Z",
+      "count": 1,
+      "type": "Normal",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": ""
+    },
+    {
+      "metadata": {
+        "name": "elasticsearch-logging-0.15fe156b5969aed1",
+        "namespace": "kube-system",
+        "selfLink": "/api/v1/namespaces/kube-system/events/elasticsearch-logging-0.15fe156b5969aed1",
+        "uid": "d44446d1-6b7d-11ea-a941-000c297a5447",
+        "resourceVersion": "35214889",
+        "creationTimestamp": "2020-03-21T14:11:16Z"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "namespace": "kube-system",
+        "name": "elasticsearch-logging-0",
+        "uid": "6c5ae616-6ad5-11ea-a941-000c297a5447",
+        "apiVersion": "v1",
+        "resourceVersion": "35071566"
+      },
+      "reason": "FailedMount",
+      "message": "Unable to mount volumes for pod \"elasticsearch-logging-0_kube-system(6c5ae616-6ad5-11ea-a941-000c297a5447)\": timeout expired waiting for volumes to attach or mount for pod \"kube-system\"/\"elasticsearch-logging-0\". list of unmounted volumes=[elasticsearch-logging]. list of unattached volumes=[elasticsearch-logging elasticsearch-logging-token-dxpz5]",
+      "source": {
+        "component": "kubelet",
+        "host": "elmerfudd.cloudlab.com"
+      },
+      "firstTimestamp": "2020-03-20T18:07:49Z",
+      "lastTimestamp": "2020-03-21T16:32:04Z",
+      "count": 497,
+      "type": "Warning",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": ""
+    },
+    {
+      "metadata": {
+        "name": "elasticsearch-logging-0.15fe15877cd523ce",
+        "namespace": "kube-system",
+        "selfLink": "/api/v1/namespaces/kube-system/events/elasticsearch-logging-0.15fe15877cd523ce",
+        "uid": "83d147a8-6b70-11ea-a941-000c297a5447",
+        "resourceVersion": "35213690",
+        "creationTimestamp": "2020-03-21T12:35:58Z"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "namespace": "kube-system",
+        "name": "elasticsearch-logging-0",
+        "uid": "6c5ae616-6ad5-11ea-a941-000c297a5447",
+        "apiVersion": "v1",
+        "resourceVersion": "35071566"
+      },
+      "reason": "FailedMount",
+      "message": "(combined from similar events): MountVolume.SetUp failed for volume \"pvc-2af842ec-b942-11e9-91ab-000c297a5447\" : mount failed: mount failed: exit status 1\nMounting command: systemd-run\nMounting arguments: --description=Kubernetes transient mount for /var/lib/kubelet/pods/6c5ae616-6ad5-11ea-a941-000c297a5447/volumes/kubernetes.io~glusterfs/pvc-2af842ec-b942-11e9-91ab-000c297a5447 --scope -- mount -t glusterfs -o auto_unmount,backup-volfile-servers=192.168.40.90:192.168.40.91:192.168.40.92,log-file=/var/lib/kubelet/plugins/kubernetes.io/glusterfs/pvc-2af842ec-b942-11e9-91ab-000c297a5447/elasticsearch-logging-0-glusterfs.log,log-level=ERROR 192.168.40.91:vol_3090a9543f2f090dc3bec55bcf63418c /var/lib/kubelet/pods/6c5ae616-6ad5-11ea-a941-000c297a5447/volumes/kubernetes.io~glusterfs/pvc-2af842ec-b942-11e9-91ab-000c297a5447\nOutput: Running scope as unit run-21165.scope.\n[2020-03-21 16:21:01.816074] E [glusterfsd.c:825:gf_remember_backup_volfile_server] 0-glusterfs: failed to set volfile server: File exists\nMount failed. Please check the log file for more details.\n\n, the following error information was pulled from the glusterfs log to help diagnose this issue: \n[2019-11-05 11:18:41.226769] E [fuse-bridge.c:220:check_and_dump_fuse_W] (--\u003e /lib64/libglusterfs.so.0(_gf_log_callingfn+0x13b)[0x7fa8a1b2d70b] (--\u003e /usr/lib64/glusterfs/6.4/xlator/mount/fuse.so(+0x81d1)[0x7fa898edb1d1] (--\u003e /usr/lib64/glusterfs/6.4/xlator/mount/fuse.so(+0x8aaa)[0x7fa898edbaaa] (--\u003e /lib64/libpthread.so.0(+0x7dd5)[0x7fa8a096bdd5] (--\u003e /lib64/libc.so.6(clone+0x6d)[0x7fa8a023302d] ))))) 0-glusterfs-fuse: writing to fuse device failed: No such file or directory\n[2019-11-06 14:08:33.353574] E [fuse-bridge.c:220:check_and_dump_fuse_W] (--\u003e /lib64/libglusterfs.so.0(_gf_log_callingfn+0x13b)[0x7fa8a1b2d70b] (--\u003e /usr/lib64/glusterfs/6.4/xlator/mount/fuse.so(+0x81d1)[0x7fa898edb1d1] (--\u003e /usr/lib64/glusterfs/6.4/xlator/mount/fuse.so(+0x8aaa)[0x7fa898edbaaa] (--\u003e /lib64/libpthread.so.0(+0x7dd5)[0x7fa8a096bdd5] (--\u003e /lib64/libc.so.6(clone+0x6d)[0x7fa8a023302d] ))))) 0-glusterfs-fuse: writing to fuse device failed: No such file or directory\n",
+      "source": {
+        "component": "kubelet",
+        "host": "elmerfudd.cloudlab.com"
+      },
+      "firstTimestamp": "2020-03-20T18:09:50Z",
+      "lastTimestamp": "2020-03-21T16:21:14Z",
+      "count": 689,
+      "type": "Warning",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": ""
+    },
+    {
+      "metadata": {
+        "name": "elasticsearch-logging-1.15fd273418886181",
+        "namespace": "kube-system",
+        "selfLink": "/api/v1/namespaces/kube-system/events/elasticsearch-logging-1.15fd273418886181",
+        "uid": "e08d2ac4-6873-11ea-a941-000c297a5447",
+        "resourceVersion": "35213711",
+        "creationTimestamp": "2020-03-17T17:22:28Z"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "namespace": "kube-system",
+        "name": "elasticsearch-logging-1",
+        "uid": "31ab1d50-b942-11e9-91ab-000c297a5447",
+        "apiVersion": "v1",
+        "resourceVersion": "34684867"
+      },
+      "reason": "FailedMount",
+      "message": "Unable to mount volumes for pod \"elasticsearch-logging-1_kube-system(31ab1d50-b942-11e9-91ab-000c297a5447)\": timeout expired waiting for volumes to attach or mount for pod \"kube-system\"/\"elasticsearch-logging-1\". list of unmounted volumes=[elasticsearch-logging]. list of unattached volumes=[elasticsearch-logging elasticsearch-logging-token-dxpz5]",
+      "source": {
+        "component": "kubelet",
+        "host": "speedygonzales.cloudlab.com"
+      },
+      "firstTimestamp": "2020-03-17T17:22:28Z",
+      "lastTimestamp": "2020-03-21T16:21:26Z",
+      "count": 2331,
+      "type": "Warning",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": ""
+    },
+    {
+      "metadata": {
+        "name": "elasticsearch-logging-1.15fd27513132e40c",
+        "namespace": "kube-system",
+        "selfLink": "/api/v1/namespaces/kube-system/events/elasticsearch-logging-1.15fd27513132e40c",
+        "uid": "2b0998da-6874-11ea-a941-000c297a5447",
+        "resourceVersion": "35215293",
+        "creationTimestamp": "2020-03-17T17:24:33Z"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "namespace": "kube-system",
+        "name": "elasticsearch-logging-1",
+        "uid": "31ab1d50-b942-11e9-91ab-000c297a5447",
+        "apiVersion": "v1",
+        "resourceVersion": "34684867"
+      },
+      "reason": "FailedMount",
+      "message": "(combined from similar events): MountVolume.SetUp failed for volume \"pvc-31aa9219-b942-11e9-91ab-000c297a5447\" : mount failed: mount failed: exit status 1\nMounting command: systemd-run\nMounting arguments: --description=Kubernetes transient mount for /var/lib/kubelet/pods/31ab1d50-b942-11e9-91ab-000c297a5447/volumes/kubernetes.io~glusterfs/pvc-31aa9219-b942-11e9-91ab-000c297a5447 --scope -- mount -t glusterfs -o auto_unmount,backup-volfile-servers=192.168.40.90:192.168.40.91:192.168.40.92,log-file=/var/lib/kubelet/plugins/kubernetes.io/glusterfs/pvc-31aa9219-b942-11e9-91ab-000c297a5447/elasticsearch-logging-1-glusterfs.log,log-level=ERROR 192.168.40.90:vol_ab6bd19ed6b317d47fa8bd8526f2bf36 /var/lib/kubelet/pods/31ab1d50-b942-11e9-91ab-000c297a5447/volumes/kubernetes.io~glusterfs/pvc-31aa9219-b942-11e9-91ab-000c297a5447\nOutput: Running scope as unit run-25778.scope.\n[2020-03-21 16:35:33.043447] E [glusterfsd.c:825:gf_remember_backup_volfile_server] 0-glusterfs: failed to set volfile server: File exists\nMount failed. Please check the log file for more details.\n\n, the following error information was pulled from the glusterfs log to help diagnose this issue: \n[2019-08-07 18:36:09.164358] E [MSGID: 108006] [afr-common.c:5318:__afr_handle_child_down_event] 0-vol_ab6bd19ed6b317d47fa8bd8526f2bf36-replicate-0: All subvolumes are down. Going offline until at least one of them comes back up.\n[2019-11-06 17:40:36.027755] E [fuse-bridge.c:220:check_and_dump_fuse_W] (--\u003e /lib64/libglusterfs.so.0(_gf_log_callingfn+0x13b)[0x7f13883ee70b] (--\u003e /usr/lib64/glusterfs/6.4/xlator/mount/fuse.so(+0x81d1)[0x7f137f79c1d1] (--\u003e /usr/lib64/glusterfs/6.4/xlator/mount/fuse.so(+0x8aaa)[0x7f137f79caaa] (--\u003e /lib64/libpthread.so.0(+0x7dd5)[0x7f138722cdd5] (--\u003e /lib64/libc.so.6(clone+0x6d)[0x7f1386af402d] ))))) 0-glusterfs-fuse: writing to fuse device failed: No such file or directory\n",
+      "source": {
+        "component": "kubelet",
+        "host": "speedygonzales.cloudlab.com"
+      },
+      "firstTimestamp": "2020-03-17T17:24:33Z",
+      "lastTimestamp": "2020-03-21T16:35:46Z",
+      "count": 2972,
+      "type": "Warning",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": ""
+    }
+  ]
+}

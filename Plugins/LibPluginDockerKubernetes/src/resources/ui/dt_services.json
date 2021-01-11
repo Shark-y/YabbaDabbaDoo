@@ -1,0 +1,15 @@
+{
+	"id": "tblServices",
+	"usePanel" : false,
+	"panelToolbar" : [
+		{ "widget" : "refresh-button", "class": "", "title": "Click to refresh"},
+		{ "widget" : "dropdown"
+			, "menus" : [
+				{"label": "About Kubernetes Services", "target": "_blank", "href": "https://kubernetes.io/docs/concepts/services-networking/service/"}
+			]
+		},
+	],
+	"header": {
+		"labels" : ["Name", "Namespace", "Created", "IP(s)", "Action"]
+	}
+}

@@ -1,0 +1,236 @@
+{
+	"version": "v1",
+	"endPoints": [
+		{
+			"name": "API",
+			"desc": "API Version",
+			"uri": "version",
+			"method": "GET",
+			"headers": [
+				{ "Authorization" : "Bearer ${TOKEN}"}
+			]
+		},
+		
+		{
+			"name": "ListNamespaces",
+			"desc": "List Namespaces",
+			"uri": "api/${API_VERSION}/namespaces",
+			"method": "GET",
+			"headers": [
+				{ "Authorization" : "Bearer ${TOKEN}"}
+			]
+		},
+		{
+			"name": "CreateNamespace",
+			"desc": "https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.11/#-strong-write-operations-namespace-v1-core-strong-",
+			"uri": "api/${API_VERSION}/namespaces",
+			"method": "POST",
+			"headers": [
+				{ "Authorization" : "Bearer ${TOKEN}"}
+			]
+		},
+		{
+			"name": "DeleteNamespace",
+			"desc": "List Namespaces",
+			"uri": "api/${API_VERSION}/namespaces/${NAME}",
+			"method": "DELETE",
+			"headers": [
+				{ "Authorization" : "Bearer ${TOKEN}"}
+			]
+		},
+		
+		{
+			"name": "ListNodes",
+			"desc": "List Nodes",
+			"uri": "api/${API_VERSION}/nodes",
+			"method": "GET",
+			"headers": [
+				{ "Authorization" : "Bearer ${TOKEN}"}
+			]
+		},
+		
+		{
+			"name": "ListAllPods",
+			"desc": "List Pods for all Namespaces",
+			"uri": "api/${API_VERSION}/pods",
+			"method": "GET",
+			"headers": [
+				{ "Authorization" : "Bearer ${TOKEN}"}
+			]
+		},
+		{
+			"name": "ListPods",
+			"desc": "List Pods for a Namespace",
+			"uri": "api/${API_VERSION}/namespaces/${NAMESPACE}/pods",
+			"method": "GET",
+			"headers": [
+				{ "Authorization" : "Bearer ${TOKEN}"}
+			]
+		},
+		{
+			"name": "GetPodLogs",
+			"desc": "List Pods",
+			"uri": "api/${API_VERSION}/namespaces/${NAMESPACE}/pods/${POD}/log?${LOGARGS}",
+			"method": "GET",
+			"headers": [
+				{ "Authorization" : "Bearer ${TOKEN}"}
+			]
+		},		
+				
+		{
+			"name": "ListServices",
+			"desc": "List Services",
+			"uri": "api/${API_VERSION}/services",
+			"method": "GET",
+			"headers": [
+				{ "Authorization" : "Bearer ${TOKEN}"}
+			]
+		},
+			
+		{
+			"name": "ListDeployments",
+			"desc": "List Deployments",
+			"uri": "apis/apps/${API_VERSION}/deployments",
+			"method": "GET",
+			"headers": [
+				{ "Authorization" : "Bearer ${TOKEN}"}
+			]
+		},
+		{
+			"name": "PatchDeployment",
+			"desc": "https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.17/#patch-deployment-v1-apps",
+			"uri": "apis/apps/${API_VERSION}/namespaces/${NAMESPACE}/deployments/${DEPLOYMENT}",
+			"method": "PATCH",
+			"contentType" : "application/strategic-merge-patch+json",
+			"headers": [
+				{ "Authorization" : "Bearer ${TOKEN}"}
+			]
+		},
+	
+		{
+			"name": "ListSecrets",
+			"desc": "List Secrets - https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.17/#list-all-namespaces-secret-v1-core",
+			"uri": "api/${API_VERSION}/secrets",
+			"method": "GET",
+			"headers": [
+				{ "Authorization" : "Bearer ${TOKEN}"}
+			]
+		},	
+		{
+			"name": "CreateSecret",
+			"desc": "https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.17/#-strong-write-operations-secret-v1-core-strong-",
+			"uri": "api/${API_VERSION}/namespaces/${NAMESPACE}/secrets",
+			"method": "POST",
+			"headers": [
+				{ "Authorization" : "Bearer ${TOKEN}"}
+			]
+		},	
+		{
+			"name": "DeleteSecret",
+			"desc": "https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.17/#delete-secret-v1-core",
+			"uri": "api/${API_VERSION}/namespaces/${NAMESPACE}/secrets/${NAME}",
+			"method": "DELETE",
+			"headers": [
+				{ "Authorization" : "Bearer ${TOKEN}"}
+			]
+		},	
+
+		{
+			"name": "ListEvents",
+			"desc": "List Events",
+			"uri": "api/${API_VERSION}/events",
+			"method": "GET",
+			"headers": [
+				{ "Authorization" : "Bearer ${TOKEN}"}
+			]
+		},
+
+		{
+			"name": "ListPVs",
+			"desc": "List Persistent Volumes",
+			"uri": "api/${API_VERSION}/persistentvolumes",
+			"method": "GET",
+			"headers": [
+				{ "Authorization" : "Bearer ${TOKEN}"}
+			]
+		},
+		{
+			"name": "CreatePV",
+			"desc": "Create a Persistent Volume",
+			"uri": "api/${API_VERSION}/persistentvolumes",
+			"method": "POST",
+			"headers": [
+				{ "Authorization" : "Bearer ${TOKEN}"}
+			]
+		},
+		{
+			"name": "DeleteVolume",
+			"desc": "List Persistent Volumes",
+			"uri": "api/${API_VERSION}/persistentvolumes/${NAME}",
+			"method": "DELETE",
+			"headers": [
+				{ "Authorization" : "Bearer ${TOKEN}"}
+			]
+		},
+		
+		{
+			"name": "ListPVCs",
+			"desc": "List Persistent Volume Claims",
+			"uri": "api/${API_VERSION}/persistentvolumeclaims",
+			"method": "GET",
+			"headers": [
+				{ "Authorization" : "Bearer ${TOKEN}"}
+			]
+		},
+		{
+			"name": "CreatePVC",
+			"desc": "https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#-strong-write-operations-persistentvolumeclaim-v1-core-strong-",
+			"uri": "api/${API_VERSION}/namespaces/${NAMESPACE}/persistentvolumeclaims",
+			"method": "POST",
+			"headers": [
+				{ "Authorization" : "Bearer ${TOKEN}"}
+			]
+		},
+		{
+			"name": "DeleteVolumeClaim",
+			"desc": "List Persistent Volume Claims",
+			"uri": "api/${API_VERSION}/namespaces/${NAMESPACE}/persistentvolumeclaims/${NAME}",
+			"method": "DELETE",
+			"headers": [
+				{ "Authorization" : "Bearer ${TOKEN}"}
+			]
+		},
+		
+		{
+			"name": "ListStorageClasses",
+			"desc": "List StorageClasses",
+			"uri": "apis/storage.k8s.io/${API_VERSION}/storageclasses",
+			"method": "GET",
+			"headers": [
+				{ "Authorization" : "Bearer ${TOKEN}"}
+			]
+		},
+		
+		
+		{
+			"name": "ListServiceAccounts",
+			"desc": "List ServiceAccounts for all namesapaces",
+			"uri": "api/${API_VERSION}/serviceaccounts",
+			"method": "GET",
+			"headers": [
+				{ "Authorization" : "Bearer ${TOKEN}"}
+			]
+		},
+		{
+			"name": "PatchServiceAccount",
+			"desc": "https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.11/#patch-serviceaccount-v1-core",
+			"uri": "api/${API_VERSION}/namespaces/${NAMESPACE}/serviceaccounts/${SERVICEACCOUNT}",
+			"method": "PATCH",
+			"contentType" : "application/strategic-merge-patch+json",
+			"headers": [
+				{ "Authorization" : "Bearer ${TOKEN}"}
+			]
+		}
+				
+	]
+}

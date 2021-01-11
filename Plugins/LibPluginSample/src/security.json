@@ -1,0 +1,19 @@
+{
+	"META_Comment": [
+		"## Modular Security Descriptors ##",
+		" Web parameters are scanned for security violations by looking at a security descriptor ",
+		" stored @ the module class-path /configuration/security-{PACKAGE_NAME}.json  where PACKAGE_NAME is the name of the main package of the module.",
+
+		"## Parameter Validators ##",
+		" Parameter validators are used to describe valid values for a given parameter using regular expressions. ",
+		" For example, the JSON { param: server_runMode, regexp: '\\b(PRIMARY|SECONDARY)\\b'} The parameter server_runMode accepts the values: PRIMARY or SECONDARY only.",
+		" MATCH AN EXTERNAL URL: ((?:https?\\:\\/\\/|www\\.)(?:[-a-z0-9]+\\.)*[-a-z0-9]+.*) "
+	],
+
+	"validators": [
+	
+	
+		{ "param": "SAMPLE_HTTP_PARAM", "regexp": "((?:https?\\:\\/\\/|www\\.)(?:[-a-z0-9]+\\.)*[-a-z0-9]+.*)"}
+		
+	]
+}

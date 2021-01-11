@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+<version>3</version>
+
+<property>
+	<key>rts01_evExp</key>
+	<name>rts01_evExp</name>
+	<value><![CDATA[60000]]></value>
+	<attributes>
+		<label>Event Expiration Interval (ms)</label>
+		<group>cfg_group01_backend</group>
+		<widget><![CDATA[text]]></widget>
+	</attributes>
+</property>
+
+<property>
+	<key>rts02_gcInt</key>
+	<name>rts02_gcInt</name>
+	<value><![CDATA[60000]]></value>
+	<attributes>
+		<label>Garbage Collection Interval (ms)</label>
+		<group>cfg_group01_backend</group>
+		<widget><![CDATA[text]]></widget>
+	</attributes>
+</property>
+
+<property>
+	<key>rts03_mss</key>
+	<name>rts03_mss</name>
+	<value><![CDATA[http://localhost:8080/CloudStorage01]]></value>
+	<attributes>
+		<label>Storage EndPoint</label>
+		<group>cfg_group02_ms</group>
+		<widget><![CDATA[text]]></widget>
+		<required>true</required>
+	</attributes>
+</property>
+
+<property>
+	<key>rts04_mss</key>
+	<name>rts04_mss</name>
+	<value><![CDATA[5000]]></value>
+	<attributes>
+		<label>Read Timeout</label>
+		<group>cfg_group02_ms</group>
+		<widget><![CDATA[combo&5000,8000,10000,15000]]></widget>
+		<required>true</required>
+	</attributes>
+</property>
+
+<property>
+	<key>rts05_mss</key>
+	<name>rts05_mss</name>
+	<value><![CDATA[5000]]></value>
+	<attributes>
+		<label>Connect Timeout</label>
+		<group>cfg_group02_ms</group>
+		<widget><![CDATA[combo&5000,8000,10000,15000]]></widget>
+		<required>true</required>
+	</attributes>
+</property>
+
+<group>
+	<name>cfg_group01_backend</name>
+	<title>Event Queue</title>
+</group>
+
+<group>
+	<name>cfg_group02_ms</name>
+	<title>Micro Services</title>
+</group>
+
+</configuration>

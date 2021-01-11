@@ -1,0 +1,9 @@
+{
+	"uuid" : "%s",
+	"nodeAddress": "%s",
+	"nodeName": "%s",
+	"messageType" : "%s",
+	"timeCreated": %d ,
+	"timeSent": %d ,
+	"attributes" : %s
+}

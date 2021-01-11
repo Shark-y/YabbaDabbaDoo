@@ -1,0 +1,178 @@
+<h2>Cloud Reports Core Library Change Log</h2>
+<hr>
+
+<h3>Branch release-1.1</h3>
+
+<ul>
+<li> 06/05/2020 v1.0.11 by VSilva
+	<ul>
+		<li>ds.jsp plus tile_ds*.jsp: Added logic to support the plugin system.</li>
+		<li>File system DS: Added file list filter to Data Stores config JSP.</li>
+		<li>MANIFEST.MF Version increased to 1.0.11</li>
+	</ul>
+</li>
+
+<li> 00/04/2019 v1.0.9 by VSilva
+	<ul>
+		<li>10/25/2019 Cleaned up the VDN event pump.</li>
+		<li>Removed Apache commons file upload code and libs.</li>
+		<li>Fix for broken build msg:  E:\AutomationScripts\Products\Cloud_UnifiedReports\release-1.1\LibCloudReportsCore\lib does not exist.</li>
+		<li>03/25/2020 FileSystemDataSource.java Updates to read files and dris pluys bug fixes.</li>
+	</ul>
+</li>
+
+<li> 06/11/2019 v1.0.8 by VSilva
+	<ul>
+		<li>DataSourceManager.java: New method to get DS by type: getDatyaSources(type)</li>
+		<li>DisagnosticsServlet.java: Added support for dumping FileSystem data source records (files).</li>
+		<li>DataSourceManager.java, RestApiServlet.java: Updated for new DS type FILESYSTEM.</li>
+		<li>New files: BaseDatSource, FileSystemDataSource.java</li>
+		<li>JSPHandlerDatSource.java: Added logic for FS DS.</li>
+		<li>IDataSource.java: New DataSourceType FILESYSTEM.</li>
+		<li>New data source type FILESYSTEM: tile_ds_fs.jsp, ds.js, ds.jsp</li>
+	</ul>
+</li>
+
+<li> 05/08/2019 v1.0.8 by VSilva
+	<ul>
+		<li>5/28/2019 tile_ds_db.jsp: Fixed bug where the DB URL will not display when adding a new DB data source.</li>
+		<li>5/25/2019 SimRTPumpEvents.java Added new agent pump metrics.</li>
+		<li>5/14/2019 MANIFEST.MF Version increased to 1.0.10</li>
+		<li>5/14/2019 dash.jsp, Dashboard.java, RealTimeStatService.java,DashboradListjava: New dashboard field HEADING to display alongside the Group By key. See <a href="http://skyfall.cloudlab.com:6091/issue/UNIFIED_REPORTS-50">UNIFIED_REPORTS-50</a></li>
+		<li>tile_ds_main.jsp, Simulators/Tests: Changed default end of batch from END_OF_RECORDS to END_OF_DATA to match CMS perl script plus new Agent sample DS/Dash.</li>
+		<li>Dashborad.java: new method List getMetrics(WidgetType type)</li>
+		<li>MANIFEST.MF Version increased to 1.0.9</li>
+	</ul>
+</li>
+
+<li>
+	<ul>
+		<li>02/26/2019 SimRTSockPumpEvents.java: fixed pump interval @ 20s.</li>
+		<li>12/11/2018 JavaMailDataSoucre.java: IMAPS fixed bug where mail content will will display as an object instead as text.</li>
+		<li>11/9/2018 New data source IMAPS to fetch email over SSL.</li>
+		<li>6/8/2018 Moved com.rts.tools.Mailtool.java to LibCloudCore com.cloud.core.io.Mailtool.java</li>
+		<li>1/16/2018 Datasource JSP: (ds.js) fixed bug where port will not display when data source type is SOCKET or SOCKET_WITH_STORAGE</li>
+		<li>11/30/2017 New Java mail data source JavaMailDatasource.java</li>
+	</ul>
+</li>
+<li> 11/23/2017  v1.0.8 by VSilva
+	<ul>
+	 	<li>Made DataSourceManager a singleton.</li>
+	 	<li>Made Data source JSP (conf/ds.jsp) and companion servlet com.rts.jsp.DiagnosticsServlet.java reusable across all data source types.</li>
+	 	<li>New Data source types: SMTP, SMTPS: JavaMaildataSource.java - SMS: SMSTwilioDataSource.java</li>
+	</ul>
+</li>
+
+<li> v1.0.7 by VSilva
+	<ul>
+		<li>9/30/2017 Fixed <a href="http://acme208.acme.com:6091/issue/UNIFIED_REPORTS-41">UNIFIED_REPORTS-41</a> Catch Invalid format footer &amp; display an error in node log.</li>	
+	 	<li>9/29/2017 Fixed <a href="http://acme208.acme.com:6091/issue/UNIFIED_REPORTS-40">UNIFIED_REPORTS-40</a> Cloud Reports Arvato CMS Reporting and Web Dashboard.</li>
+	 	<li>9/30/2017 New interface IDataService for implementations that handle either data sources or data stores.</li>
+	 	<li>10/2/2017 Fixed <a href="http://acme208.acme.com:6091/issue/UNIFIED_REPORTS-42">UNIFIED_REPORTS-42</a>TCP server bind errors need to display in the diagnostix page.</li>
+	 	<li>10/3/2017 Data source changes to support a subset of format fields to be stored.</li>
+	 	<li>10/11/2017 Moved bootstrap growl notifications (notify.js) to the foundation LIB LibCloudConsole src/js/notify.js</li>
+	 	<li>11/01/2017 Dashboard.java: Fixed <a href="http://acme208.acme.com:6091/issue/UNIFIED_REPORTS-44">UNIFIED_REPORTS-44</a> NullPointer Ex in CentOS7 and Windows 10 64bit.</li>
+	 	<li>11/02/2017 Increased version in MANIFEST.MF to 1.0.7</li>
+	 	<li>11/12/2017 TCPSockHandler.java lowered the log level for un-necessary half buffer message.</li>
+	 	<li>11/16/2017 DataFormat.java (plus ds.jsp) Added new storage option (wipe table). If true, clear the table before an update.</li>
+	</ul>
+</li>
+
+<li> 9/16/2017 v1.0.6
+	<ul>
+		<li>ds.jsp: UI implementation for new Database data source and cleanup.</li>
+		<li>New pkg and classes com.rts.datasource.db</li>
+		<li>Refactorings: RealTimeStatsService, DataSourceMananger and others.</li>
+		<li>Deprecated XML format for data sources in favor of JSON.</li>
+		<li>Threshold.java: Findbugs - override hashCode()</li>
+		<li>9/21/17 Changes to make LibCloudReportsCore a reusable module for all micro services.</li>
+		<li>9/21/17 Moved pkgs com.rts.service, com.rts.jsp, /configuration to project CloudReports</li>
+		<li>9/21/17 Moved all reports JSPs from src/META-INF/resources to CloudReports/WebContent</li>
+		<li>9/21/17 Moved all reports servlets to LibCloudReports com.rts.servlet </li>
+	</ul>
+</li>
+
+<li> 9/9/2017
+	<ul>
+		<li>Initial support for multiple data sources: Extracted interface IDatasSource from TCPSockDatasource.</li>
+		<li>JSP changes: replaced all occurrences of TCPSockDatasource with IDataSource. </li>
+		<li>New pkgs: com.rts.datasource.sock, com.rts.datasource.db</li>
+		<li>Moved classes TCPSock* to pkg com.rts.datasource.sock.</li>
+		<li>Long poll servlet/dash-view-lp.jsp EventQueueAsyncServlet Added poll reaping logic to kill stale/dead polls and fix rogue threads when the container shuts down.</li>
+	</ul>
+</li>
+<li>
+	9/5/17 Fixed <a href="http://acme208.acme.com:6091/issue/UNIFIED_REPORTS-38">UNIFIED_REPORTS-38</a> Security access violation in sales force when When accessing a dashboard via TABS in the SF console app.
+</li>
+<li>
+	8/16/17 Fixed <a href="http://acme208.acme.com:6091/issue/UNIFIED_REPORTS-36">UNIFIED_REPORTS-36</a>Reports: Dash viewer disable login for this resource (via the OWASP descriptor).
+</li>
+<li>
+	8/10/2017 v1.0.5 changes by VSilva
+	<ul>
+		<li>Fixed <a href="http://acme208.acme.com:6091/issue/UNIFIED_REPORTS-34">UNIFIED_REPORTS-34</a>Dashboard viewer. Use a long poll to display metrics quickly.</li>
+		<li>New class: EventQueueAsyncServlet (event long poll)</li>
+		<li>Refactorings: RealTimeStatsService: getTCPService -> getDataSourceManager + class/JSP changes.</li>
+		<li>Refactorings: TCPNetService -> TCPSockDataSource + class/JSP changes.</li>
+		<li>Refactorings: TCPNetServiceHandler -> TCPSockHandler + class/JSP changes.</li>
+		<li>Refactorings: DefaultDataMatcher -> TCPSockDataMatcher + class/JSP changes.</li>
+		<li>Security descriptor: Added "resources": [{ "uri" : "/dash-view.jsp"... { "uri" : "/dash-view-lp.jsp"...] to skip X-Frame-Options "DENY". This allows /dash-view.jsp and /dash-view-lp.jsp to be displayed within an IFRAME.</li>
+		<li>8/13/2017 EventQueue.java uses compressed elements to save heap space.</li>
+		<li>8/15/2017 Fixed <a href="http://acme208.acme.com:6091/issue/UNIFIED_REPORTS-35">UNIFIED_REPORTS-35</a>Disable X-Frame-Options HTTP resp hdr from the dash view JSP (Salesforce IFRAME).</li>
+	</ul>
+</li>
+
+<li>
+	8/7/2017 v1.0.4 changes by VSilva
+	<ul>
+		<li>Fixed <a href="http://acme208.acme.com:6091/issue/UNIFIED_REPORTS-33">UNIFIED_REPORTS-33</a>Configure > Thresholds : double nav crumbs.</li>
+		<li>Fixed <a href="http://acme208.acme.com:6091/issue/UNIFIED_REPORTS-32">UNIFIED_REPORTS-32</a>System >Diagnostics event data truncated.</li>
+		<li>Enabled bread crumbs for this theme.</li>
+		<li>Improved diagnostics page: shows record sizes for each data source.</li>
+		<li>Improved diagnostics page: new JSON formatter for batches.</li>
+		<li>New data source diagnostics page: shows records for a given data source.</li>
+		<li>Increased module version in MANIFEST.MF to 1.0.4.</li>
+	</ul>
+</li>
+
+<li>
+	8/2/2017 v1.0.3 changes by VSilva
+	<ul>
+		<li>Fixed <a href="http://acme208.acme.com:6091/issue/UNIFIED_REPORTS-31">UNIFIED_REPORTS-31</a>System > Diagnostics events choke on high load CPUs.</li>
+		<li>Fixed <a href="http://acme208.acme.com:6091/issue/UNIFIED_REPORTS-30">UNIFIED_REPORTS-30</a>Eliminate race conditions by multiple client views against the same dashboard.</li>
+		<li>Threshold.java, ThresholdList.java code optimizations.</li>
+	</ul>
+</li>
+
+<li>
+	7/6/2017 v1.0.2 dash-view.jsp
+	<ul>
+		<li>Made the display range a query string parameter (overrides the range in the dash config xml file).</li>
+		<li>Added a label for the display key field as a new HTTP param (keyLbl).</li>
+		<li>Lots of Javascript cleanup into dash-view.js.</li>
+		<li>Dashboard.java: Added branding info to the dashboard toJSON().</li>
+		<li>DashboardList.java: Cleanup/optimizations.</li>
+	</ul>
+</li>
+
+<li>
+	6/18/2017 v1.0.2 Fixed <a href="http://acme208.acme.com:6091/issue/UNIFIED_REPORTS-29">UNIFIED_REPORTS-29</a>Alerts triggers.
+	<ul>
+		<li>Core config (main_theme.ini) enabled Configure > Thresholds menu.</li>
+		<li>dash.jsp: View Label changed to Preview</li>
+		<li>dashboads.xml: Sample dashboards name changed to Sample...</li>
+	</ul>
+</li>
+
+<li>
+	6/2/2017 v1.0.1 Fixed <a href="http://acme208.acme.com:6091/issue/UNIFIED_REPORTS-26">UNIFIED_REPORTS-26</a>New Marqeee widget type.
+	<ul>
+		<li>Dashboard.java: New WidgetType MARQUEE</li>
+		<li>dash-view.jsp, dash-view.js, dash-view.css Marquee HTML,JS,CSS display</li>
+	</ul>
+</li>
+
+<li> 5/26/2017 Initial log tracking.</li>
+
+</ul>
+

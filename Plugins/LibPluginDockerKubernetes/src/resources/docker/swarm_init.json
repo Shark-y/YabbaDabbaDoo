@@ -1,0 +1,11 @@
+{
+  "ListenAddr": "0.0.0.0:2377",
+  "AdvertiseAddr": "${ADVERTISEADDR}",
+  "ForceNewCluster": false,
+  "Spec": {
+    "Orchestration": {},
+    "Raft": {},
+    "Dispatcher": {},
+    "CAConfig": {}
+  }
+}

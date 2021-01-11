@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<eclipse-userlibraries version="2">
+    <library name="CloudServices" systemlibrary="false">
+        <archive path="/LibCloudDoc/lib/javax.mail.jar"/>
+        <archive path="/LibCloudDoc/lib/LibProfiler.jar"/>
+        <archive path="/LibCloudDoc/lib/log4j-1.2.17.jar"/>
+        <archive javadoc="jar:platform:/resource/LibCloudDoc/doc/json-1.0.zip!/" path="/LibCloudDoc/lib/json-1.0.jar" source="/LibCloudDoc/src/json-1.0.zip"/>
+		<archive path="/LibCloudDoc/lib/hazelcast-3.4.2.jar"/>
+       <archive javadoc="jar:platform:/resource/LibCloudDoc/doc/LibCloudCluster-1.2.zip!/" path="/LibCloudDoc/lib/LibCloudCluster-1.2.jar" source="/LibCloudDoc/src/LibCloudCluster-1.2.zip"/>
+        <archive javadoc="jar:platform:/resource/LibCloudDoc/doc/LibCloudConsole-1.8.zip!/" path="/LibCloudDoc/lib/LibCloudConsole-1.8.jar" source="/LibCloudDoc/src/LibCloudConsole-1.8.zip"/>
+        <archive javadoc="jar:platform:/resource/LibCloudDoc/doc/LibCloudCore-1.6.zip!/" path="/LibCloudDoc/lib/LibCloudCore-1.6.jar" source="/LibCloudDoc/src/LibCloudCore-1.6.zip"/>
+ 		
+    </library>
+ 
+</eclipse-userlibraries>

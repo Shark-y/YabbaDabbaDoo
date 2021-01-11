@@ -1,0 +1,346 @@
+{
+  "kind": "PersistentVolumeList",
+  "apiVersion": "v1",
+  "metadata": {
+    "selfLink": "/api/v1/persistentvolumes",
+    "resourceVersion": "35345824"
+  },
+  "items": [
+    {
+      "metadata": {
+        "name": "nfs-pv",
+        "selfLink": "/api/v1/persistentvolumes/nfs-pv",
+        "uid": "ab93788a-6bd2-11ea-a941-000c297a5447",
+        "resourceVersion": "35266786",
+        "creationTimestamp": "2020-03-22T00:18:35Z",
+        "annotations": {
+          "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"PersistentVolume\",\"metadata\":{\"annotations\":{},\"name\":\"nfs-pv\"},\"spec\":{\"accessModes\":[\"ReadWriteOnce\"],\"capacity\":{\"storage\":\"1Gi\"},\"mountOptions\":[\"hard\",\"nfsvers=3\"],\"nfs\":{\"path\":\"/var/cloud\",\"server\":\"192.168.40.84\"},\"persistentVolumeReclaimPolicy\":\"Recycle\",\"storageClassName\":\"manual\",\"volumeMode\":\"Filesystem\"}}\n",
+          "pv.kubernetes.io/bound-by-controller": "yes"
+        },
+        "finalizers": [
+          "kubernetes.io/pv-protection"
+        ]
+      },
+      "spec": {
+        "capacity": {
+          "storage": "1Gi"
+        },
+        "nfs": {
+          "server": "192.168.40.84",
+          "path": "/var/cloud"
+        },
+        "accessModes": [
+          "ReadWriteOnce"
+        ],
+        "claimRef": {
+          "kind": "PersistentVolumeClaim",
+          "namespace": "default",
+          "name": "nfs-pvc",
+          "uid": "ae658694-6bd2-11ea-a941-000c297a5447",
+          "apiVersion": "v1",
+          "resourceVersion": "35266783"
+        },
+        "persistentVolumeReclaimPolicy": "Recycle",
+        "storageClassName": "manual",
+        "mountOptions": [
+          "hard",
+          "nfsvers=3"
+        ],
+        "volumeMode": "Filesystem"
+      },
+      "status": {
+        "phase": "Bound"
+      }
+    },
+    {
+      "metadata": {
+        "name": "pvc-242f5144-b889-11e9-91ab-000c297a5447",
+        "selfLink": "/api/v1/persistentvolumes/pvc-242f5144-b889-11e9-91ab-000c297a5447",
+        "uid": "38ed2f01-b889-11e9-91ab-000c297a5447",
+        "resourceVersion": "35216420",
+        "creationTimestamp": "2019-08-06T20:31:51Z",
+        "annotations": {
+          "Description": "Gluster-Internal: Dynamically provisioned PV",
+          "gluster.kubernetes.io/heketi-volume-id": "ce40d4648dad4a7b993f291cbf275c82",
+          "gluster.org/type": "file",
+          "kubernetes.io/createdby": "heketi-dynamic-provisioner",
+          "pv.beta.kubernetes.io/gid": "2003",
+          "pv.kubernetes.io/bound-by-controller": "yes",
+          "pv.kubernetes.io/provisioned-by": "kubernetes.io/glusterfs"
+        },
+        "finalizers": [
+          "kubernetes.io/pv-protection"
+        ]
+      },
+      "spec": {
+        "capacity": {
+          "storage": "1Gi"
+        },
+        "glusterfs": {
+          "endpoints": "glusterfs-dynamic-242f5144-b889-11e9-91ab-000c297a5447",
+          "path": "vol_ce40d4648dad4a7b993f291cbf275c82",
+          "endpointsNamespace": "conversations"
+        },
+        "accessModes": [
+          "ReadWriteOnce"
+        ],
+        "claimRef": {
+          "kind": "PersistentVolumeClaim",
+          "namespace": "conversations",
+          "name": "contextstore-es-sxk9mfnzmp-elasticsearch-data",
+          "uid": "242f5144-b889-11e9-91ab-000c297a5447",
+          "apiVersion": "v1",
+          "resourceVersion": "15328031"
+        },
+        "persistentVolumeReclaimPolicy": "Delete",
+        "storageClassName": "glusterfs",
+        "volumeMode": "Filesystem"
+      },
+      "status": {
+        "phase": "Failed",
+        "message": "Delete http://cecil.cloudlab.com:8080/volumes/ce40d4648dad4a7b993f291cbf275c82: dial tcp 192.168.40.90:8080: connect: no route to host"
+      }
+    },
+    {
+      "metadata": {
+        "name": "pvc-2af842ec-b942-11e9-91ab-000c297a5447",
+        "selfLink": "/api/v1/persistentvolumes/pvc-2af842ec-b942-11e9-91ab-000c297a5447",
+        "uid": "2e92d85c-b942-11e9-91ab-000c297a5447",
+        "resourceVersion": "15474540",
+        "creationTimestamp": "2019-08-07T18:35:51Z",
+        "annotations": {
+          "Description": "Gluster-Internal: Dynamically provisioned PV",
+          "gluster.kubernetes.io/heketi-volume-id": "3090a9543f2f090dc3bec55bcf63418c",
+          "gluster.org/type": "file",
+          "kubernetes.io/createdby": "heketi-dynamic-provisioner",
+          "pv.beta.kubernetes.io/gid": "2001",
+          "pv.kubernetes.io/bound-by-controller": "yes",
+          "pv.kubernetes.io/provisioned-by": "kubernetes.io/glusterfs"
+        },
+        "finalizers": [
+          "kubernetes.io/pv-protection"
+        ]
+      },
+      "spec": {
+        "capacity": {
+          "storage": "10Gi"
+        },
+        "glusterfs": {
+          "endpoints": "glusterfs-dynamic-2af842ec-b942-11e9-91ab-000c297a5447",
+          "path": "vol_3090a9543f2f090dc3bec55bcf63418c",
+          "endpointsNamespace": "kube-system"
+        },
+        "accessModes": [
+          "ReadWriteOnce"
+        ],
+        "claimRef": {
+          "kind": "PersistentVolumeClaim",
+          "namespace": "kube-system",
+          "name": "elasticsearch-logging-elasticsearch-logging-0",
+          "uid": "2af842ec-b942-11e9-91ab-000c297a5447",
+          "apiVersion": "v1",
+          "resourceVersion": "15474511"
+        },
+        "persistentVolumeReclaimPolicy": "Delete",
+        "storageClassName": "glusterfs",
+        "volumeMode": "Filesystem"
+      },
+      "status": {
+        "phase": "Bound"
+      }
+    },
+    {
+      "metadata": {
+        "name": "pvc-31aa9219-b942-11e9-91ab-000c297a5447",
+        "selfLink": "/api/v1/persistentvolumes/pvc-31aa9219-b942-11e9-91ab-000c297a5447",
+        "uid": "367d8bcd-b942-11e9-91ab-000c297a5447",
+        "resourceVersion": "15474596",
+        "creationTimestamp": "2019-08-07T18:36:04Z",
+        "annotations": {
+          "Description": "Gluster-Internal: Dynamically provisioned PV",
+          "gluster.kubernetes.io/heketi-volume-id": "ab6bd19ed6b317d47fa8bd8526f2bf36",
+          "gluster.org/type": "file",
+          "kubernetes.io/createdby": "heketi-dynamic-provisioner",
+          "pv.beta.kubernetes.io/gid": "2002",
+          "pv.kubernetes.io/bound-by-controller": "yes",
+          "pv.kubernetes.io/provisioned-by": "kubernetes.io/glusterfs"
+        },
+        "finalizers": [
+          "kubernetes.io/pv-protection"
+        ]
+      },
+      "spec": {
+        "capacity": {
+          "storage": "10Gi"
+        },
+        "glusterfs": {
+          "endpoints": "glusterfs-dynamic-31aa9219-b942-11e9-91ab-000c297a5447",
+          "path": "vol_ab6bd19ed6b317d47fa8bd8526f2bf36",
+          "endpointsNamespace": "kube-system"
+        },
+        "accessModes": [
+          "ReadWriteOnce"
+        ],
+        "claimRef": {
+          "kind": "PersistentVolumeClaim",
+          "namespace": "kube-system",
+          "name": "elasticsearch-logging-elasticsearch-logging-1",
+          "uid": "31aa9219-b942-11e9-91ab-000c297a5447",
+          "apiVersion": "v1",
+          "resourceVersion": "15474566"
+        },
+        "persistentVolumeReclaimPolicy": "Delete",
+        "storageClassName": "glusterfs",
+        "volumeMode": "Filesystem"
+      },
+      "status": {
+        "phase": "Bound"
+      }
+    },
+    {
+      "metadata": {
+        "name": "pvc-3ac02bf8-b942-11e9-91ab-000c297a5447",
+        "selfLink": "/api/v1/persistentvolumes/pvc-3ac02bf8-b942-11e9-91ab-000c297a5447",
+        "uid": "3e5c5ac6-b942-11e9-91ab-000c297a5447",
+        "resourceVersion": "15474654",
+        "creationTimestamp": "2019-08-07T18:36:17Z",
+        "annotations": {
+          "Description": "Gluster-Internal: Dynamically provisioned PV",
+          "gluster.kubernetes.io/heketi-volume-id": "b611ab8337d0858f3ece1583feb9c014",
+          "gluster.org/type": "file",
+          "kubernetes.io/createdby": "heketi-dynamic-provisioner",
+          "pv.beta.kubernetes.io/gid": "2004",
+          "pv.kubernetes.io/bound-by-controller": "yes",
+          "pv.kubernetes.io/provisioned-by": "kubernetes.io/glusterfs"
+        },
+        "finalizers": [
+          "kubernetes.io/pv-protection"
+        ]
+      },
+      "spec": {
+        "capacity": {
+          "storage": "10Gi"
+        },
+        "glusterfs": {
+          "endpoints": "glusterfs-dynamic-3ac02bf8-b942-11e9-91ab-000c297a5447",
+          "path": "vol_b611ab8337d0858f3ece1583feb9c014",
+          "endpointsNamespace": "kube-system"
+        },
+        "accessModes": [
+          "ReadWriteOnce"
+        ],
+        "claimRef": {
+          "kind": "PersistentVolumeClaim",
+          "namespace": "kube-system",
+          "name": "elasticsearch-logging-elasticsearch-logging-2",
+          "uid": "3ac02bf8-b942-11e9-91ab-000c297a5447",
+          "apiVersion": "v1",
+          "resourceVersion": "15474628"
+        },
+        "persistentVolumeReclaimPolicy": "Delete",
+        "storageClassName": "glusterfs",
+        "volumeMode": "Filesystem"
+      },
+      "status": {
+        "phase": "Bound"
+      }
+    },
+    {
+      "metadata": {
+        "name": "pvc-94dc180f-b942-11e9-91ab-000c297a5447",
+        "selfLink": "/api/v1/persistentvolumes/pvc-94dc180f-b942-11e9-91ab-000c297a5447",
+        "uid": "99153ddd-b942-11e9-91ab-000c297a5447",
+        "resourceVersion": "15474971",
+        "creationTimestamp": "2019-08-07T18:38:49Z",
+        "annotations": {
+          "Description": "Gluster-Internal: Dynamically provisioned PV",
+          "gluster.kubernetes.io/heketi-volume-id": "5326695760c0961d945ae7b9c1965eb8",
+          "gluster.org/type": "file",
+          "kubernetes.io/createdby": "heketi-dynamic-provisioner",
+          "pv.beta.kubernetes.io/gid": "2005",
+          "pv.kubernetes.io/bound-by-controller": "yes",
+          "pv.kubernetes.io/provisioned-by": "kubernetes.io/glusterfs"
+        },
+        "finalizers": [
+          "kubernetes.io/pv-protection"
+        ]
+      },
+      "spec": {
+        "capacity": {
+          "storage": "10Gi"
+        },
+        "glusterfs": {
+          "endpoints": "glusterfs-dynamic-94dc180f-b942-11e9-91ab-000c297a5447",
+          "path": "vol_5326695760c0961d945ae7b9c1965eb8",
+          "endpointsNamespace": "kube-system"
+        },
+        "accessModes": [
+          "ReadWriteOnce"
+        ],
+        "claimRef": {
+          "kind": "PersistentVolumeClaim",
+          "namespace": "kube-system",
+          "name": "elasticsearch-logging-elasticsearch-logging-3",
+          "uid": "94dc180f-b942-11e9-91ab-000c297a5447",
+          "apiVersion": "v1",
+          "resourceVersion": "15474939"
+        },
+        "persistentVolumeReclaimPolicy": "Delete",
+        "storageClassName": "glusterfs",
+        "volumeMode": "Filesystem"
+      },
+      "status": {
+        "phase": "Bound"
+      }
+    },
+    {
+      "metadata": {
+        "name": "pvc-a8b134b2-b888-11e9-91ab-000c297a5447",
+        "selfLink": "/api/v1/persistentvolumes/pvc-a8b134b2-b888-11e9-91ab-000c297a5447",
+        "uid": "bbc4413e-b888-11e9-91ab-000c297a5447",
+        "resourceVersion": "35216407",
+        "creationTimestamp": "2019-08-06T20:28:21Z",
+        "annotations": {
+          "Description": "Gluster-Internal: Dynamically provisioned PV",
+          "gluster.kubernetes.io/heketi-volume-id": "d33f4f0d49c5af2864bf51b9bac4d815",
+          "gluster.org/type": "file",
+          "kubernetes.io/createdby": "heketi-dynamic-provisioner",
+          "pv.beta.kubernetes.io/gid": "2000",
+          "pv.kubernetes.io/bound-by-controller": "yes",
+          "pv.kubernetes.io/provisioned-by": "kubernetes.io/glusterfs"
+        },
+        "finalizers": [
+          "kubernetes.io/pv-protection"
+        ]
+      },
+      "spec": {
+        "capacity": {
+          "storage": "8Gi"
+        },
+        "glusterfs": {
+          "endpoints": "glusterfs-dynamic-a8b134b2-b888-11e9-91ab-000c297a5447",
+          "path": "vol_d33f4f0d49c5af2864bf51b9bac4d815",
+          "endpointsNamespace": "conversations"
+        },
+        "accessModes": [
+          "ReadWriteOnce"
+        ],
+        "claimRef": {
+          "kind": "PersistentVolumeClaim",
+          "namespace": "conversations",
+          "name": "data-kissed-squid-rabbitmq-0",
+          "uid": "a8b134b2-b888-11e9-91ab-000c297a5447",
+          "apiVersion": "v1",
+          "resourceVersion": "15327235"
+        },
+        "persistentVolumeReclaimPolicy": "Delete",
+        "storageClassName": "glusterfs",
+        "volumeMode": "Filesystem"
+      },
+      "status": {
+        "phase": "Failed",
+        "message": "Delete http://cecil.cloudlab.com:8080/volumes/d33f4f0d49c5af2864bf51b9bac4d815: dial tcp 192.168.40.90:8080: connect: no route to host"
+      }
+    }
+  ]
+}

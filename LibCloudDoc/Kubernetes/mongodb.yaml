@@ -1,0 +1,19 @@
+# https://hub.helm.sh/charts/bitnami/mongodb
+
+## Pod Security Context
+##
+
+## Kubernetes service type
+service:
+  type: NodePort
+
+## Enable persistence using Persistent Volume Claims
+## ref: http://kubernetes.io/docs/user-guide/persistent-volumes/
+##
+persistence:
+  enabled: false
+
+mongodbRootPassword: admin
+mongodbUsername: admin
+mongodbPassword: admin
+mongodbDatabase: db

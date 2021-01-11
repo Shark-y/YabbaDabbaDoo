@@ -1,0 +1,14 @@
+{
+	"params" : {
+			"notification_proto": 		"smtps",
+			"notification_host":		"smtp.mail.yahoo.com",
+			"notification_port": 		"465",
+			"notification_starttls.enable": 	false,
+			"notification_debug" :				false,
+			"notification_from" :			"converge_one@yahoo.com",
+			"notification_to" :				"cloud_git@convergeone.com",
+			"notification_user" : 			"converge_one@yahoo.com",
+			"notification_password" : 		"Thenewcti1"
+		
+	}
+}

@@ -1,0 +1,40 @@
+{"aggregates": [
+ {
+  "name": "SampleTotalsBySkill",
+  "description": "Call Totals by Skill",
+  "metrics": [
+   {
+    "metric": "ACDCALLS",
+    "label": "ACD Calls"
+   },
+   {
+    "metric": "AGINRING",
+    "label": "Ringing"
+   },
+   {
+    "metric": "INAUX",
+    "label": "In Aux"
+   }
+  ],
+  "type": "SUM",
+  "dataSource": "Sample CSPLIT",
+  "groupByMetric": "SPLIT_NAME"
+ },
+ {
+  "name": "SampleTotalsFromSPLIT",
+  "description": "Call Totals from the Sample SPLIT DS",
+  "metrics": [
+   {
+    "metric": "ACDCALLS",
+    "label": "On ACD"
+   },
+   {
+    "metric": "ABNCALLS",
+    "label": "Abandoned"
+   }
+  ],
+  "type": "SUM",
+  "dataSource": "Sample CSPLIT",
+  "groupByMetric": "NONE"
+ }
+]}

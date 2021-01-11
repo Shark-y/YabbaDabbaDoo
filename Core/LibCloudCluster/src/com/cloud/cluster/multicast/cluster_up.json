@@ -1,0 +1,13 @@
+{
+	"uuid" : "%s",
+	"nodeAddress": "%s",
+	"messageType" : "%s",
+	"timeCreated": %d ,
+	"timeSent": %d ,
+	"db": {
+		"driver": "%s",
+		"url" : "%s",
+		"user": "%s",
+		"password": "%s"
+	}
+}

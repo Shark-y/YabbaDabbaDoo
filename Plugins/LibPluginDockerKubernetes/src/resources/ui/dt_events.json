@@ -1,0 +1,15 @@
+{
+	"id": "tblEvents",
+	"usePanel" : false,
+	"panelToolbar" : [
+		{ "widget" : "refresh-button", "class": "", "title": "Click to refresh"},
+		{ "widget" : "dropdown"
+			, "menus" : [
+				{"label": "About Kubernetes Events", "target": "_blank", "href": "https://kubernetes.io/docs/tasks/debug-application-cluster/"}
+			]
+		},
+	],
+	"header": {
+		"labels" : ["Kind", "Namespace", "Type", "Created", "Details"]
+	}
+}

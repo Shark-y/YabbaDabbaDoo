@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dashboards>
+<!-- THIS FORMAT IS DEPRECATED USE dashboards.jaon -->
+<!-- 
+<dashboard>
+    <title>Sample Call Metrics By VDN</title>
+	<listener>Sample CVDN</listener>
+	<key>VDN</key>
+	<keyRange>1000,1001</keyRange>
+	<metric>
+		<name>CALLS_WAITING</name>
+		<description>Calls Waiting</description>
+		<type>NUMBER</type>
+		<widget>GAUGE</widget>
+	</metric>
+	<metric>
+		<name>ACTIVECALLS</name>
+		<description>Active Calls</description>
+		<type>NUMBER</type>		
+		<widget>GAUGE</widget>
+	</metric>
+	<metric>
+		<name>ACDCALLS</name>
+		<description><![CDATA[ACD Calls]]></description>
+		<type>NUMBER</type>
+		<widget>AREA_CHART</widget>
+	</metric>
+	<metric>
+		<name>ABNCALLS</name>
+		<description><![CDATA[Abandoned]]></description>
+		<type>NUMBER</type>
+		<widget>GAUGE</widget>
+	</metric>
+</dashboard>
+<dashboard>
+	<title><![CDATA[Sample Call Metrics by SPLIT]]></title>
+	<listener>Sample CSPLIT</listener>
+	<key>SPLIT</key>
+	<keyRange>1-3</keyRange>
+	<metric>
+		<name>CALLS_WAITING</name>
+		<description><![CDATA[Calls Waiting]]></description>
+		<type>NUMBER</type>
+		<widget>AREA_CHART</widget>
+	</metric>
+	<metric>
+		<name>ABNCALLS</name>
+		<description><![CDATA[Abandoned]]></description>
+		<type>NUMBER</type>
+		<widget>AREA_CHART</widget>
+	</metric>
+	<metric>
+		<name>ACDCALLS</name>
+		<description><![CDATA[ACD Calls]]></description>
+		<type>NUMBER</type>
+		<widget>AREA_CHART</widget>
+	</metric>
+	<metric>
+		<name>AVG_SPEED_ANS</name>
+		<description><![CDATA[Avg. speed of answer]]></description>
+		<type>STRING</type>
+		<widget>PANEL</widget>
+	</metric>
+	<metric>
+		<name>AVAILABLE</name>
+		<description><![CDATA[Agents Available]]></description>
+		<type>NUMBER</type>
+		<widget>GAUGE</widget>
+	</metric>
+	<metric>
+		<name>AGINRING</name>
+		<description><![CDATA[Agents: Ringing]]></description>
+		<type>NUMBER</type>
+		<widget>PANEL</widget>
+	</metric>
+	<metric>
+		<name>ONACD</name>
+		<description><![CDATA[Agents: ACD]]></description>
+		<type>NUMBER</type>
+		<widget>PANEL</widget>
+	</metric>
+</dashboard>
+-->
+<!-- 5/25/2019 A custom dash using complex 4metric panels and the agent data source -->
+<!-- 
+<dashboard>
+	<title><![CDATA[Sample Custom Agent metrics by SKILL]]></title>
+	<listener>Sample CAGENT</listener>
+	<key>SPLIT</key>
+	<keyRange>1-2</keyRange>
+	<displayHeading>SPLIT_NAME</displayHeading>
+	<metric>
+		<name>AGENTID</name>
+		<description><![CDATA[Agent Id]]></description>
+		<type>NUMBER</type>
+		<widget>PANEL</widget>
+	</metric>
+	<metric>
+		<name>AGENT_NAME</name>
+		<description><![CDATA[Name]]></description>
+		<type>NUMBER</type>
+		<widget>PANEL</widget>
+	</metric>
+	<metric>
+		<name>STATE</name>
+		<description><![CDATA[State]]></description>
+		<type>NUMBER</type>
+		<widget>PANEL</widget>
+	</metric>
+	<metric>
+		<name>TIME_IN_STATE</name>
+		<description><![CDATA[Time in state]]></description>
+		<type>NUMBER</type>
+		<widget>PANEL</widget>
+	</metric>
+	<branding>
+		<bgColor>F5F5F5</bgColor>
+	</branding>
+</dashboard>
+-->
+</dashboards>

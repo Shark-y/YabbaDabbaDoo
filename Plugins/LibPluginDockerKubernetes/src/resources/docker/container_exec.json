@@ -1,0 +1,10 @@
+{
+  "AttachStdin": true,
+  "AttachStdout": true,
+  "AttachStderr": true,
+  "Cmd": ${CMD},
+  "DetachKeys": "ctrl-p,ctrl-q",
+  "Privileged": true,
+  "Tty": true,
+  "User": "root:root"
+}

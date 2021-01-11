@@ -1,0 +1,44 @@
+{
+	"UpdatedAt": "2019-03-25T15:53:20.555269823Z",
+	"JoinTokens": {
+		"Worker": "SWMTKN-1-0izadorcbcb0rhkd25409dbuakqbsfkedn971nf9d3gb80ndab-3j0hurzmutqgwhj4u5podwz1m",
+		"Manager": "SWMTKN-1-0izadorcbcb0rhkd25409dbuakqbsfkedn971nf9d3gb80ndab-c1h56fasl7o1v3arqq7smxau0"
+	},
+	"TLSInfo": {
+		"CertIssuerSubject": "MBMxETAPBgNVBAMTCHN3YXJtLWNh",
+		"CertIssuerPublicKey": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEAbsDW2ynbwE2HPEDqbfKADfzxlk8qgEyni1wQgFIt5k80G4Xro7F9E9GXHLlkn7742d2OKXVwm6lZghUM0V+5g==",
+		"TrustRoot": "-----BEGIN CERTIFICATE-----\nMIIBazCCARCgAwIBAgIUdCDXw5VdR48CvtMH2Rr72WFKiHQwCgYIKoZIzj0EAwIw\nEzERMA8GA1UEAxMIc3dhcm0tY2EwHhcNMTkwMzI1MTU0ODAwWhcNMzkwMzIwMTU0\nODAwWjATMREwDwYDVQQDEwhzd2FybS1jYTBZMBMGByqGSM49AgEGCCqGSM49AwEH\nA0IABAG7A1tsp28BNhzxA6m3ygA388ZZPKoBMp4tcEIBSLeZPNBuF66OxfRPRlxy\n5ZJ+++Nndjil1cJupWYIVDNFfuajQjBAMA4GA1UdDwEB/wQEAwIBBjAPBgNVHRMB\nAf8EBTADAQH/MB0GA1UdDgQWBBTrOtxni1Vd2uxFAIkCwBBLr9EAoTAKBggqhkjO\nPQQDAgNJADBGAiEA+xZ1/p38XkVOt2NzCNbJHc/v2rPS6AvGZ9Arwfy2JtQCIQDg\nNGnMXE0wfd5PHD5EnhPTuAdfgbHTnpP9D0enPl0MSA==\n-----END CERTIFICATE-----\n"
+	},
+	"SubnetSize": 24,
+	"DefaultAddrPool": ["10.0.0.0/8"],
+	"Spec": {
+		"Dispatcher": {
+			"HeartbeatPeriod": 5000000000
+		},
+		"Name": "default",
+		"Orchestration": {
+			"TaskHistoryRetentionLimit": 5
+		},
+		"Labels": {},
+		"EncryptionConfig": {
+			"AutoLockManagers": false
+		},
+		"CAConfig": {
+			"NodeCertExpiry": 7776000000000000
+		},
+		"TaskDefaults": {},
+		"Raft": {
+			"KeepOldSnapshots": 0,
+			"HeartbeatTick": 1,
+			"ElectionTick": 10,
+			"LogEntriesForSlowFollowers": 500,
+			"SnapshotInterval": 10000
+		}
+	},
+	"ID": "jnirz6k2qc6qqbk9ofxc86wxi",
+	"RootRotationInProgress": false,
+	"Version": {
+		"Index": 10
+	},
+	"CreatedAt": "2019-03-25T15:53:19.880849214Z"
+}

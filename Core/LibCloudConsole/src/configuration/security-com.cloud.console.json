@@ -1,0 +1,41 @@
+{
+	"META_Comment": [
+		"## Modular Security Descriptors ##",
+		" Web parameters are scanned for security violations by looking at a security descriptor ",
+		" stored @ the module class-path /configuration/security-{PACKAGE_NAME}.json  where PACKAGE_NAME is the name of the main package of the module.",
+
+		"## URI Exceptions ##",
+		"URI exceptions are used to exempt certain URIs from all security validations. For example:",
+		" {exceptions: [{ uri: RawMessage}] Any URI matching the pattern (regular expression) RawMessage will skip all security checks.",
+
+		"## Parameter Validators ##",
+		" Parameter validators are used to describe valid values for a given parameter using regular expressions. ",
+		" For example, the JSON { param: server_runMode, regexp: '\\b(PRIMARY|SECONDARY)\\b'} The parameter server_runMode accepts the values: PRIMARY or SECONDARY only."
+	],
+	
+	"exceptions": [
+		{ "uri": "/CloudClusterManager", "method": "get", "contentType": "text/html"}
+	],
+
+	"validators": [
+		
+		{ "param": "server_runMode", "regexp": "\\b(PRIMARY|SECONDARY)\\b"},
+		{ "param": "server_failOverType", "regexp": "\\b(CLUSTER_HAZELCAST|CLUSTER_ZEROCONF|SERVLET)\\b"},
+		{ "param": "server_serviceScheduleStartHHMM", "regexp": "\\d\\d \\d\\d"},
+		{ "param": "server_serviceScheduleStopHHMM", "regexp": "\\d\\d \\d\\d"} ,
+		{ "param": "logRotationPolicy", "regexp": "^[A-z0-9 \\.%{}\\-]{1,24}$" } ,
+		{ "param": "iam_azuread_res", "regexp": "https://" } ,
+		{ "param": "iam_azuread_ep", "regexp": "https://" } 
+		
+	],
+	
+	"authenticate": [
+		{ "uri": "^(?!.*(login.jsp|error.jsp)).*\\.jsp.*" , "type": "BASIC"} ,
+		{ "uri": "/SysAdmin" , "type": "BASIC"} ,
+		{ "uri": "/LogServlet" , "type": "BASIC"} 
+	],
+	
+	"authorize": [
+	]	
+	
+}

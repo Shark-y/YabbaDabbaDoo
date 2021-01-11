@@ -1,0 +1,215 @@
+{
+	"version": "v1.24",
+	"endPoints": [
+		{
+			"name": "CheckAuth",
+			"desc": "Validate credentials for a registry and get identity token",
+			"uri": "${API_VERSION}/auth",
+			"method": "POST"
+		},		
+		{
+			"name": "ListContainers",
+			"desc": "List Containers",
+			"uri": "containers/json?all=1",
+			"method": "GET",
+			"headers": [
+				{ "key1" : "val1"}
+			]
+		},
+		{
+			"name": "ListImages",
+			"desc": "List Images",
+			"uri": "images/json?all=1",
+			"method": "GET",
+			"headers": []
+		},
+		{
+			"name": "ListVolumes",
+			"desc": "List Volumes",
+			"uri": "volumes",
+			"method": "GET"
+		},	
+		{
+			"name": "ListNetworks",
+			"desc": "List Networks",
+			"uri": "networks",
+			"method": "GET"
+		},		
+		{
+			"name": "SysInfo",
+			"desc": "Display system-wide information: https://docs.docker.com/engine/api/v1.24/#33-misc",
+			"uri": "${API_VERSION}/info",
+			"method": "GET"
+		},		
+		{
+			"name": "CreateContainer",
+			"desc": "Create a container: https://docs.docker.com/engine/api/v1.24/#31-containers",
+			"uri": "containers/create?${CONTAINERNAME}",
+			"method": "POST"
+		},		
+		{
+			"name": "StartContainer",
+			"desc": "Start a container: https://docs.docker.com/engine/api/v1.24/#31-containers",
+			"uri": "containers/${ID}/start",
+			"method": "POST"
+		},		
+		{
+			"name": "StopContainer",
+			"desc": "Stop a container: https://docs.docker.com/engine/api/v1.24/#31-containers",
+			"uri": "containers/${ID}/stop",
+			"method": "POST"
+		},		
+		{
+			"name": "RemoveContainer",
+			"desc": "Start a container: https://docs.docker.com/engine/api/v1.24/#31-containers",
+			"uri": "containers/${ID}",
+			"method": "DELETE"
+		},
+		{
+			"name": "ContainerLogs",
+			"desc": "Get container logs",
+			"uri": "containers/${ID}/logs?timestamps=0&details=0&follow=0&${LOGARGS}",
+			"method": "GET"
+		},
+		{
+			"name": "ContainerExecCreate",
+			"desc": "Sets up an exec instance in a running container id",
+			"uri": "containers/${ID}/exec",
+			"method": "POST"
+		},
+		{
+			"name": "InspectContainer",
+			"desc": "Return low-level information on the container id or name.",
+			"uri": "containers/${ID}/json",
+			"method": "GET"
+		},	
+			
+		{
+			"name": "CreateImage",
+			"desc": "Create an image either by pulling it from the registry or by importing it.",
+			"uri": "images/create?fromImage=${NAME}&tag=${TAG}",
+			"method": "POST",
+			"headers": [
+				{ "X-Registry-Auth" : "${AUTHOBJ}"}
+			]
+		},
+		{
+			"name": "RemoveImage",
+			"desc": "Remove the image name from the filesystem.",
+			"uri": "images/${NAME}",
+			"method": "DELETE"
+		},
+		{
+			"name": "InspectImage",
+			"desc": "Return low-level information on the image.",
+			"uri": "images/${NAME}/json",
+			"method": "GET"
+		},
+		{
+			"name": "RemoveVolume",
+			"desc": "Instruct the driver to remove the volume.",
+			"uri": "volumes/${NAME}",
+			"method": "DELETE"
+		},
+		{
+			"name": "SwarmInspect",
+			"desc": "Inspect swarm.",
+			"uri": "swarm",
+			"method": "GET"
+		},
+		{
+			"name": "SwarmInit",
+			"desc": "Initialize a new swarm. The body of the HTTP response includes the node ID.",
+			"uri": "swarm/init",
+			"method": "POST"
+		},
+		{
+			"name": "SwarmJoin",
+			"desc": "Join an existing swarm.",
+			"uri": "swarm/join",
+			"method": "POST"
+		},
+		{
+			"name": "SwarmLeave",
+			"desc": "Leave a swarm.",
+			"uri": "swarm/leave?force=${FORCE}",
+			"method": "POST"
+		},
+		{
+			"name": "SwarmUpdate",
+			"desc": "Update a swarm.",
+			"uri": "swarm/update",
+			"method": "POST"
+		},
+		{
+			"name": "ListNodes",
+			"desc": "List nodes. Node operations require the engine to be part of a swarm.",
+			"uri": "nodes",
+			"method": "GET"
+		},
+		{
+			"name": "InspectNode",
+			"desc": "Return low-level information on the node id.",
+			"uri": "nodes/${ID}",
+			"method": "GET"
+		},
+		{
+			"name": "RemoveNode",
+			"desc": "Remove a node from the swarm.",
+			"uri": "nodes/${ID}",
+			"method": "DELETE"
+		},
+		{
+			"name": "UpdateNode",
+			"desc": "Update a node. he payload of the POST request is the new NodeSpec and overrides the current NodeSpec",
+			"uri": "nodes/${ID}/update?version=${VERSION}",
+			"method": "POST"
+		},
+		{
+			"name": "ListServices",
+			"desc": "Service operations require to first be part of a swarm.",
+			"uri": "services",
+			"method": "GET"
+		},
+		{
+			"name": "CreateService",
+			"desc": "Create a service.",
+			"uri": "services/create",
+			"method": "POST",
+			"headers": [
+				{ "X-Registry-Auth" : "${AUTHOBJ}"}
+			]
+		},
+		{
+			"name": "InspectService",
+			"desc": "Return information on the service id.",
+			"uri": "services/${ID}",
+			"method": "GET"
+		},
+		{
+			"name": "UpdateService",
+			"desc": "Return information on the service id.",
+			"uri": "services/${ID}/update",
+			"method": "POST"
+		},
+		{
+			"name": "RemoveService",
+			"desc": "Stop and remove the service id.",
+			"uri": "services/${ID}",
+			"method": "DELETE"
+		},
+		{
+			"name": "ListTasks",
+			"desc": "Task operations require the engine to be part of a swarm..",
+			"uri": "tasks",
+			"method": "GET"
+		},
+		{
+			"name": "InspectTask",
+			"desc": "Get details on the task id.",
+			"uri": "tasks/${ID}",
+			"method": "GET"
+		}
+		
+	]
+}
